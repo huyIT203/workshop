@@ -1,7 +1,7 @@
 ---
-title : "Tạo Admin Group và Admin User"
-date :  "`r Sys.Date()`" 
-weight : 3
+title : "Tạo tài khoản và nhóm Admin"
+date : "2024-01-01"
+weight : 3 
 chapter : false
 pre : " <b> 3. </b> "
 ---

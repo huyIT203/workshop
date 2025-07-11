@@ -1,7 +1,7 @@
 ---
-title : "MFA for AWS Accounts"
-date : "`r Sys.Date()`"
-weight : 2
+title : "Setting up MFA for the AWS Account root user"
+date : "2024-01-01"
+weight : 2 
 chapter : false
 pre : " <b> 2. </b> "
 ---

@@ -1,7 +1,7 @@
 ---
-title : "Tạo mới tài khoản AWS"
-date :  "`r Sys.Date()`" 
-weight : 1
+title : "Tạo tài khoản AWS"
+date : "2024-01-01"
+weight : 1 
 chapter : false
 pre : " <b> 1. </b> "
 ---

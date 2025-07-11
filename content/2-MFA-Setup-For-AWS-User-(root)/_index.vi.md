@@ -1,7 +1,7 @@
 ---
-title : "MFA cho Tài khoản AWS"
-date :  "`r Sys.Date()`" 
-weight : 2
+title : "Thiết lập MFA cho tài khoản AWS (Root)"
+date : "2024-01-01"
+weight : 2 
 chapter : false
 pre : " <b> 2. </b> "
 ---

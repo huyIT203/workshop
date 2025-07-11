@@ -1,7 +1,7 @@
 ---
-title : "Create Admin Group and Admin User"
-date : "`r Sys.Date()`"
-weight : 3
+title : "Creating an Administrator Accounts and Groups"
+date : "2024-01-01"
+weight : 3 
 chapter : false
 pre : " <b> 3. </b> "
 ---

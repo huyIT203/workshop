@@ -1,7 +1,7 @@
 ---
-title : "Close a standalone AWS account"
-date : "`r Sys.Date()`"
-weight : 4
+title : "Close Account"
+date : "2024-01-01"
+weight : 4 
 chapter : false
 pre : " <b> 1.4 </b> "
 ---

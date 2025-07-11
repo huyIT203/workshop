@@ -1,7 +1,7 @@
 ---
-title : "Thiết bị MFA cứng"
-date :  "`r Sys.Date()`" 
-weight : 3
+title : "Thiết bị MFA phần cứng khác"
+date : "2024-01-01"
+weight : 3 
 chapter : false
 pre : " <b> 2.3 </b> "
 ---

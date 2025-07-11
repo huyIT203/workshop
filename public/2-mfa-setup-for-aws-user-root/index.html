@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.148.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>MFA for AWS Accounts :: Create a new AWS account.</title>
+    <title>Setting up MFA for the AWS Account root user :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1704686315" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1704686315" rel="stylesheet">
-    <link href="/css/hybrid.css?1704686315" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1704686315" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1704686315" rel="stylesheet">
-    <link href="/css/auto-complete.css?1704686315" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1704686315" rel="stylesheet">
-    <link href="/css/theme.css?1704686315" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1704686315" rel="stylesheet">
+    <link href="/css/nucleus.css?1752196738" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752196738" rel="stylesheet">
+    <link href="/css/hybrid.css?1752196738" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752196738" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752196738" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752196738" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752196738" rel="stylesheet">
+    <link href="/css/theme.css?1752196738" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752196738" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1704686315" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1752196738" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1704686315"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752196738"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1704686315"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1704686315"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1752196738"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1752196738"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1704686315"></script>
+<script type="text/javascript" src="/js/search.js?1752196738"></script>
 
     
   </div>
@@ -82,13 +82,13 @@
  
   
     
-    <li data-nav-id="/1-create-new-aws-account/" title="Create new AWS account" class="dd-item 
+    <li data-nav-id="/1-create-new-aws-account/" title="Creating a new AWS Account" class="dd-item 
         
         
         
         ">
       <a href="/1-create-new-aws-account/">
-           <b> 1. </b> Create new AWS account
+           <b> 1. </b> Creating a new AWS Account
           
             <i class="fas fa-check read-icon"></i>
           
@@ -113,13 +113,13 @@
  
   
     
-    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="View AWS account identifiers" class="dd-item 
+    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="Finding Account ID" class="dd-item 
         
         
         
         ">
       <a href="/1-create-new-aws-account/1.1-find-account-id/">
-           <b> 1.1 </b> View AWS account identifiers
+           <b> 1.1 </b> Finding Account ID
           
             <i class="fas fa-check read-icon"></i>
           
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Update the AWS account" class="dd-item 
+    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Update Account Information" class="dd-item 
         
         
         
         ">
       <a href="/1-create-new-aws-account/1.2-update-account/">
-           <b> 1.2 </b> Update the AWS account
+           <b> 1.2 </b> Update Account Information
           
             <i class="fas fa-check read-icon"></i>
           
@@ -169,13 +169,13 @@
  
   
     
-    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="Create or update your AWS account alias" class="dd-item 
+    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="AWS Account Alias" class="dd-item 
         
         
         
         ">
       <a href="/1-create-new-aws-account/1.3-aws-account-alias/">
-           <b> 1.3 </b> Create or update your AWS account alias
+           <b> 1.3 </b> AWS Account Alias
           
             <i class="fas fa-check read-icon"></i>
           
@@ -197,13 +197,13 @@
  
   
     
-    <li data-nav-id="/1-create-new-aws-account/1.4-close-account/" title="Close a standalone AWS account" class="dd-item 
+    <li data-nav-id="/1-create-new-aws-account/1.4-close-account/" title="Close Account" class="dd-item 
         
         
         
         ">
       <a href="/1-create-new-aws-account/1.4-close-account/">
-           <b> 1.4 </b> Close a standalone AWS account
+           <b> 1.4 </b> Close Account
           
             <i class="fas fa-check read-icon"></i>
           
@@ -232,13 +232,13 @@
  
   
     
-    <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="MFA for AWS Accounts" class="dd-item 
-        parent
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="Setting up MFA for the AWS Account root user" class="dd-item 
+        
         active
         
         ">
       <a href="/2-mfa-setup-for-aws-user-root/">
-           <b> 2. </b> MFA for AWS Accounts
+           <b> 2. </b> Setting up MFA for the AWS Account root user
           
             <i class="fas fa-check read-icon"></i>
           
@@ -319,13 +319,13 @@
  
   
     
-    <li data-nav-id="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Hard MFA Device" class="dd-item 
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Other Hardware MFA Device" class="dd-item 
         
         
         
         ">
       <a href="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/">
-           <b> 2.3 </b> Hard MFA Device
+           <b> 2.3 </b> Other Hardware MFA Device
           
             <i class="fas fa-check read-icon"></i>
           
@@ -354,13 +354,13 @@
  
   
     
-    <li data-nav-id="/3-create-admin-user-and-group/" title="Create Admin Group and Admin User" class="dd-item 
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating an Administrator Accounts and Groups" class="dd-item 
         
         
         
         ">
       <a href="/3-create-admin-user-and-group/">
-           <b> 3. </b> Create Admin Group and Admin User
+           <b> 3. </b> Creating an Administrator Accounts and Groups
           
             <i class="fas fa-check read-icon"></i>
           
@@ -380,13 +380,13 @@
  
   
     
-    <li data-nav-id="/4-verify-new-account/" title="Account Authentication Support" class="dd-item 
+    <li data-nav-id="/4-verify-new-account/" title="Getting support for Account Authentication" class="dd-item 
         
         
         
         ">
       <a href="/4-verify-new-account/">
-           <b> 4. </b> Account Authentication Support
+           <b> 4. </b> Getting support for Account Authentication
           
             <i class="fas fa-check read-icon"></i>
           
@@ -537,7 +537,7 @@
             
           
           
-            <a href='/'>Setting up an AWS account</a> > MFA for AWS Accounts
+            <a href='/'>Setting up an AWS account</a> > Setting up MFA for the AWS Account root user
           
         
           
@@ -576,7 +576,7 @@
           
             <h1>
               
-              MFA for AWS Accounts
+              Setting up MFA for the AWS Account root user
             </h1>
           
 
@@ -604,10 +604,10 @@
 </ol>
 <h2 id="content">Content</h2>
 <ul>
-<li><a href="#content">Content</a></li>
-<li><a href="#1-setup-with-virtual-mfa-device">1. Setup with Virtual MFA Device</a></li>
-<li><a href="#2-setup-with-u2f-security-key">2. Setup with U2F Security Key</a></li>
-<li><a href="#3-setup-with-other-hardware-mfa-device">3. Setup with Other Hardware MFA Device</a></li>
+<li><a href="/2-mfa-setup-for-aws-user-root/#content">Content</a></li>
+<li><a href="/2-mfa-setup-for-aws-user-root/#1-setup-with-virtual-mfa-device">1. Setup with Virtual MFA Device</a></li>
+<li><a href="/2-mfa-setup-for-aws-user-root/#2-setup-with-u2f-security-key">2. Setup with U2F Security Key</a></li>
+<li><a href="/2-mfa-setup-for-aws-user-root/#3-setup-with-other-hardware-mfa-device">3. Setup with Other Hardware MFA Device</a></li>
 </ul>
 <hr>
 <h2 id="1-setup-with-virtual-mfa-device">1. Setup with Virtual MFA Device</h2>
@@ -866,7 +866,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/1-create-new-aws-account/1.4-close-account/" title="Close a standalone AWS account"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/1-create-new-aws-account/1.4-close-account/" title="Close Account"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Virtual MFA Device" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -879,19 +879,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1704686315"></script>
-    <script src="/js/perfect-scrollbar.min.js?1704686315"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1704686315"></script>
-    <script src="/js/jquery.sticky.js?1704686315"></script>
-    <script src="/js/featherlight.min.js?1704686315"></script>
-    <script src="/js/highlight.pack.js?1704686315"></script>
+    <script src="/js/clipboard.min.js?1752196738"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752196738"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752196738"></script>
+    <script src="/js/jquery.sticky.js?1752196738"></script>
+    <script src="/js/featherlight.min.js?1752196738"></script>
+    <script src="/js/highlight.pack.js?1752196738"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1704686315"></script>
-    <script src="/js/learn.js?1704686315"></script>
-    <script src="/js/hugo-learn.js?1704686315"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752196738"></script>
+    <script src="/js/learn.js?1752196738"></script>
+    <script src="/js/hugo-learn.js?1752196738"></script>
 
-    <link href="/mermaid/mermaid.css?1704686315" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1704686315"></script>
+    <link href="/mermaid/mermaid.css?1752196738" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1752196738"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

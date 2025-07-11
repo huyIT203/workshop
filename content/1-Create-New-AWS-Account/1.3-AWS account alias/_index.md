@@ -1,7 +1,7 @@
 ---
-title : "Create or update your AWS account alias"
-date : "`r Sys.Date()`"
-weight : 3
+title : "AWS Account Alias"
+date : "2024-01-01"
+weight : 3 
 chapter : false
 pre : " <b> 1.3 </b> "
 ---

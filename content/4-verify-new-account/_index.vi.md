@@ -1,7 +1,7 @@
 ---
-title : "Hỗ trợ Xác thực Tài khoản"
-date :  "`r Sys.Date()`" 
-weight : 4
+title : "Hỗ trợ xác thực tài khoản"
+date : "2024-01-01"
+weight : 4 
 chapter : false
 pre : " <b> 4. </b> "
 ---

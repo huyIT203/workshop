@@ -1,6 +1,15 @@
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 
+# Suppress warnings
+ignoreLogs = ['warning-goldmark-raw-html']
+
+# Allow raw HTML in markdown
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

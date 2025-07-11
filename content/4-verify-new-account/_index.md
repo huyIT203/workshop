@@ -1,7 +1,7 @@
 ---
-title : "Account Authentication Support"
-date : "`r Sys.Date()`"
-weight : 4
+title : "Getting support for Account Authentication"
+date : "2024-01-01"
+weight : 4 
 chapter : false
 pre : " <b> 4. </b> "
 ---

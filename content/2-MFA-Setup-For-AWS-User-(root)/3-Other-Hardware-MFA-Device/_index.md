@@ -1,7 +1,7 @@
 ---
-title : "Hard MFA Device"
-date : "`r Sys.Date()`"
-weight : 3
+title : "Other Hardware MFA Device"
+date : "2024-01-01"
+weight : 3 
 chapter : false
 pre : " <b> 2.3 </b> "
 ---
