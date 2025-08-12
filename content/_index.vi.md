@@ -1,42 +1,70 @@
 ---
-title : "Thiết lập Tài Khoản AWS"
-date : "2024-01-01"
+title : "Workshop Nền Tảng E-Learning Esoclusty"
+date : "2025-01-11"
 weight : 1 
 chapter : false
 ---
 
-# Tạo tài khoản AWS đầu tiên
+# Workshop Nền Tảng E-Learning Esoclusty
 
 #### Tổng quan
-Trong bài lab đầu tiên này, bạn sẽ tạo mới **tài khoản AWS** đầu tiên của mình, tạo **MFA** (Multi-factor Authentication) để gia tăng bảo mật tài khoản của bạn. Bước tiếp theo bạn sẽ tạo **Admin Group**, **Admin User** để quản lý quyền truy cập vào các tài nguyên trong tài khoản của mình thay vì sử dụng user root.\
-Cuối cùng, nếu quá trình xác thực tài khoản của bạn có vấn đề, bạn sẽ được hướng dẫn hỗ trợ xác thực tài khoản với **AWS Support**.
+Chào mừng bạn đến với workshop toàn diện về việc xây dựng nền tảng e-learning hiện đại, giàu tính năng sử dụng Spring Boot, MongoDB và MySQL. Workshop này sẽ hướng dẫn bạn qua toàn bộ quá trình phát triển, từ việc lựa chọn công nghệ đến triển khai production, bao gồm các tính năng nâng cao như giao tiếp real-time, tự động hóa database migration và giám sát toàn diện.
 
-#### Tài khoản AWS (AWS Account)
-**Tài khoản AWS** là phương tiện để bạn có thể truy cập và sử dụng những tài nguyên và dịch vụ của AWS. Theo mặc định, mỗi tài khoản AWS sẽ có một *root user*. *Root user* có toàn quyền với tài khoản AWS của bạn, và quyền hạn của root user không thể bị giới hạn. Nếu bạn mới sử dụng tài khoản AWS lần đầu tiên, bạn sẽ truy cập vào tài khoản dưới danh nghĩa của *root user*.
+#### Những gì bạn sẽ học
+Trong workshop này, bạn sẽ xây dựng một nền tảng e-learning hoàn chỉnh với:
+- **Quản lý người dùng**: Xác thực dựa trên vai trò (Admin, Teacher, Student)
+- **Quản lý khóa học**: Nội dung phong phú, video bài học, bài quiz tương tác
+- **Tính năng real-time**: Chat và thông báo dựa trên WebSocket
+- **Tự động hóa database**: Hệ thống migration nâng cao với khả năng rollback
+- **Tính năng production**: Giám sát, bảo mật và thực hành triển khai tốt nhất
 
-![Create Account](/images/1/0001.png?featherlight=false&width=90pc)
+![Nền Tảng E-Learning](/images/1/0001.png?featherlight=false&width=90pc)
 
 {{% notice note %}}
-Chính vì quyền hạn của **root user** không thể bị giới hạn, AWS khuyên bạn không nên sử dụng trực tiếp *root user* cho bất kỳ công tác nào. Thay vào đó, bạn nên tạo ra một *IAM User* và trao quyền quản trị cho *IAM User* đó để dễ dàng quản lý và giảm thiểu rủi ro.
+Workshop này bao gồm cả khía cạnh phát triển và production, phù hợp với các developer ở mọi cấp độ. Nền tảng được thiết kế để có thể mở rộng, bảo mật và sẵn sàng cho doanh nghiệp với khả năng testing và giám sát toàn diện.
 {{% /notice %}}
 
-#### MFA (Multi-factor Authentication)
-**MFA** là một tính năng được sử dụng để gia tăng bảo mật của tài khoản AWS. Nếu MFA được kích hoạt, bạn sẽ phải nhập mã OTP (One-time Password) mỗi lần bạn đăng nhập vào tài khoản AWS.
+#### Stack Công nghệ
+**Framework Backend**: Spring Boot 3.4.5 với Java 17
+**Database**: MongoDB (chính) + MySQL (bình luận & metadata)
+**Bảo mật**: Spring Security với xác thực JWT
+**Real-time**: WebSocket với giao thức STOMP
+**Frontend**: Template Thymeleaf với thiết kế responsive
+**Migration**: Quản lý schema database tự động
 
-#### IAM Group 
-**IAM Group**  là một công cụ quản lý người dùng (*IAM User*) của AWS. Một IAM Group có thể chứa nhiều IAM User. Các IAM User ở trong một IAM Group đều hưởng chung quyền hạn mà IAM Group đó được gán cho.
+#### Tính năng chính
+- **Hệ thống người dùng đa vai trò**: Giao diện Admin, Teacher và Student
+- **Quản lý nội dung phong phú**: Hỗ trợ Markdown, tích hợp video, upload file
+- **Học tập tương tác**: Chat real-time, theo dõi tiến độ, đánh giá
+- **Bảo mật nâng cao**: Token JWT, kiểm soát truy cập dựa trên vai trò, bảo vệ CSRF
+- **Tự động hóa database**: Schema migrations, khả năng rollback, hỗ trợ đa môi trường
+- **Giám sát & Analytics**: Metrics real-time, health checks, theo dõi hiệu suất
 
-#### IAM User
-**IAM User** là một đơn vị người dùng của AWS. Khi bạn đăng nhập vào AWS, bạn sẽ phải đăng nhập dưới danh nghĩa của một IAM User. Nếu bạn mới đăng nhập vào AWS lần đầu tiên, bạn sẽ đăng nhập dưới danh nghĩa của *root user* (tạm dịch là người dùng gốc). Ngoài *root user* ra, bạn có thể tạo ra nhiều IAM User khác để cho phép người khác truy cập **dài hạn** vào tài nguyên AWS trong tài khoản AWS của bạn.
+#### Cấu trúc Workshop
 
+1. [Tổng quan Công nghệ & Dependencies](1-technology-overview/)
+2. [Thiết lập Dự án & Cấu hình Database](2-project-setup/)
+3. [Tính năng Cốt lõi & Giao diện Người dùng](3-core-features/)
+4. [Tự động hóa Database Migration](4-database-migration/)
 
-#### AWS Support
-**AWS Support** là một đơn vị cung cấp các dịch vụ hỗ trợ khách hàng của AWS.
+#### Yêu cầu trước khi tham gia
+- Java 17 trở lên
+- Maven 3.9+
+- MongoDB 4.4+
+- MySQL 8.0+
+- Kiến thức cơ bản về Spring Boot và phát triển web
 
+#### Kết quả mong đợi
+Kết thúc workshop, bạn sẽ có:
+- Một nền tảng e-learning hoàn chỉnh và hoạt động
+- Hiểu biết về kiến trúc ứng dụng web hiện đại
+- Kinh nghiệm với tự động hóa database và giám sát
+- Kiến thức về thực hành phát triển sẵn sàng cho production
+- Kỹ năng mở rộng và tùy chỉnh nền tảng
 
 #### Nội dung chính
 
-1. [Tạo tài khoản AWS](1-create-new-aws-account/)
-2. [Thiết lập MFA cho tài khoản AWS (Root)](2-mfa-setup-for-aws-user-(root)/)
-3. [Tài khoản và Nhóm Admin](3-create-admin-user-and-group/)
-4. [Hỗ trợ Xác thực Tài khoản](4-verify-new-account/)
+1. [Tổng quan Công nghệ & Dependencies](1-technology-overview/)
+2. [Thiết lập Dự án & Cấu hình Database](2-project-setup/)
+3. [Tính năng Cốt lõi & Giao diện Người dùng](3-core-features/)
+4. [Tự động hóa Database Migration](4-database-migration/)

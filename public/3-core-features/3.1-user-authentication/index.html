@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>User Authentication &amp; Authorization :: Create a new AWS account.</title>
+
+    
+    <link href="/css/nucleus.css?1754986437" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1754986437" rel="stylesheet">
+    <link href="/css/hybrid.css?1754986437" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1754986437" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1754986437" rel="stylesheet">
+    <link href="/css/auto-complete.css?1754986437" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1754986437" rel="stylesheet">
+    <link href="/css/theme.css?1754986437" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1754986437" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1754986437" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1754986437"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/3-core-features/3.1-user-authentication/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1754986437"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1754986437"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1754986437"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/" title="Creating a new AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/">
+           <b> 1. </b> Creating a new AWS Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="Finding Account ID" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.1-find-account-id/">
+           <b> 1.1 </b> Finding Account ID
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Update Account Information" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.2-update-account/">
+           <b> 1.2 </b> Update Account Information
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="AWS Account Alias" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.3-aws-account-alias/">
+           <b> 1.3 </b> AWS Account Alias
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.4-close-account/" title="Close Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.4-close-account/">
+           <b> 1.4 </b> Close Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/" title="Technology Overview &amp; Dependencies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/">
+          Technology Overview &amp; Dependencies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.1-backend-framework/" title="Backend Framework" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.1-backend-framework/">
+          Backend Framework
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.2-database-technologies/" title="Database Technologies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.2-database-technologies/">
+          Database Technologies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.3-third-party-dependencies/" title="Third-Party Dependencies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.3-third-party-dependencies/">
+          Third-Party Dependencies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="Setting up MFA for the AWS Account root user" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/">
+           <b> 2. </b> Setting up MFA for the AWS Account root user
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Virtual MFA Device" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/">
+           <b> 2.1 </b> Virtual MFA Device
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/" title="U2F Security Key" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/">
+           <b> 2.2 </b> U2F Security Key
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Other Hardware MFA Device" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/">
+           <b> 2.3 </b> Other Hardware MFA Device
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/" title="Project Setup &amp; Database Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/">
+          Project Setup &amp; Database Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/2.1-environment-setup/" title="Environment Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/2.1-environment-setup/">
+          Environment Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/2.2-project-initialization/" title="Project Initialization" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/2.2-project-initialization/">
+          Project Initialization
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/2.3-database-configuration/" title="Database Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/2.3-database-configuration/">
+          Database Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating an Administrator Accounts and Groups" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/">
+           <b> 3. </b> Creating an Administrator Accounts and Groups
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/" title="Core Features &amp; User Interface" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/3-core-features/">
+          Core Features &amp; User Interface
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.1-user-authentication/" title="User Authentication &amp; Authorization" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/3-core-features/3.1-user-authentication/">
+          User Authentication &amp; Authorization
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.2-course-management/" title="Course Management System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.2-course-management/">
+          Course Management System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.3-real-time-communication/" title="Real-time Communication Features" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.3-real-time-communication/">
+          Real-time Communication Features
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-verify-new-account/" title="Getting support for Account Authentication" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-verify-new-account/">
+           <b> 4. </b> Getting support for Account Authentication
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-database-migration/" title="Database Migration Automation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-database-migration/">
+          Database Migration Automation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-database-migration/4.1-migration-architecture/" title="Migration System Architecture" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-database-migration/4.1-migration-architecture/">
+          Migration System Architecture
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/3-core-features/3.1-user-authentication/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Esoclusty E-Learning Platform Workshop</a> > <a href='/3-core-features/'>Core Features & User Interface</a> > User Authentication & Authorization
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              User Authentication &amp; Authorization
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="user-authentication--authorization">User Authentication &amp; Authorization</h1>
+<h4 id="overview">Overview</h4>
+<p>The Esoclusty E-Learning Platform implements a comprehensive authentication and authorization system that ensures secure access to platform features while providing a seamless user experience. This section explores the multi-role user management system, JWT-based authentication, and role-based access control.</p>
+<h4 id="multi-role-user-management">Multi-Role User Management</h4>
+<h5 id="user-role-system">User Role System</h5>
+<p>The platform implements a sophisticated three-tier role system:</p>
+<p><strong>Admin Role</strong></p>
+<ul>
+<li><strong>Complete System Administration</strong>: Full access to all platform features</li>
+<li><strong>User Management</strong>: Create, modify, and delete user accounts</li>
+<li><strong>Role Assignment</strong>: Assign and modify user roles and permissions</li>
+<li><strong>System Monitoring</strong>: Access to system logs, metrics, and health status</li>
+<li><strong>Content Moderation</strong>: Oversee and moderate all platform content</li>
+<li><strong>Database Management</strong>: Access to database administration tools</li>
+<li><strong>System Configuration</strong>: Modify platform settings and configurations</li>
+</ul>
+<p><strong>Teacher Role</strong></p>
+<ul>
+<li><strong>Course Management</strong>: Create, edit, and delete courses</li>
+<li><strong>Content Creation</strong>: Upload and organize learning materials</li>
+<li><strong>Student Monitoring</strong>: Track student progress and performance</li>
+<li><strong>Assessment Management</strong>: Create and grade quizzes and assignments</li>
+<li><strong>Communication Tools</strong>: Interact with enrolled students</li>
+<li><strong>Analytics Access</strong>: View course-specific analytics and reports</li>
+<li><strong>Content Publishing</strong>: Publish and schedule course content</li>
+</ul>
+<p><strong>Student Role</strong></p>
+<ul>
+<li><strong>Course Enrollment</strong>: Browse and enroll in available courses</li>
+<li><strong>Content Consumption</strong>: Access course materials and lessons</li>
+<li><strong>Progress Tracking</strong>: Monitor learning progress and achievements</li>
+<li><strong>Assessment Participation</strong>: Complete quizzes and assignments</li>
+<li><strong>Communication</strong>: Interact with teachers and fellow students</li>
+<li><strong>Certificate Generation</strong>: Receive completion certificates</li>
+<li><strong>Profile Management</strong>: Update personal information and preferences</li>
+</ul>
+<p><img src="/images/3/0001.png?featherlight=false&amp;width=90pc" alt="User Role Management Interface"></p>
+<h5 id="role-hierarchy-and-permissions">Role Hierarchy and Permissions</h5>
+<p><strong>Permission Matrix</strong></p>
+<pre tabindex="0"><code>┌─────────────────┬─────────┬──────────┬─────────┐
+│     Feature     │ Student │ Teacher  │  Admin  │
+├─────────────────┼─────────┼──────────┼─────────┤
+│ View Courses    │    ✓    │    ✓     │    ✓    │
+│ Enroll Courses  │    ✓    │    ✗     │    ✓    │
+│ Create Courses  │    ✗    │    ✓     │    ✓    │
+│ Manage Users    │    ✗    │    ✗     │    ✓    │
+│ System Config   │    ✗    │    ✗     │    ✓    │
+│ View Analytics  │ Limited │ Course   │   All   │
+│ Content Mod     │    ✗    │    ✗     │    ✓    │
+└─────────────────┴─────────┴──────────┴─────────┘
+</code></pre><p><strong>Access Control Levels</strong></p>
+<ul>
+<li><strong>Public Access</strong>: Course browsing, registration, login</li>
+<li><strong>Authenticated Access</strong>: User dashboard, profile management</li>
+<li><strong>Role-Based Access</strong>: Feature access based on user role</li>
+<li><strong>Resource-Level Access</strong>: Specific content and data access</li>
+<li><strong>Time-Based Access</strong>: Scheduled content availability</li>
+</ul>
+<h4 id="jwt-based-authentication-system">JWT-Based Authentication System</h4>
+<h5 id="authentication-flow">Authentication Flow</h5>
+<p><strong>Complete Authentication Process</strong></p>
+<pre tabindex="0"><code>1. User Registration/Login
+   ↓
+2. Credential Validation
+   ↓
+3. JWT Token Generation
+   ↓
+4. Token Storage (Cookie/Header)
+   ↓
+5. Request Authentication
+   ↓
+6. Token Validation
+   ↓
+7. Role Extraction
+   ↓
+8. Access Control
+</code></pre><p><img src="/images/3/0002.png?featherlight=false&amp;width=90pc" alt="Authentication Flow Diagram"></p>
+<h5 id="jwt-token-structure">JWT Token Structure</h5>
+<p><strong>Token Components</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;header&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;alg&#34;</span>: <span style="color:#e6db74">&#34;HS256&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;typ&#34;</span>: <span style="color:#e6db74">&#34;JWT&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;payload&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sub&#34;</span>: <span style="color:#e6db74">&#34;user@example.com&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;TEACHER&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;userId&#34;</span>: <span style="color:#e6db74">&#34;507f1f77bcf86cd799439011&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;iat&#34;</span>: <span style="color:#ae81ff">1640995200</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;exp&#34;</span>: <span style="color:#ae81ff">1640998800</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;iss&#34;</span>: <span style="color:#e6db74">&#34;esoclusty-elearning&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;aud&#34;</span>: <span style="color:#e6db74">&#34;elearning-users&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;signature&#34;</span>: <span style="color:#e6db74">&#34;HMACSHA256(base64UrlEncode(header) + &#39;.&#39; + base64UrlEncode(payload), secret)&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Token Claims</strong></p>
+<ul>
+<li><strong>sub (Subject)</strong>: User email address</li>
+<li><strong>role</strong>: User role (ADMIN, TEACHER, STUDENT)</li>
+<li><strong>userId</strong>: Unique user identifier</li>
+<li><strong>iat (Issued At)</strong>: Token creation timestamp</li>
+<li><strong>exp (Expiration)</strong>: Token expiration timestamp</li>
+<li><strong>iss (Issuer)</strong>: Token issuer identifier</li>
+<li><strong>aud (Audience)</strong>: Token audience</li>
+</ul>
+<h5 id="token-management">Token Management</h5>
+<p><strong>Token Lifecycle</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Token generation on successful authentication</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">generateToken</span>(UserDetails userDetails) {
+</span></span><span style="display:flex;"><span>    Map<span style="color:#f92672">&lt;</span>String, Object<span style="color:#f92672">&gt;</span> claims <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>    claims.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;role&#34;</span>, userDetails.<span style="color:#a6e22e">getAuthorities</span>().<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">map</span>(GrantedAuthority::getAuthority)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">joining</span>(<span style="color:#e6db74">&#34;,&#34;</span>)));
+</span></span><span style="display:flex;"><span>    claims.<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;userId&#34;</span>, userDetails.<span style="color:#a6e22e">getUsername</span>());
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Jwts.<span style="color:#a6e22e">builder</span>()
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">setClaims</span>(claims)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">setSubject</span>(userDetails.<span style="color:#a6e22e">getUsername</span>())
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">setIssuedAt</span>(<span style="color:#66d9ef">new</span> Date(System.<span style="color:#a6e22e">currentTimeMillis</span>()))
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">setExpiration</span>(<span style="color:#66d9ef">new</span> Date(System.<span style="color:#a6e22e">currentTimeMillis</span>() <span style="color:#f92672">+</span> JWT_EXPIRATION))
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">signWith</span>(SignatureAlgorithm.<span style="color:#a6e22e">HS256</span>, JWT_SECRET)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">compact</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Token validation on each request</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">validateToken</span>(String token, UserDetails userDetails) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String username <span style="color:#f92672">=</span> extractUsername(token);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (username.<span style="color:#a6e22e">equals</span>(userDetails.<span style="color:#a6e22e">getUsername</span>()) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>isTokenExpired(token));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Token Security Features</strong></p>
+<ul>
+<li><strong>Secure Secret</strong>: Cryptographically strong secret key</li>
+<li><strong>Expiration Time</strong>: Configurable token lifetime</li>
+<li><strong>Signature Verification</strong>: HMAC-SHA256 signature validation</li>
+<li><strong>Claim Validation</strong>: Role and user ID verification</li>
+<li><strong>Token Refresh</strong>: Automatic token renewal for active sessions</li>
+</ul>
+<h4 id="security-implementation">Security Implementation</h4>
+<h5 id="password-security">Password Security</h5>
+<p><strong>BCrypt Hashing</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> PasswordEncoder <span style="color:#a6e22e">passwordEncoder</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BCryptPasswordEncoder(12); <span style="color:#75715e">// 12 rounds for security</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Password encoding during registration</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> User <span style="color:#a6e22e">registerUser</span>(UserRegistrationDTO registrationDTO) {
+</span></span><span style="display:flex;"><span>    User user <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User();
+</span></span><span style="display:flex;"><span>    user.<span style="color:#a6e22e">setEmail</span>(registrationDTO.<span style="color:#a6e22e">getEmail</span>());
+</span></span><span style="display:flex;"><span>    user.<span style="color:#a6e22e">setPassword</span>(passwordEncoder.<span style="color:#a6e22e">encode</span>(registrationDTO.<span style="color:#a6e22e">getPassword</span>()));
+</span></span><span style="display:flex;"><span>    user.<span style="color:#a6e22e">setRole</span>(registrationDTO.<span style="color:#a6e22e">getRole</span>());
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> userRepository.<span style="color:#a6e22e">save</span>(user);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Password verification during login</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">authenticateUser</span>(String email, String rawPassword) {
+</span></span><span style="display:flex;"><span>    User user <span style="color:#f92672">=</span> userRepository.<span style="color:#a6e22e">findByEmail</span>(email)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">orElseThrow</span>(() <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">new</span> UsernameNotFoundException(<span style="color:#e6db74">&#34;User not found&#34;</span>));
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> passwordEncoder.<span style="color:#a6e22e">matches</span>(rawPassword, user.<span style="color:#a6e22e">getPassword</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Password Policy</strong></p>
+<ul>
+<li><strong>Minimum Length</strong>: 8 characters</li>
+<li><strong>Complexity Requirements</strong>: Uppercase, lowercase, numbers, special characters</li>
+<li><strong>Common Password Prevention</strong>: Block common weak passwords</li>
+<li><strong>Password History</strong>: Prevent password reuse</li>
+<li><strong>Expiration Policy</strong>: Regular password change requirements</li>
+</ul>
+<h5 id="session-management">Session Management</h5>
+<p><strong>Session Security</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@EnableWebSecurity</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecurityConfig</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> SecurityFilterChain <span style="color:#a6e22e">filterChain</span>(HttpSecurity http) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        http
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">sessionManagement</span>()
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">sessionCreationPolicy</span>(SessionCreationPolicy.<span style="color:#a6e22e">STATELESS</span>)
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">and</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">csrf</span>()
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">disable</span>() <span style="color:#75715e">// JWT handles CSRF protection</span>
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">authorizeHttpRequests</span>()
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/api/auth/**&#34;</span>).<span style="color:#a6e22e">permitAll</span>()
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/api/admin/**&#34;</span>).<span style="color:#a6e22e">hasRole</span>(<span style="color:#e6db74">&#34;ADMIN&#34;</span>)
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/api/teacher/**&#34;</span>).<span style="color:#a6e22e">hasRole</span>(<span style="color:#e6db74">&#34;TEACHER&#34;</span>)
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/api/student/**&#34;</span>).<span style="color:#a6e22e">hasRole</span>(<span style="color:#e6db74">&#34;STUDENT&#34;</span>)
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">anyRequest</span>().<span style="color:#a6e22e">authenticated</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">addFilterBefore</span>(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> http.<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Session Features</strong></p>
+<ul>
+<li><strong>Stateless Design</strong>: No server-side session storage</li>
+<li><strong>Token Expiration</strong>: Automatic session termination</li>
+<li><strong>Concurrent Sessions</strong>: Support for multiple device logins</li>
+<li><strong>Session Invalidation</strong>: Secure logout and token blacklisting</li>
+<li><strong>Remember Me</strong>: Extended session for trusted devices</li>
+</ul>
+<h4 id="access-control-implementation">Access Control Implementation</h4>
+<h5 id="method-level-security">Method-Level Security</h5>
+<p><strong>Controller Security</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/api/courses&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CourseController</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span>(<span style="color:#e6db74">&#34;/{id}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PreAuthorize</span>(<span style="color:#e6db74">&#34;hasRole(&#39;STUDENT&#39;) or hasRole(&#39;TEACHER&#39;) or hasRole(&#39;ADMIN&#39;)&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>CourseDTO<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getCourse</span>(<span style="color:#a6e22e">@PathVariable</span> String id) {
+</span></span><span style="display:flex;"><span>        Course course <span style="color:#f92672">=</span> courseService.<span style="color:#a6e22e">findById</span>(id);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>(courseMapper.<span style="color:#a6e22e">toDTO</span>(course));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PostMapping</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PreAuthorize</span>(<span style="color:#e6db74">&#34;hasRole(&#39;TEACHER&#39;) or hasRole(&#39;ADMIN&#39;)&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>CourseDTO<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">createCourse</span>(<span style="color:#a6e22e">@RequestBody</span> <span style="color:#a6e22e">@Valid</span> CourseCreateDTO courseDTO) {
+</span></span><span style="display:flex;"><span>        Course course <span style="color:#f92672">=</span> courseService.<span style="color:#a6e22e">createCourse</span>(courseDTO);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">status</span>(HttpStatus.<span style="color:#a6e22e">CREATED</span>).<span style="color:#a6e22e">body</span>(courseMapper.<span style="color:#a6e22e">toDTO</span>(course));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@DeleteMapping</span>(<span style="color:#e6db74">&#34;/{id}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PreAuthorize</span>(<span style="color:#e6db74">&#34;hasRole(&#39;ADMIN&#39;) or @courseService.isOwner(#id, authentication.name)&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">deleteCourse</span>(<span style="color:#a6e22e">@PathVariable</span> String id) {
+</span></span><span style="display:flex;"><span>        courseService.<span style="color:#a6e22e">deleteCourse</span>(id);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">noContent</span>().<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Service Layer Security</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Transactional</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CourseService</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PreAuthorize</span>(<span style="color:#e6db74">&#34;hasRole(&#39;TEACHER&#39;) or hasRole(&#39;ADMIN&#39;)&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Course <span style="color:#a6e22e">createCourse</span>(CourseCreateDTO courseDTO) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Course creation logic</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PreAuthorize</span>(<span style="color:#e6db74">&#34;hasRole(&#39;STUDENT&#39;) or hasRole(&#39;TEACHER&#39;) or hasRole(&#39;ADMIN&#39;)&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Course <span style="color:#a6e22e">findById</span>(String id) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Course retrieval logic</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PreAuthorize</span>(<span style="color:#e6db74">&#34;hasRole(&#39;ADMIN&#39;) or @securityService.isCourseOwner(#id)&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteCourse</span>(String id) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Course deletion logic</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="url-based-security">URL-Based Security</h5>
+<p><strong>Path Security Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WebSecurityConfig</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> SecurityFilterChain <span style="color:#a6e22e">filterChain</span>(HttpSecurity http) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        http
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">authorizeHttpRequests</span>(authz <span style="color:#f92672">-&gt;</span> authz
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Public endpoints</span>
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#e6db74">&#34;/login&#34;</span>, <span style="color:#e6db74">&#34;/register&#34;</span>, <span style="color:#e6db74">&#34;/forgot-password&#34;</span>).<span style="color:#a6e22e">permitAll</span>()
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/css/**&#34;</span>, <span style="color:#e6db74">&#34;/js/**&#34;</span>, <span style="color:#e6db74">&#34;/images/**&#34;</span>, <span style="color:#e6db74">&#34;/uploads/**&#34;</span>).<span style="color:#a6e22e">permitAll</span>()
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/api/auth/**&#34;</span>).<span style="color:#a6e22e">permitAll</span>()
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Admin endpoints</span>
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/admin/**&#34;</span>, <span style="color:#e6db74">&#34;/api/admin/**&#34;</span>).<span style="color:#a6e22e">hasRole</span>(<span style="color:#e6db74">&#34;ADMIN&#34;</span>)
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Teacher endpoints</span>
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/teacher/**&#34;</span>, <span style="color:#e6db74">&#34;/api/teacher/**&#34;</span>).<span style="color:#a6e22e">hasRole</span>(<span style="color:#e6db74">&#34;TEACHER&#34;</span>)
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Student endpoints</span>
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/student/**&#34;</span>, <span style="color:#e6db74">&#34;/api/student/**&#34;</span>).<span style="color:#a6e22e">hasRole</span>(<span style="color:#e6db74">&#34;STUDENT&#34;</span>)
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Authenticated endpoints</span>
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">requestMatchers</span>(<span style="color:#e6db74">&#34;/dashboard/**&#34;</span>, <span style="color:#e6db74">&#34;/api/user/**&#34;</span>).<span style="color:#a6e22e">authenticated</span>()
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Default security</span>
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">anyRequest</span>().<span style="color:#a6e22e">authenticated</span>()
+</span></span><span style="display:flex;"><span>            );
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> http.<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="user-registration-and-login">User Registration and Login</h4>
+<h5 id="registration-process">Registration Process</h5>
+<p><strong>User Registration Flow</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/api/auth&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AuthController</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PostMapping</span>(<span style="color:#e6db74">&#34;/register&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>AuthResponseDTO<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">register</span>(<span style="color:#a6e22e">@RequestBody</span> <span style="color:#a6e22e">@Valid</span> UserRegistrationDTO registrationDTO) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Validate email uniqueness</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (userService.<span style="color:#a6e22e">existsByEmail</span>(registrationDTO.<span style="color:#a6e22e">getEmail</span>())) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> EmailAlreadyExistsException(<span style="color:#e6db74">&#34;Email already registered&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create user account</span>
+</span></span><span style="display:flex;"><span>        User user <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">registerUser</span>(registrationDTO);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Generate JWT token</span>
+</span></span><span style="display:flex;"><span>        String token <span style="color:#f92672">=</span> jwtService.<span style="color:#a6e22e">generateToken</span>(user);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Send welcome email</span>
+</span></span><span style="display:flex;"><span>        emailService.<span style="color:#a6e22e">sendWelcomeEmail</span>(user.<span style="color:#a6e22e">getEmail</span>());
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>(<span style="color:#66d9ef">new</span> AuthResponseDTO(token, user.<span style="color:#a6e22e">getRole</span>()));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Registration Validation</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserRegistrationDTO</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@NotBlank</span>(message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Email is required&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Email</span>(message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Invalid email format&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String email;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@NotBlank</span>(message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Password is required&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Size</span>(min <span style="color:#f92672">=</span> 8, message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Password must be at least 8 characters&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Pattern</span>(regexp <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&amp;])[A-Za-z\\d@$!%*?&amp;]{8,}$&#34;</span>,
+</span></span><span style="display:flex;"><span>             message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Password must contain uppercase, lowercase, number, and special character&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String password;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@NotBlank</span>(message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Role is required&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Pattern</span>(regexp <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;^(STUDENT|TEACHER)$&#34;</span>, message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Invalid role&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String role;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Additional fields and validation</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="login-process">Login Process</h5>
+<p><strong>User Authentication</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@PostMapping</span>(<span style="color:#e6db74">&#34;/login&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>AuthResponseDTO<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">login</span>(<span style="color:#a6e22e">@RequestBody</span> <span style="color:#a6e22e">@Valid</span> UserLoginDTO loginDTO) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Authenticate user</span>
+</span></span><span style="display:flex;"><span>        Authentication authentication <span style="color:#f92672">=</span> authenticationManager.<span style="color:#a6e22e">authenticate</span>(
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> UsernamePasswordAuthenticationToken(loginDTO.<span style="color:#a6e22e">getEmail</span>(), loginDTO.<span style="color:#a6e22e">getPassword</span>())
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Generate JWT token</span>
+</span></span><span style="display:flex;"><span>        UserDetails userDetails <span style="color:#f92672">=</span> (UserDetails) authentication.<span style="color:#a6e22e">getPrincipal</span>();
+</span></span><span style="display:flex;"><span>        String token <span style="color:#f92672">=</span> jwtService.<span style="color:#a6e22e">generateToken</span>(userDetails);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Update last login timestamp</span>
+</span></span><span style="display:flex;"><span>        userService.<span style="color:#a6e22e">updateLastLogin</span>(loginDTO.<span style="color:#a6e22e">getEmail</span>());
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Log successful login</span>
+</span></span><span style="display:flex;"><span>        auditService.<span style="color:#a6e22e">logLogin</span>(loginDTO.<span style="color:#a6e22e">getEmail</span>(), <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>(<span style="color:#66d9ef">new</span> AuthResponseDTO(token, userDetails.<span style="color:#a6e22e">getAuthorities</span>()));
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (AuthenticationException e) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Log failed login attempt</span>
+</span></span><span style="display:flex;"><span>        auditService.<span style="color:#a6e22e">logLogin</span>(loginDTO.<span style="color:#a6e22e">getEmail</span>(), <span style="color:#66d9ef">false</span>, e.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidCredentialsException(<span style="color:#e6db74">&#34;Invalid email or password&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Login Security Features</strong></p>
+<ul>
+<li><strong>Rate Limiting</strong>: Prevent brute force attacks</li>
+<li><strong>Account Lockout</strong>: Temporary account suspension after failed attempts</li>
+<li><strong>Audit Logging</strong>: Track all login attempts</li>
+<li><strong>IP Monitoring</strong>: Detect suspicious login patterns</li>
+<li><strong>Two-Factor Authentication</strong>: Optional 2FA for enhanced security</li>
+</ul>
+<h4 id="password-recovery-system">Password Recovery System</h4>
+<h5 id="forgot-password-flow">Forgot Password Flow</h5>
+<p><strong>Password Reset Request</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@PostMapping</span>(<span style="color:#e6db74">&#34;/forgot-password&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">forgotPassword</span>(<span style="color:#a6e22e">@RequestBody</span> <span style="color:#a6e22e">@Valid</span> ForgotPasswordDTO forgotPasswordDTO) {
+</span></span><span style="display:flex;"><span>    String email <span style="color:#f92672">=</span> forgotPasswordDTO.<span style="color:#a6e22e">getEmail</span>();
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Check if user exists</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>userService.<span style="color:#a6e22e">existsByEmail</span>(email)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Don&#39;t reveal user existence for security</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>().<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Generate reset token</span>
+</span></span><span style="display:flex;"><span>    String resetToken <span style="color:#f92672">=</span> passwordResetService.<span style="color:#a6e22e">generateResetToken</span>(email);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Send reset email</span>
+</span></span><span style="display:flex;"><span>    emailService.<span style="color:#a6e22e">sendPasswordResetEmail</span>(email, resetToken);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>().<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Password Reset Process</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@PostMapping</span>(<span style="color:#e6db74">&#34;/reset-password&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">resetPassword</span>(<span style="color:#a6e22e">@RequestBody</span> <span style="color:#a6e22e">@Valid</span> PasswordResetDTO resetDTO) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Validate reset token</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>passwordResetService.<span style="color:#a6e22e">isValidToken</span>(resetDTO.<span style="color:#a6e22e">getToken</span>())) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidTokenException(<span style="color:#e6db74">&#34;Invalid or expired reset token&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Reset password</span>
+</span></span><span style="display:flex;"><span>    userService.<span style="color:#a6e22e">resetPassword</span>(resetDTO.<span style="color:#a6e22e">getToken</span>(), resetDTO.<span style="color:#a6e22e">getNewPassword</span>());
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Invalidate reset token</span>
+</span></span><span style="display:flex;"><span>    passwordResetService.<span style="color:#a6e22e">invalidateToken</span>(resetDTO.<span style="color:#a6e22e">getToken</span>());
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Log password reset</span>
+</span></span><span style="display:flex;"><span>    auditService.<span style="color:#a6e22e">logPasswordReset</span>(resetDTO.<span style="color:#a6e22e">getEmail</span>());
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>().<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="security-best-practices">Security Best Practices</h4>
+<h5 id="input-validation">Input Validation</h5>
+<p><strong>Request Validation</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PutMapping</span>(<span style="color:#e6db74">&#34;/profile&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PreAuthorize</span>(<span style="color:#e6db74">&#34;hasRole(&#39;USER&#39;)&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>UserProfileDTO<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">updateProfile</span>(
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@RequestBody</span> <span style="color:#a6e22e">@Valid</span> UserProfileUpdateDTO profileDTO,
+</span></span><span style="display:flex;"><span>            Authentication authentication) {
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Additional business logic validation</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (profileDTO.<span style="color:#a6e22e">getAge</span>() <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> (profileDTO.<span style="color:#a6e22e">getAge</span>() <span style="color:#f92672">&lt;</span> 13 <span style="color:#f92672">||</span> profileDTO.<span style="color:#a6e22e">getAge</span>() <span style="color:#f92672">&gt;</span> 120)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ValidationException(<span style="color:#e6db74">&#34;Invalid age value&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        UserProfile profile <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">updateProfile</span>(authentication.<span style="color:#a6e22e">getName</span>(), profileDTO);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>(userProfileMapper.<span style="color:#a6e22e">toDTO</span>(profile));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>SQL Injection Prevention</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Use parameterized queries</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Query</span>(<span style="color:#e6db74">&#34;SELECT u FROM User u WHERE u.email = :email AND u.isActive = true&#34;</span>)
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findByEmailAndActive</span>(<span style="color:#a6e22e">@Param</span>(<span style="color:#e6db74">&#34;email&#34;</span>) String email);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Avoid string concatenation in queries</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// WRONG: &#34;SELECT * FROM users WHERE email = &#39;&#34; + email + &#34;&#39;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// CORRECT: Use @Query with @Param or method name queries</span>
+</span></span></code></pre></div><h5 id="csrf-protection">CSRF Protection</h5>
+<p><strong>CSRF Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecurityConfig</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> SecurityFilterChain <span style="color:#a6e22e">filterChain</span>(HttpSecurity http) <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        http
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">csrf</span>(csrf <span style="color:#f92672">-&gt;</span> csrf
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">csrfTokenRepository</span>(CookieCsrfTokenRepository.<span style="color:#a6e22e">withHttpOnlyFalse</span>())
+</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">ignoringRequestMatchers</span>(<span style="color:#e6db74">&#34;/api/auth/**&#34;</span>) <span style="color:#75715e">// JWT endpoints don&#39;t need CSRF</span>
+</span></span><span style="display:flex;"><span>            );
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> http.<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Token Validation</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CsrfTokenValidator</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">validateToken</span>(HttpServletRequest request, String token) {
+</span></span><span style="display:flex;"><span>        CsrfToken csrfToken <span style="color:#f92672">=</span> (CsrfToken) request.<span style="color:#a6e22e">getAttribute</span>(CsrfToken.<span style="color:#a6e22e">class</span>.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> csrfToken <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> token.<span style="color:#a6e22e">equals</span>(csrfToken.<span style="color:#a6e22e">getToken</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="audit-and-logging">Audit and Logging</h4>
+<h5 id="security-event-logging">Security Event Logging</h5>
+<p><strong>Audit Service</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AuditService</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">logLogin</span>(String email, <span style="color:#66d9ef">boolean</span> success, String failureReason) {
+</span></span><span style="display:flex;"><span>        SecurityAuditEvent event <span style="color:#f92672">=</span> SecurityAuditEvent.<span style="color:#a6e22e">builder</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">eventType</span>(LoginEventType.<span style="color:#a6e22e">LOGIN_ATTEMPT</span>)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">userEmail</span>(email)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">timestamp</span>(LocalDateTime.<span style="color:#a6e22e">now</span>())
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">ipAddress</span>(getClientIpAddress())
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">userAgent</span>(getUserAgent())
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">success</span>(success)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">failureReason</span>(failureReason)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        auditEventRepository.<span style="color:#a6e22e">save</span>(event);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">logRoleChange</span>(String adminEmail, String targetEmail, String oldRole, String newRole) {
+</span></span><span style="display:flex;"><span>        SecurityAuditEvent event <span style="color:#f92672">=</span> SecurityAuditEvent.<span style="color:#a6e22e">builder</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">eventType</span>(LoginEventType.<span style="color:#a6e22e">ROLE_CHANGE</span>)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">userEmail</span>(adminEmail)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">targetEmail</span>(targetEmail)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">oldValue</span>(oldRole)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">newValue</span>(newRole)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">timestamp</span>(LocalDateTime.<span style="color:#a6e22e">now</span>())
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        auditEventRepository.<span style="color:#a6e22e">save</span>(event);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Audit Event Types</strong></p>
+<ul>
+<li><strong>Authentication Events</strong>: Login, logout, failed attempts</li>
+<li><strong>Authorization Events</strong>: Role changes, permission modifications</li>
+<li><strong>Data Access Events</strong>: Sensitive data access, modifications</li>
+<li><strong>System Events</strong>: Configuration changes, security updates</li>
+<li><strong>User Management Events</strong>: Account creation, deletion, modification</li>
+</ul>
+<h4 id="next-steps">Next Steps</h4>
+<p>With the authentication and authorization system in place, we can now explore:</p>
+<ul>
+<li>Course management and content delivery</li>
+<li>Real-time communication features</li>
+<li>User interface and dashboard design</li>
+<li>Assessment and progress tracking</li>
+</ul>
+<h4 id="key-takeaways">Key Takeaways</h4>
+<ul>
+<li><strong>Multi-role system</strong> provides granular access control</li>
+<li><strong>JWT-based authentication</strong> ensures stateless and scalable security</li>
+<li><strong>Role-based access control</strong> protects platform resources</li>
+<li><strong>Comprehensive security</strong> includes password policies and audit logging</li>
+<li><strong>Input validation</strong> prevents security vulnerabilities</li>
+<li><strong>Audit trail</strong> maintains security compliance and monitoring</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/3-core-features/" title="Core Features &amp; User Interface"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/3-core-features/3.2-course-management/" title="Course Management System" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1754986437"></script>
+    <script src="/js/perfect-scrollbar.min.js?1754986437"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1754986437"></script>
+    <script src="/js/jquery.sticky.js?1754986437"></script>
+    <script src="/js/featherlight.min.js?1754986437"></script>
+    <script src="/js/highlight.pack.js?1754986437"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1754986437"></script>
+    <script src="/js/learn.js?1754986437"></script>
+    <script src="/js/hugo-learn.js?1754986437"></script>
+
+    <link href="/mermaid/mermaid.css?1754986437" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1754986437"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

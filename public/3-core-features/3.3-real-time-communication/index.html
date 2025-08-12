@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Real-time Communication Features :: Create a new AWS account.</title>
+
+    
+    <link href="/css/nucleus.css?1754986437" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1754986437" rel="stylesheet">
+    <link href="/css/hybrid.css?1754986437" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1754986437" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1754986437" rel="stylesheet">
+    <link href="/css/auto-complete.css?1754986437" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1754986437" rel="stylesheet">
+    <link href="/css/theme.css?1754986437" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1754986437" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1754986437" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1754986437"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/3-core-features/3.3-real-time-communication/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1754986437"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1754986437"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1754986437"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/" title="Creating a new AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/">
+           <b> 1. </b> Creating a new AWS Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="Finding Account ID" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.1-find-account-id/">
+           <b> 1.1 </b> Finding Account ID
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Update Account Information" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.2-update-account/">
+           <b> 1.2 </b> Update Account Information
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="AWS Account Alias" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.3-aws-account-alias/">
+           <b> 1.3 </b> AWS Account Alias
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.4-close-account/" title="Close Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.4-close-account/">
+           <b> 1.4 </b> Close Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/" title="Technology Overview &amp; Dependencies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/">
+          Technology Overview &amp; Dependencies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.1-backend-framework/" title="Backend Framework" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.1-backend-framework/">
+          Backend Framework
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.2-database-technologies/" title="Database Technologies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.2-database-technologies/">
+          Database Technologies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.3-third-party-dependencies/" title="Third-Party Dependencies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.3-third-party-dependencies/">
+          Third-Party Dependencies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="Setting up MFA for the AWS Account root user" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/">
+           <b> 2. </b> Setting up MFA for the AWS Account root user
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Virtual MFA Device" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/">
+           <b> 2.1 </b> Virtual MFA Device
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/" title="U2F Security Key" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/">
+           <b> 2.2 </b> U2F Security Key
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Other Hardware MFA Device" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/">
+           <b> 2.3 </b> Other Hardware MFA Device
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/" title="Project Setup &amp; Database Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/">
+          Project Setup &amp; Database Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/2.1-environment-setup/" title="Environment Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/2.1-environment-setup/">
+          Environment Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/2.2-project-initialization/" title="Project Initialization" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/2.2-project-initialization/">
+          Project Initialization
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/2.3-database-configuration/" title="Database Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/2.3-database-configuration/">
+          Database Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating an Administrator Accounts and Groups" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/">
+           <b> 3. </b> Creating an Administrator Accounts and Groups
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/" title="Core Features &amp; User Interface" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/3-core-features/">
+          Core Features &amp; User Interface
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.1-user-authentication/" title="User Authentication &amp; Authorization" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.1-user-authentication/">
+          User Authentication &amp; Authorization
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.2-course-management/" title="Course Management System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.2-course-management/">
+          Course Management System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.3-real-time-communication/" title="Real-time Communication Features" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/3-core-features/3.3-real-time-communication/">
+          Real-time Communication Features
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-verify-new-account/" title="Getting support for Account Authentication" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-verify-new-account/">
+           <b> 4. </b> Getting support for Account Authentication
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-database-migration/" title="Database Migration Automation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-database-migration/">
+          Database Migration Automation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-database-migration/4.1-migration-architecture/" title="Migration System Architecture" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-database-migration/4.1-migration-architecture/">
+          Migration System Architecture
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/3-core-features/3.3-real-time-communication/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Esoclusty E-Learning Platform Workshop</a> > <a href='/3-core-features/'>Core Features & User Interface</a> > Real-time Communication Features
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Real-time Communication Features
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="real-time-communication-features">Real-time Communication Features</h1>
+<h4 id="overview">Overview</h4>
+<p>The Esoclusty E-Learning Platform provides comprehensive real-time communication capabilities that enhance the learning experience through instant messaging, live notifications, and collaborative features. This section explores the WebSocket implementation, chat system, and real-time collaboration tools.</p>
+<h4 id="websocket-implementation">WebSocket Implementation</h4>
+<h5 id="stomp-protocol-configuration">STOMP Protocol Configuration</h5>
+<p><strong>WebSocket Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@EnableWebSocketMessageBroker</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WebSocketConfig</span> <span style="color:#66d9ef">implements</span> WebSocketMessageBrokerConfigurer {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configureMessageBroker</span>(MessageBrokerRegistry config) {
+</span></span><span style="display:flex;"><span>        config.<span style="color:#a6e22e">enableSimpleBroker</span>(<span style="color:#e6db74">&#34;/topic&#34;</span>, <span style="color:#e6db74">&#34;/queue&#34;</span>, <span style="color:#e6db74">&#34;/user&#34;</span>);
+</span></span><span style="display:flex;"><span>        config.<span style="color:#a6e22e">setApplicationDestinationPrefixes</span>(<span style="color:#e6db74">&#34;/app&#34;</span>);
+</span></span><span style="display:flex;"><span>        config.<span style="color:#a6e22e">setUserDestinationPrefix</span>(<span style="color:#e6db74">&#34;/user&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">registerStompEndpoints</span>(StompEndpointRegistry registry) {
+</span></span><span style="display:flex;"><span>        registry.<span style="color:#a6e22e">addEndpoint</span>(<span style="color:#e6db74">&#34;/ws&#34;</span>)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">setAllowedOrigins</span>(<span style="color:#e6db74">&#34;*&#34;</span>)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">withSockJS</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">configureMessageConverters</span>(List<span style="color:#f92672">&lt;</span>MessageConverter<span style="color:#f92672">&gt;</span> messageConverters) {
+</span></span><span style="display:flex;"><span>        messageConverters.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> MappingJackson2MessageConverter());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Security Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WebSocketSecurityConfig</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ChannelInterceptor <span style="color:#a6e22e">channelInterceptor</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ChannelInterceptor() {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> Message<span style="color:#f92672">&lt;?&gt;</span> preSend(Message<span style="color:#f92672">&lt;?&gt;</span> message, MessageChannel channel) {
+</span></span><span style="display:flex;"><span>                StompHeaderAccessor accessor <span style="color:#f92672">=</span> MessageHeaderAccessor.<span style="color:#a6e22e">getAccessor</span>(message, StompHeaderAccessor.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (StompCommand.<span style="color:#a6e22e">CONNECT</span>.<span style="color:#a6e22e">equals</span>(accessor.<span style="color:#a6e22e">getCommand</span>())) {
+</span></span><span style="display:flex;"><span>                    String token <span style="color:#f92672">=</span> accessor.<span style="color:#a6e22e">getFirstNativeHeader</span>(<span style="color:#e6db74">&#34;Authorization&#34;</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> (token <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> token.<span style="color:#a6e22e">startsWith</span>(<span style="color:#e6db74">&#34;Bearer &#34;</span>)) {
+</span></span><span style="display:flex;"><span>                        token <span style="color:#f92672">=</span> token.<span style="color:#a6e22e">substring</span>(7);
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e">// Validate JWT token and set user</span>
+</span></span><span style="display:flex;"><span>                        String username <span style="color:#f92672">=</span> jwtService.<span style="color:#a6e22e">extractUsername</span>(token);
+</span></span><span style="display:flex;"><span>                        accessor.<span style="color:#a6e22e">setUser</span>(<span style="color:#66d9ef">new</span> Principal() {
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() { <span style="color:#66d9ef">return</span> username; }
+</span></span><span style="display:flex;"><span>                        });
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> message;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="live-chat-system">Live Chat System</h4>
+<h5 id="chat-room-management">Chat Room Management</h5>
+<p><strong>Chat Room Structure</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Table</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;chat_rooms&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChatRoom</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GeneratedValue</span>(strategy <span style="color:#f92672">=</span> GenerationType.<span style="color:#a6e22e">IDENTITY</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Long id;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Column</span>(nullable <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Enumerated</span>(EnumType.<span style="color:#a6e22e">STRING</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> ChatRoomType type; <span style="color:#75715e">// COURSE, PRIVATE, GROUP</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String courseId; <span style="color:#75715e">// For course-specific chats</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String createdBy;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDateTime createdAt;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@OneToMany</span>(mappedBy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;chatRoom&#34;</span>, cascade <span style="color:#f92672">=</span> CascadeType.<span style="color:#a6e22e">ALL</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>ChatMessage<span style="color:#f92672">&gt;</span> messages;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@OneToMany</span>(mappedBy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;chatRoom&#34;</span>, cascade <span style="color:#f92672">=</span> CascadeType.<span style="color:#a6e22e">ALL</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>ChatParticipant<span style="color:#f92672">&gt;</span> participants;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Table</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;chat_messages&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChatMessage</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GeneratedValue</span>(strategy <span style="color:#f92672">=</span> GenerationType.<span style="color:#a6e22e">IDENTITY</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Long id;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Column</span>(nullable <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String content;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String senderId;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String senderName;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDateTime timestamp;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> MessageType type; <span style="color:#75715e">// TEXT, FILE, SYSTEM</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@ManyToOne</span>(fetch <span style="color:#f92672">=</span> FetchType.<span style="color:#a6e22e">LAZY</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@JoinColumn</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;chat_room_id&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> ChatRoom chatRoom;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String fileUrl; <span style="color:#75715e">// For file messages</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String fileName;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Long fileSize;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="real-time-message-handling">Real-time Message Handling</h5>
+<p><strong>Message Controller</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChatController</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@MessageMapping</span>(<span style="color:#e6db74">&#34;/chat.sendMessage&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@SendTo</span>(<span style="color:#e6db74">&#34;/topic/public&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ChatMessage <span style="color:#a6e22e">sendMessage</span>(<span style="color:#a6e22e">@Payload</span> ChatMessage chatMessage) {
+</span></span><span style="display:flex;"><span>        chatMessage.<span style="color:#a6e22e">setTimestamp</span>(LocalDateTime.<span style="color:#a6e22e">now</span>());
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Save message to database</span>
+</span></span><span style="display:flex;"><span>        ChatMessage savedMessage <span style="color:#f92672">=</span> chatMessageService.<span style="color:#a6e22e">saveMessage</span>(chatMessage);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Notify online users</span>
+</span></span><span style="display:flex;"><span>        notificationService.<span style="color:#a6e22e">notifyOnlineUsers</span>(chatMessage);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> savedMessage;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@MessageMapping</span>(<span style="color:#e6db74">&#34;/chat.addUser&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@SendTo</span>(<span style="color:#e6db74">&#34;/topic/public&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ChatMessage <span style="color:#a6e22e">addUser</span>(<span style="color:#a6e22e">@Payload</span> ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add username to web socket session</span>
+</span></span><span style="display:flex;"><span>        headerAccessor.<span style="color:#a6e22e">getSessionAttributes</span>().<span style="color:#a6e22e">put</span>(<span style="color:#e6db74">&#34;username&#34;</span>, chatMessage.<span style="color:#a6e22e">getSenderName</span>());
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Save user join message</span>
+</span></span><span style="display:flex;"><span>        ChatMessage joinMessage <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ChatMessage();
+</span></span><span style="display:flex;"><span>        joinMessage.<span style="color:#a6e22e">setType</span>(MessageType.<span style="color:#a6e22e">SYSTEM</span>);
+</span></span><span style="display:flex;"><span>        joinMessage.<span style="color:#a6e22e">setContent</span>(chatMessage.<span style="color:#a6e22e">getSenderName</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; joined the chat&#34;</span>);
+</span></span><span style="display:flex;"><span>        joinMessage.<span style="color:#a6e22e">setTimestamp</span>(LocalDateTime.<span style="color:#a6e22e">now</span>());
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> chatMessageService.<span style="color:#a6e22e">saveMessage</span>(joinMessage);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@EventListener</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleWebSocketDisconnectListener</span>(SessionDisconnectEvent event) {
+</span></span><span style="display:flex;"><span>        SimpMessageHeaderAccessor headerAccessor <span style="color:#f92672">=</span> SimpMessageHeaderAccessor.<span style="color:#a6e22e">wrap</span>(event.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>        String username <span style="color:#f92672">=</span> (String) headerAccessor.<span style="color:#a6e22e">getSessionAttributes</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (username <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            ChatMessage chatMessage <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ChatMessage();
+</span></span><span style="display:flex;"><span>            chatMessage.<span style="color:#a6e22e">setType</span>(MessageType.<span style="color:#a6e22e">SYSTEM</span>);
+</span></span><span style="display:flex;"><span>            chatMessage.<span style="color:#a6e22e">setContent</span>(username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; left the chat&#34;</span>);
+</span></span><span style="display:flex;"><span>            chatMessage.<span style="color:#a6e22e">setTimestamp</span>(LocalDateTime.<span style="color:#a6e22e">now</span>());
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            chatMessageService.<span style="color:#a6e22e">saveMessage</span>(chatMessage);
+</span></span><span style="display:flex;"><span>            messagingTemplate.<span style="color:#a6e22e">convertAndSend</span>(<span style="color:#e6db74">&#34;/topic/public&#34;</span>, chatMessage);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="live-notifications">Live Notifications</h4>
+<h5 id="notification-system">Notification System</h5>
+<p><strong>Notification Types</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> NotificationType {
+</span></span><span style="display:flex;"><span>    COURSE_ENROLLMENT(<span style="color:#e6db74">&#34;Course Enrollment&#34;</span>, <span style="color:#e6db74">&#34;New student enrolled in your course&#34;</span>),
+</span></span><span style="display:flex;"><span>    COURSE_COMPLETION(<span style="color:#e6db74">&#34;Course Completion&#34;</span>, <span style="color:#e6db74">&#34;Student completed your course&#34;</span>),
+</span></span><span style="display:flex;"><span>    ASSIGNMENT_SUBMISSION(<span style="color:#e6db74">&#34;Assignment Submission&#34;</span>, <span style="color:#e6db74">&#34;New assignment submitted&#34;</span>),
+</span></span><span style="display:flex;"><span>    QUIZ_RESULT(<span style="color:#e6db74">&#34;Quiz Result&#34;</span>, <span style="color:#e6db74">&#34;Quiz result available&#34;</span>),
+</span></span><span style="display:flex;"><span>    COURSE_UPDATE(<span style="color:#e6db74">&#34;Course Update&#34;</span>, <span style="color:#e6db74">&#34;Course content has been updated&#34;</span>),
+</span></span><span style="display:flex;"><span>    SYSTEM_ANNOUNCEMENT(<span style="color:#e6db74">&#34;System Announcement&#34;</span>, <span style="color:#e6db74">&#34;Important system announcement&#34;</span>),
+</span></span><span style="display:flex;"><span>    PRIVATE_MESSAGE(<span style="color:#e6db74">&#34;Private Message&#34;</span>, <span style="color:#e6db74">&#34;New private message received&#34;</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String displayName;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String description;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    NotificationType(String displayName, String description) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">displayName</span> <span style="color:#f92672">=</span> displayName;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">description</span> <span style="color:#f92672">=</span> description;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Real-time Notification Service</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NotificationService</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> SimpMessagingTemplate messagingTemplate;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendNotificationToUser</span>(String userId, Notification notification) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Save notification to database</span>
+</span></span><span style="display:flex;"><span>        notificationRepository.<span style="color:#a6e22e">save</span>(notification);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Send real-time notification</span>
+</span></span><span style="display:flex;"><span>        messagingTemplate.<span style="color:#a6e22e">convertAndSendToUser</span>(
+</span></span><span style="display:flex;"><span>            userId,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/queue/notifications&#34;</span>,
+</span></span><span style="display:flex;"><span>            notification
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendNotificationToCourse</span>(String courseId, Notification notification) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Get all enrolled students</span>
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>Enrollment<span style="color:#f92672">&gt;</span> enrollments <span style="color:#f92672">=</span> enrollmentRepository.<span style="color:#a6e22e">findByCourseId</span>(courseId);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Enrollment enrollment : enrollments) {
+</span></span><span style="display:flex;"><span>            sendNotificationToUser(enrollment.<span style="color:#a6e22e">getStudent</span>().<span style="color:#a6e22e">getId</span>(), notification);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendSystemNotification</span>(Notification notification) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Get all active users</span>
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> activeUsers <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">findActiveUsers</span>();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (User user : activeUsers) {
+</span></span><span style="display:flex;"><span>            sendNotificationToUser(user.<span style="color:#a6e22e">getId</span>(), notification);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="collaborative-learning-features">Collaborative Learning Features</h4>
+<h5 id="real-time-collaboration">Real-time Collaboration</h5>
+<p><strong>Shared Whiteboard</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Controller</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WhiteboardController</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@MessageMapping</span>(<span style="color:#e6db74">&#34;/whiteboard.draw&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@SendTo</span>(<span style="color:#e6db74">&#34;/topic/whiteboard/{sessionId}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> DrawingAction <span style="color:#a6e22e">handleDrawing</span>(<span style="color:#a6e22e">@Payload</span> DrawingAction action, <span style="color:#a6e22e">@DestinationVariable</span> String sessionId) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Save drawing action</span>
+</span></span><span style="display:flex;"><span>        whiteboardService.<span style="color:#a6e22e">saveAction</span>(sessionId, action);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Broadcast to all participants</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> action;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@MessageMapping</span>(<span style="color:#e6db74">&#34;/whiteboard.clear&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@SendTo</span>(<span style="color:#e6db74">&#34;/topic/whiteboard/{sessionId}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ClearAction <span style="color:#a6e22e">handleClear</span>(<span style="color:#a6e22e">@Payload</span> ClearAction action, <span style="color:#a6e22e">@DestinationVariable</span> String sessionId) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Clear whiteboard</span>
+</span></span><span style="display:flex;"><span>        whiteboardService.<span style="color:#a6e22e">clearSession</span>(sessionId);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> action;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Table</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;whiteboard_sessions&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WhiteboardSession</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GeneratedValue</span>(strategy <span style="color:#f92672">=</span> GenerationType.<span style="color:#a6e22e">IDENTITY</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Long id;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String sessionId;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String courseId;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String createdBy;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDateTime createdAt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> LocalDateTime lastActivity;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@OneToMany</span>(mappedBy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;session&#34;</span>, cascade <span style="color:#f92672">=</span> CascadeType.<span style="color:#a6e22e">ALL</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>DrawingAction<span style="color:#f92672">&gt;</span> actions;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="live-screen-sharing">Live Screen Sharing</h5>
+<p><strong>Screen Sharing Service</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ScreenSharingService</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">startScreenShare</span>(String sessionId, String userId) {
+</span></span><span style="display:flex;"><span>        ScreenShareSession session <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ScreenShareSession();
+</span></span><span style="display:flex;"><span>        session.<span style="color:#a6e22e">setSessionId</span>(sessionId);
+</span></span><span style="display:flex;"><span>        session.<span style="color:#a6e22e">setHostId</span>(userId);
+</span></span><span style="display:flex;"><span>        session.<span style="color:#a6e22e">setStatus</span>(ScreenShareStatus.<span style="color:#a6e22e">ACTIVE</span>);
+</span></span><span style="display:flex;"><span>        session.<span style="color:#a6e22e">setStartedAt</span>(LocalDateTime.<span style="color:#a6e22e">now</span>());
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        screenShareRepository.<span style="color:#a6e22e">save</span>(session);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Notify participants</span>
+</span></span><span style="display:flex;"><span>        notifyParticipants(sessionId, <span style="color:#e6db74">&#34;Screen sharing started&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">stopScreenShare</span>(String sessionId) {
+</span></span><span style="display:flex;"><span>        ScreenShareSession session <span style="color:#f92672">=</span> screenShareRepository.<span style="color:#a6e22e">findBySessionId</span>(sessionId);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (session <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            session.<span style="color:#a6e22e">setStatus</span>(ScreenShareStatus.<span style="color:#a6e22e">STOPPED</span>);
+</span></span><span style="display:flex;"><span>            session.<span style="color:#a6e22e">setStoppedAt</span>(LocalDateTime.<span style="color:#a6e22e">now</span>());
+</span></span><span style="display:flex;"><span>            screenShareRepository.<span style="color:#a6e22e">save</span>(session);
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Notify participants</span>
+</span></span><span style="display:flex;"><span>            notifyParticipants(sessionId, <span style="color:#e6db74">&#34;Screen sharing stopped&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">notifyParticipants</span>(String sessionId, String message) {
+</span></span><span style="display:flex;"><span>        messagingTemplate.<span style="color:#a6e22e">convertAndSend</span>(<span style="color:#e6db74">&#34;/topic/screenshare/&#34;</span> <span style="color:#f92672">+</span> sessionId, message);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="real-time-progress-updates">Real-time Progress Updates</h4>
+<h5 id="live-progress-tracking">Live Progress Tracking</h5>
+<p><strong>Progress Update Service</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LiveProgressService</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateProgress</span>(String courseId, String studentId, <span style="color:#66d9ef">double</span> progress) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Update progress in database</span>
+</span></span><span style="display:flex;"><span>        progressTrackingService.<span style="color:#a6e22e">updateCourseProgress</span>(courseId, studentId, progress);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Send real-time update to teacher</span>
+</span></span><span style="display:flex;"><span>        String teacherId <span style="color:#f92672">=</span> courseService.<span style="color:#a6e22e">findById</span>(courseId).<span style="color:#a6e22e">getTeacher</span>().<span style="color:#a6e22e">getId</span>();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        ProgressUpdate update <span style="color:#f92672">=</span> ProgressUpdate.<span style="color:#a6e22e">builder</span>()
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">courseId</span>(courseId)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">studentId</span>(studentId)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">progress</span>(progress)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">timestamp</span>(LocalDateTime.<span style="color:#a6e22e">now</span>())
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        messagingTemplate.<span style="color:#a6e22e">convertAndSendToUser</span>(
+</span></span><span style="display:flex;"><span>            teacherId,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;/queue/progress-updates&#34;</span>,
+</span></span><span style="display:flex;"><span>            update
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">broadcastCourseProgress</span>(String courseId) {
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>Enrollment<span style="color:#f92672">&gt;</span> enrollments <span style="color:#f92672">=</span> enrollmentRepository.<span style="color:#a6e22e">findByCourseId</span>(courseId);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Enrollment enrollment : enrollments) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">double</span> progress <span style="color:#f92672">=</span> progressTrackingService.<span style="color:#a6e22e">getCourseProgress</span>(
+</span></span><span style="display:flex;"><span>                courseId, enrollment.<span style="color:#a6e22e">getStudent</span>().<span style="color:#a6e22e">getId</span>()).<span style="color:#a6e22e">getOverallProgress</span>();
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            updateProgress(courseId, enrollment.<span style="color:#a6e22e">getStudent</span>().<span style="color:#a6e22e">getId</span>(), progress);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="websocket-event-handling">WebSocket Event Handling</h4>
+<h5 id="connection-management">Connection Management</h5>
+<p><strong>WebSocket Event Listeners</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WebSocketEventListener</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@EventListener</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleWebSocketConnectListener</span>(SessionConnectEvent event) {
+</span></span><span style="display:flex;"><span>        SimpMessageHeaderAccessor headerAccessor <span style="color:#f92672">=</span> SimpMessageHeaderAccessor.<span style="color:#a6e22e">wrap</span>(event.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>        String username <span style="color:#f92672">=</span> (String) headerAccessor.<span style="color:#a6e22e">getSessionAttributes</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (username <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Update user online status</span>
+</span></span><span style="display:flex;"><span>            userService.<span style="color:#a6e22e">updateOnlineStatus</span>(username, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Notify other users</span>
+</span></span><span style="display:flex;"><span>            ChatMessage chatMessage <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ChatMessage();
+</span></span><span style="display:flex;"><span>            chatMessage.<span style="color:#a6e22e">setType</span>(MessageType.<span style="color:#a6e22e">SYSTEM</span>);
+</span></span><span style="display:flex;"><span>            chatMessage.<span style="color:#a6e22e">setContent</span>(username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is now online&#34;</span>);
+</span></span><span style="display:flex;"><span>            chatMessage.<span style="color:#a6e22e">setTimestamp</span>(LocalDateTime.<span style="color:#a6e22e">now</span>());
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            messagingTemplate.<span style="color:#a6e22e">convertAndSend</span>(<span style="color:#e6db74">&#34;/topic/public&#34;</span>, chatMessage);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@EventListener</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">handleWebSocketDisconnectListener</span>(SessionDisconnectEvent event) {
+</span></span><span style="display:flex;"><span>        SimpMessageHeaderAccessor headerAccessor <span style="color:#f92672">=</span> SimpMessageHeaderAccessor.<span style="color:#a6e22e">wrap</span>(event.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>        String username <span style="color:#f92672">=</span> (String) headerAccessor.<span style="color:#a6e22e">getSessionAttributes</span>().<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (username <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Update user online status</span>
+</span></span><span style="display:flex;"><span>            userService.<span style="color:#a6e22e">updateOnlineStatus</span>(username, <span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Notify other users</span>
+</span></span><span style="display:flex;"><span>            ChatMessage chatMessage <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ChatMessage();
+</span></span><span style="display:flex;"><span>            chatMessage.<span style="color:#a6e22e">setType</span>(MessageType.<span style="color:#a6e22e">SYSTEM</span>);
+</span></span><span style="display:flex;"><span>            chatMessage.<span style="color:#a6e22e">setContent</span>(username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is now offline&#34;</span>);
+</span></span><span style="display:flex;"><span>            chatMessage.<span style="color:#a6e22e">setTimestamp</span>(LocalDateTime.<span style="color:#a6e22e">now</span>());
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            messagingTemplate.<span style="color:#a6e22e">convertAndSend</span>(<span style="color:#e6db74">&#34;/topic/public&#34;</span>, chatMessage);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="performance-optimization">Performance Optimization</h4>
+<h5 id="websocket-performance">WebSocket Performance</h5>
+<p><strong>Connection Pooling</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WebSocketPerformanceConfig</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> TaskExecutor <span style="color:#a6e22e">messageBrokerTaskExecutor</span>() {
+</span></span><span style="display:flex;"><span>        ThreadPoolTaskExecutor executor <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ThreadPoolTaskExecutor();
+</span></span><span style="display:flex;"><span>        executor.<span style="color:#a6e22e">setCorePoolSize</span>(10);
+</span></span><span style="display:flex;"><span>        executor.<span style="color:#a6e22e">setMaxPoolSize</span>(20);
+</span></span><span style="display:flex;"><span>        executor.<span style="color:#a6e22e">setQueueCapacity</span>(100);
+</span></span><span style="display:flex;"><span>        executor.<span style="color:#a6e22e">setThreadNamePrefix</span>(<span style="color:#e6db74">&#34;ws-&#34;</span>);
+</span></span><span style="display:flex;"><span>        executor.<span style="color:#a6e22e">initialize</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> executor;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> MessageBrokerRegistry <span style="color:#a6e22e">messageBrokerRegistry</span>() {
+</span></span><span style="display:flex;"><span>        MessageBrokerRegistry registry <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MessageBrokerRegistry(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>        registry.<span style="color:#a6e22e">setPreservePublishOrder</span>(<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>        registry.<span style="color:#a6e22e">setTaskExecutor</span>(messageBrokerTaskExecutor());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> registry;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Message Rate Limiting</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MessageRateLimiter</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Map<span style="color:#f92672">&lt;</span>String, RateLimitInfo<span style="color:#f92672">&gt;</span> userRateLimits <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConcurrentHashMap<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> MAX_MESSAGES_PER_MINUTE <span style="color:#f92672">=</span> 30;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isRateLimited</span>(String userId) {
+</span></span><span style="display:flex;"><span>        RateLimitInfo info <span style="color:#f92672">=</span> userRateLimits.<span style="color:#a6e22e">get</span>(userId);
+</span></span><span style="display:flex;"><span>        LocalDateTime now <span style="color:#f92672">=</span> LocalDateTime.<span style="color:#a6e22e">now</span>();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (info <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> info.<span style="color:#a6e22e">getLastReset</span>().<span style="color:#a6e22e">isBefore</span>(now.<span style="color:#a6e22e">minusMinutes</span>(1))) {
+</span></span><span style="display:flex;"><span>            info <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RateLimitInfo(now, 1);
+</span></span><span style="display:flex;"><span>            userRateLimits.<span style="color:#a6e22e">put</span>(userId, info);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (info.<span style="color:#a6e22e">getMessageCount</span>() <span style="color:#f92672">&gt;=</span> MAX_MESSAGES_PER_MINUTE) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        info.<span style="color:#a6e22e">incrementMessageCount</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RateLimitInfo</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> LocalDateTime lastReset;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> messageCount;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">RateLimitInfo</span>(LocalDateTime lastReset, <span style="color:#66d9ef">int</span> messageCount) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lastReset</span> <span style="color:#f92672">=</span> lastReset;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">messageCount</span> <span style="color:#f92672">=</span> messageCount;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">incrementMessageCount</span>() { messageCount<span style="color:#f92672">++</span>; }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> LocalDateTime <span style="color:#a6e22e">getLastReset</span>() { <span style="color:#66d9ef">return</span> lastReset; }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getMessageCount</span>() { <span style="color:#66d9ef">return</span> messageCount; }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="next-steps">Next Steps</h4>
+<p>With the real-time communication features in place, we can now explore:</p>
+<ul>
+<li>Assessment and evaluation system</li>
+<li>User interface and dashboard design</li>
+<li>Content analytics and reporting</li>
+<li>Mobile application features</li>
+</ul>
+<h4 id="key-takeaways">Key Takeaways</h4>
+<ul>
+<li><strong>WebSocket implementation</strong> provides real-time bidirectional communication</li>
+<li><strong>STOMP protocol</strong> enables structured message routing and handling</li>
+<li><strong>Live chat system</strong> enhances student-teacher interaction</li>
+<li><strong>Real-time notifications</strong> keep users informed of important events</li>
+<li><strong>Collaborative features</strong> enable interactive learning experiences</li>
+<li><strong>Performance optimization</strong> ensures scalable real-time communication</li>
+<li><strong>Security integration</strong> protects WebSocket connections and messages</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/3-core-features/3.2-course-management/" title="Course Management System"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/4-verify-new-account/" title="Getting support for Account Authentication" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1754986437"></script>
+    <script src="/js/perfect-scrollbar.min.js?1754986437"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1754986437"></script>
+    <script src="/js/jquery.sticky.js?1754986437"></script>
+    <script src="/js/featherlight.min.js?1754986437"></script>
+    <script src="/js/highlight.pack.js?1754986437"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1754986437"></script>
+    <script src="/js/learn.js?1754986437"></script>
+    <script src="/js/hugo-learn.js?1754986437"></script>
+
+    <link href="/mermaid/mermaid.css?1754986437" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1754986437"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

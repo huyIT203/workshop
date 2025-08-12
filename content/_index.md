@@ -1,46 +1,99 @@
 ---
-title : "Setting up an AWS account"
-date : "2024-01-01"
-weight : 1 
+title : "Esoclusty E-Learning Platform Workshop"
+date : "2025-01-11"
+weight : 1
 chapter : false
 ---
 
-# Creating your first AWS account
+# Esoclusty E-Learning Platform Workshop
 
 #### Overview
-In this first lab, you will be creating your new **AWS** account and use Multi-factor Authentication (**MFA**) to improve your account security. Next, you will create an **Administrator Group** and **Admin User** to manage access to resources in your account instead of using the root user. \
-Finally, we will step through account authentication with **AWS Support** in the event you experience authentication problems.
+Chào mừng bạn đến với workshop về Esoclusty E-Learning Platform! Đây là một nền tảng học tập trực tuyến toàn diện được xây dựng với Spring Boot, tích hợp cả MySQL và MongoDB để cung cấp trải nghiệm học tập tốt nhất.
 
-#### AWS Account
-**An AWS account** is the basic container for all the AWS resources you can create as an AWS customer. By default, each AWS account will have a _root user_. The _root user_ has full access within your AWS account, and root user permissions cannot be limited. When you first create your AWS account, you will be assessing it as the _root user_.
+#### Platform Features
+- **Multi-Role User Management**: Hệ thống quản lý người dùng với 3 vai trò (Admin, Teacher, Student)
+- **Comprehensive Course Management**: Quản lý khóa học toàn diện với nội dung đa phương tiện
+- **Real-time Communication**: Tính năng giao tiếp thời gian thực với WebSocket
+- **Advanced Assessment System**: Hệ thống đánh giá và theo dõi tiến độ học tập
+- **Hybrid Database Architecture**: Kiến trúc cơ sở dữ liệu kết hợp MySQL và MongoDB
+- **Automated Migration System**: Hệ thống tự động hóa database migration
 
-![Create Account](/images/1/0001.png?featherlight=false&width=90pc)
+#### Technology Stack
+- **Backend**: Spring Boot 3.4.5, Java 17, Spring Framework 6
+- **Databases**: MySQL 8.0+, MongoDB 4.4+
+- **Security**: Spring Security 6 với JWT authentication
+- **Real-time**: WebSocket với STOMP protocol
+- **Frontend**: Thymeleaf templates
+- **Build Tool**: Maven 3.9+
+- **Cloud Services**: AWS RDS, S3, MongoDB Atlas
 
-{{% notice note%}}
-As a best practice, do not use the AWS account _root user_ for any task where it's not required. Instead, create a new IAM user for each person that requires administrator access. Thereafter, the users in the administrators user group should set up the user groups, users, and so on, for the AWS account. All future interaction should be through the AWS account's users and their own keys instead of the root user. However, to perform some account and service management tasks, you must log in using the root user credentials.
-{{% /notice%}}
+#### Workshop Structure
 
-#### Multi-Factor Authentication (MFA)
-**MFA** adds extra security because it requires users to provide unique authentication from an AWS supported MFA mechanism in addition to their regular sign-in credentials when they access AWS websites or services.
+##### 1. Technology Overview
+Tìm hiểu về công nghệ và kiến trúc của platform:
+- **Backend Framework**: Spring Boot, Java, Spring Framework
+- **Database Technologies**: MySQL, MongoDB, hybrid strategy
+- **Third-Party Dependencies**: Security, content processing, monitoring
 
-#### IAM User Group 
-An **IAM user group** is a collection of IAM users. User groups let you specify permissions for multiple users, which can make it easier to manage the permissions for those users. Any user in that user group automatically has the permissions that are assigned to the user group. 
+[Explore Technology Overview →](1-technology-overview/)
 
-#### IAM User
-An **IAM user** is an entity that you create in AWS to represent the person or application that uses it to interact with AWS. A user in AWS consists of a name and credentials. \
-Please note that an IAM user with administrator permissions is not the same thing as the AWS account root user.
+##### 2. RDS với MySQL - Spring Boot Integration
+Thiết lập Amazon RDS với MySQL và tích hợp Spring Boot:
+- **RDS Instance Setup**: Tạo và cấu hình RDS instance
+- **Spring Boot Configuration**: Cấu hình kết nối database
+- **Database Migration**: Quản lý schema và migration
 
+[Explore RDS MySQL Integration →](2-rds-mysql-springboot/)
 
-#### AWS Support
-AWS Basic Support offers all AWS customers access to our Resource Center, Service Health Dashboard, Product FAQs, Discussion Forums, and Support for Health Checks – at no additional charge. Customers who desire a deeper level of support can subscribe to AWS Support at the Developer, Business, or Enterprise level.
+##### 3. Amazon S3 - File Storage & Management
+Thiết lập Amazon S3 cho file storage:
+- **S3 Bucket Setup**: Tạo và cấu hình S3 buckets
+- **Spring Boot Integration**: Tích hợp S3 với ứng dụng
+- **Advanced Features**: CloudFront, monitoring, cost optimization
 
-Customers who choose AWS Support gain one-on-one, fast-response support from AWS engineers. The service helps customers use AWS's products and features. With pay-by-the-month pricing and unlimited support cases, customers are freed from long-term commitments. Customers with operational issues or technical questions can contact a team of support engineers and receive predictable response times and personalized support.
+[Explore S3 Storage →](3-amazon-s3-storage/)
 
+##### 4. MongoDB Atlas - Cloud Database Service
+Thiết lập MongoDB Atlas cho document storage:
+- **Atlas Setup**: Tạo cluster và cấu hình
+- **Spring Boot Integration**: Tích hợp MongoDB với ứng dụng
+- **Advanced Features**: Search, analytics, global clusters
 
-#### Main Content
+[Explore MongoDB Atlas →](4-mongodb-atlas/)
 
-1. [Creating a new AWS Account](1-create-new-aws-account/)
-2. [Setting up MFA for the AWS Account root user](2-MFA-Setup-For-AWS-User-(root))
-3. [Creating an Administrator Accounts and Groups](3-create-admin-user-and-group/)
-4. [Getting support for Account Authentication](4-verify-new-account/)
-<!-- need to remove parenthesis for path in Hugo 0.88.1 for Windows-->
+#### Prerequisites
+Trước khi bắt đầu workshop, bạn cần:
+- **Java Development Kit**: JDK 17 hoặc cao hơn
+- **Maven**: Version 3.9+ để quản lý dependencies
+- **IDE**: IntelliJ IDEA, Eclipse, hoặc VS Code
+- **AWS Account**: Để sử dụng RDS và S3 services
+- **MongoDB Atlas Account**: Để sử dụng cloud database service
+- **Git**: Để clone repository và quản lý code
+
+#### Expected Outcomes
+Sau khi hoàn thành workshop, bạn sẽ có thể:
+- **Thiết lập và cấu hình** RDS MySQL instance trên AWS
+- **Tạo và quản lý** S3 buckets cho file storage
+- **Thiết lập MongoDB Atlas** cluster cho document storage
+- **Tích hợp tất cả services** với Spring Boot application
+- **Hiểu rõ kiến trúc** hybrid database của platform
+- **Thực hiện database migration** một cách an toàn
+- **Tối ưu hóa performance** và cost cho production
+
+#### Getting Started
+1. **Clone Repository**: `git clone https://github.com/huyIT203/e-learning.git`
+2. **Navigate to Backend**: `cd e-learning/elearning-backend`
+3. **Review Documentation**: Đọc README.md và docs/vi/
+4. **Follow Workshop Sections**: Bắt đầu với Technology Overview
+5. **Practice Hands-on**: Thực hành từng bước theo hướng dẫn
+
+#### Support and Resources
+- **GitHub Repository**: [https://github.com/huyIT203/e-learning](https://github.com/huyIT203/e-learning)
+- **Documentation**: Xem thư mục `docs/vi/` cho tài liệu tiếng Việt
+- **Issues**: Báo cáo vấn đề trên GitHub Issues
+- **Discussions**: Tham gia thảo luận trên GitHub Discussions
+
+#### Next Steps
+Bắt đầu workshop bằng cách khám phá [Technology Overview](1-technology-overview/) để hiểu rõ về kiến trúc và công nghệ của platform. Sau đó, tiếp tục với các phần thiết lập cloud services để xây dựng môi trường production-ready.
+
+Chúc bạn có một trải nghiệm học tập tuyệt vời với Esoclusty E-Learning Platform!

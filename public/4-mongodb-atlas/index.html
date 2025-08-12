@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>MongoDB Atlas - Cloud Database Service :: Create a new AWS account.</title>
+
+    
+    <link href="/css/nucleus.css?1755012969" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1755012969" rel="stylesheet">
+    <link href="/css/hybrid.css?1755012969" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1755012969" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1755012969" rel="stylesheet">
+    <link href="/css/auto-complete.css?1755012969" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1755012969" rel="stylesheet">
+    <link href="/css/theme.css?1755012969" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1755012969" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1755012969" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1755012969"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/4-mongodb-atlas/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1755012969"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1755012969"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1755012969"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/" title="Creating a new AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/">
+           <b> 1. </b> Creating a new AWS Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="Finding Account ID" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.1-find-account-id/">
+           <b> 1.1 </b> Finding Account ID
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Update Account Information" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.2-update-account/">
+           <b> 1.2 </b> Update Account Information
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="AWS Account Alias" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.3-aws-account-alias/">
+           <b> 1.3 </b> AWS Account Alias
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.4-close-account/" title="Close Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.4-close-account/">
+           <b> 1.4 </b> Close Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/" title="RDS với MySQL - Spring Boot Integration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/">
+           <b> 2. </b> RDS với MySQL - Spring Boot Integration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/2.1-rds-instance-setup/" title="RDS Instance Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/2.1-rds-instance-setup/">
+           <b> 2.1 </b> RDS Instance Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/2.2-springboot-configuration/" title="Spring Boot Database Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/2.2-springboot-configuration/">
+           <b> 2.2 </b> Spring Boot Database Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/2.3-database-migration/" title="Database Migration with Flyway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/2.3-database-migration/">
+           <b> 2.3 </b> Database Migration with Flyway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/" title="Amazon S3 - File Storage &amp; Management" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/">
+           <b> 3. </b> Amazon S3 - File Storage &amp; Management
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/3.1-s3-bucket-setup/" title="S3 Bucket Setup &amp; Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/3.1-s3-bucket-setup/">
+           <b> 3.1 </b> S3 Bucket Setup &amp; Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/3.2-springboot-integration/" title="Spring Boot S3 Integration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/3.2-springboot-integration/">
+           <b> 3.2 </b> Spring Boot S3 Integration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/3.3-cloudfront-integration/" title="CloudFront CDN Integration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/3.3-cloudfront-integration/">
+           <b> 3.3 </b> CloudFront CDN Integration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-mongodb-atlas/" title="MongoDB Atlas - Cloud Database Service" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/4-mongodb-atlas/">
+           <b> 4. </b> MongoDB Atlas - Cloud Database Service
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-mongodb-atlas/4.1-atlas-setup/" title="MongoDB Atlas Setup &amp; Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-mongodb-atlas/4.1-atlas-setup/">
+           <b> 4.1 </b> MongoDB Atlas Setup &amp; Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/4-mongodb-atlas/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'>Esoclusty E-Learning Platform Workshop</a> > MongoDB Atlas - Cloud Database Service
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              MongoDB Atlas - Cloud Database Service
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="mongodb-atlas---cloud-database-service">MongoDB Atlas - Cloud Database Service</h1>
+<h4 id="overview">Overview</h4>
+<p>Trong phần này, chúng ta sẽ thiết lập và cấu hình MongoDB Atlas để sử dụng làm cloud database service cho e-learning platform. Bạn sẽ học cách tạo cluster, cấu hình security, và tích hợp với ứng dụng Spring Boot. MongoDB Atlas sẽ cung cấp managed MongoDB service với high availability và global distribution.</p>
+<h4 id="section-contents">Section Contents</h4>
+<h5 id="41-mongodb-atlas-setup--configuration">4.1 MongoDB Atlas Setup &amp; Configuration</h5>
+<p>Thiết lập MongoDB Atlas cluster và cấu hình cơ bản:</p>
+<ul>
+<li><strong>Cluster Creation</strong>: Tạo và cấu hình MongoDB cluster</li>
+<li><strong>Network Access</strong>: Cấu hình IP whitelist và VPC peering</li>
+<li><strong>Database Access</strong>: Tạo database users và roles</li>
+<li><strong>Cluster Configuration</strong>: Instance size và storage configuration</li>
+<li><strong>Backup &amp; Monitoring</strong>: Automated backup và monitoring setup</li>
+</ul>
+<p><a href="/4-mongodb-atlas/4.1-atlas-setup/">Explore Atlas Setup →</a></p>
+<h5 id="42-spring-boot-mongodb-integration">4.2 Spring Boot MongoDB Integration</h5>
+<p>Tích hợp MongoDB Atlas với Spring Boot application:</p>
+<ul>
+<li><strong>MongoDB Driver Configuration</strong>: Cấu hình MongoDB Java driver</li>
+<li><strong>Spring Data MongoDB</strong>: Cấu hình Spring Data MongoDB</li>
+<li><strong>Connection Management</strong>: Connection pooling và retry logic</li>
+<li><strong>Data Models</strong>: MongoDB document models và repositories</li>
+<li><strong>Performance Optimization</strong>: Indexing và query optimization</li>
+</ul>
+<p><a href="4.2-springboot-integration/">Explore Spring Boot Integration →</a></p>
+<h5 id="43-mongodb-data-management">4.3 MongoDB Data Management</h5>
+<p>Quản lý dữ liệu và performance với MongoDB:</p>
+<ul>
+<li><strong>Document Design</strong>: Thiết kế MongoDB documents cho e-learning</li>
+<li><strong>Indexing Strategy</strong>: Tối ưu hóa queries với indexes</li>
+<li><strong>Aggregation Pipeline</strong>: Complex data processing</li>
+<li><strong>Data Validation</strong>: Schema validation và data integrity</li>
+<li><strong>Performance Monitoring</strong>: Query optimization và monitoring</li>
+</ul>
+<p><a href="4.3-data-management/">Explore Data Management →</a></p>
+<h4 id="mongodb-atlas-overview">MongoDB Atlas Overview</h4>
+<h5 id="cloud-database-benefits">Cloud Database Benefits</h5>
+<p><strong>Managed MongoDB Service</strong></p>
+<ul>
+<li><strong>Automated Operations</strong>: Atlas tự động quản lý database operations</li>
+<li><strong>Global Distribution</strong>: Deploy clusters worldwide</li>
+<li><strong>Built-in Security</strong>: Enterprise-grade security features</li>
+<li><strong>Scalability</strong>: Auto-scaling và manual scaling options</li>
+<li><strong>Monitoring</strong>: Real-time monitoring và alerting</li>
+</ul>
+<p><strong>Use Cases for E-Learning</strong></p>
+<ul>
+<li><strong>User Profiles</strong>: Flexible user data storage</li>
+<li><strong>Course Content</strong>: Rich document storage</li>
+<li><strong>Learning Analytics</strong>: Student progress tracking</li>
+<li><strong>Real-time Data</strong>: Chat messages và notifications</li>
+<li><strong>Content Metadata</strong>: Flexible content organization</li>
+</ul>
+<h4 id="atlas-cluster-types">Atlas Cluster Types</h4>
+<h5 id="shared-clusters-free-tier">Shared Clusters (Free Tier)</h5>
+<p><strong>M0 Sandbox</strong></p>
+<ul>
+<li><strong>Use Case</strong>: Development và testing</li>
+<li><strong>Storage</strong>: 512 MB</li>
+<li><strong>RAM</strong>: Shared</li>
+<li><strong>vCPU</strong>: Shared</li>
+<li><strong>Cost</strong>: Free</li>
+<li><strong>Limitations</strong>: No dedicated resources</li>
+</ul>
+<p><strong>M2/M5 Shared</strong></p>
+<ul>
+<li><strong>Use Case</strong>: Small production workloads</li>
+<li><strong>Storage</strong>: 2-5 GB</li>
+<li><strong>RAM</strong>: Shared</li>
+<li><strong>vCPU</strong>: Shared</li>
+<li><strong>Cost</strong>: $9-25/month</li>
+<li><strong>Limitations</strong>: Limited performance</li>
+</ul>
+<h5 id="dedicated-clusters">Dedicated Clusters</h5>
+<p><strong>M10+ Dedicated</strong></p>
+<ul>
+<li><strong>Use Case</strong>: Production workloads</li>
+<li><strong>Storage</strong>: 10+ GB</li>
+<li><strong>RAM</strong>: Dedicated</li>
+<li><strong>vCPU</strong>: Dedicated</li>
+<li><strong>Cost</strong>: $57+/month</li>
+<li><strong>Benefits</strong>: Predictable performance</li>
+</ul>
+<p><strong>M30+ Dedicated</strong></p>
+<ul>
+<li><strong>Use Case</strong>: High-performance applications</li>
+<li><strong>Storage</strong>: 30+ GB</li>
+<li><strong>RAM</strong>: Dedicated</li>
+<li><strong>vCPU</strong>: Dedicated</li>
+<li><strong>Cost</strong>: $171+/month</li>
+<li><strong>Benefits</strong>: High performance và reliability</li>
+</ul>
+<h4 id="atlas-security-features">Atlas Security Features</h4>
+<h5 id="network-security">Network Security</h5>
+<p><strong>IP Access List</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">IP Addresses</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">192.168.1.0</span><span style="color:#ae81ff">/24 (Office network)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">10.0.0.0</span><span style="color:#ae81ff">/8 (VPC CIDR)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">0.0.0.0</span><span style="color:#ae81ff">/0 (Public access - not recommended for production)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">VPC Peering</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">AWS VPC</span>: <span style="color:#ae81ff">vpc-12345678</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Atlas VPC</span>: <span style="color:#ae81ff">vpc-atlas-87654321</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Route tables</span>: <span style="color:#ae81ff">Configure routing</span>
+</span></span></code></pre></div><p><strong>Private Endpoint</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">AWS PrivateLink</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">VPC Endpoint</span>: <span style="color:#ae81ff">vpce-12345678</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Service</span>: <span style="color:#ae81ff">com.amazonaws.vpce.us-east-1.vpce-svc-12345678</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Security Groups</span>: [<span style="color:#ae81ff">Your security group]</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Subnets</span>: [<span style="color:#ae81ff">Private subnets]</span>
+</span></span></code></pre></div><h5 id="database-security">Database Security</h5>
+<p><strong>Database Users</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Create application user
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">createUser</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;elearning_user&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">pwd</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;secure_password_123&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">roles</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    { <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;readWrite&#34;</span>, <span style="color:#a6e22e">db</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;elearning&#34;</span> },
+</span></span><span style="display:flex;"><span>    { <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;dbAdmin&#34;</span>, <span style="color:#a6e22e">db</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;elearning&#34;</span> }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Create read-only user for analytics
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">createUser</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;analytics_user&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">pwd</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;analytics_password_456&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">roles</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    { <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;read&#34;</span>, <span style="color:#a6e22e">db</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;elearning&#34;</span> }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p><strong>Database Roles</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Custom role for course management
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">createRole</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;course_manager&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">privileges</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">resource</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">db</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;elearning&#34;</span>, <span style="color:#a6e22e">collection</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;courses&#34;</span> },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;find&#34;</span>, <span style="color:#e6db74">&#34;insert&#34;</span>, <span style="color:#e6db74">&#34;update&#34;</span>, <span style="color:#e6db74">&#34;delete&#34;</span>]
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">resource</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">db</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;elearning&#34;</span>, <span style="color:#a6e22e">collection</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;lessons&#34;</span> },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">actions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;find&#34;</span>, <span style="color:#e6db74">&#34;insert&#34;</span>, <span style="color:#e6db74">&#34;update&#34;</span>, <span style="color:#e6db74">&#34;delete&#34;</span>]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">roles</span><span style="color:#f92672">:</span> []
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h4 id="atlas-configuration">Atlas Configuration</h4>
+<h5 id="cluster-configuration">Cluster Configuration</h5>
+<p><strong>Instance Size Selection</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Development Environment</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Instance Size</span>: <span style="color:#ae81ff">M0 (Free) hoặc M2 ($9/month)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Storage</span>: <span style="color:#ae81ff">512</span> <span style="color:#ae81ff">MB - 2 GB</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">RAM</span>: <span style="color:#ae81ff">Shared</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">vCPU</span>: <span style="color:#ae81ff">Shared</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Production Environment</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Instance Size</span>: <span style="color:#ae81ff">M10+ ($57+/month)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Storage</span>: <span style="color:#ae81ff">10</span><span style="color:#ae81ff">+ GB</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">RAM</span>: <span style="color:#ae81ff">Dedicated</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">vCPU</span>: <span style="color:#ae81ff">Dedicated</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Backup</span>: <span style="color:#ae81ff">Daily snapshots</span>
+</span></span></code></pre></div><p><strong>Storage Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Storage Engine</span>: <span style="color:#ae81ff">WiredTiger</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Storage Size</span>: <span style="color:#ae81ff">Auto-scaling enabled</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Minimum</span>: <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">GB</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Maximum</span>: <span style="color:#ae81ff">100</span> <span style="color:#ae81ff">GB</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Auto-scaling threshold</span>: <span style="color:#ae81ff">80</span><span style="color:#ae81ff">%</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Backup Configuration</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Backup Frequency</span>: <span style="color:#ae81ff">Daily</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Retention</span>: <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">days</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Point-in-time recovery</span>: <span style="color:#ae81ff">Enabled</span>
+</span></span></code></pre></div><h5 id="advanced-configuration">Advanced Configuration</h5>
+<p><strong>Performance Advisor</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Enable Performance Advisor</span>: <span style="color:#66d9ef">Yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Monitoring</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Slow queries</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Missing indexes</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Schema suggestions</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Performance recommendations</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Index Suggestions</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Automatic index recommendations</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Performance impact analysis</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Index creation assistance</span>
+</span></span></code></pre></div><p><strong>Real-time Performance Panel</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Metrics Displayed</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Operations per second</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Query performance</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Connection count</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Memory usage</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Storage usage</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Network I/O</span>
+</span></span></code></pre></div><h4 id="spring-boot-integration">Spring Boot Integration</h4>
+<h5 id="mongodb-driver-configuration">MongoDB Driver Configuration</h5>
+<p><strong>Maven Dependencies</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.mongodb<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>mongodb-driver-sync<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>4.8.2<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-data-mongodb<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Application Properties</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#75715e"># MongoDB Atlas Connection</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.uri</span><span style="color:#f92672">=</span><span style="color:#e6db74">mongodb+srv://elearning_user:secure_password_123@cluster0.abc123.mongodb.net/elearning?retryWrites=true&amp;w=majority</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Connection Pool Settings</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.connection-pool.max-size</span><span style="color:#f92672">=</span><span style="color:#e6db74">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.connection-pool.min-size</span><span style="color:#f92672">=</span><span style="color:#e6db74">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.connection-pool.max-wait-time</span><span style="color:#f92672">=</span><span style="color:#e6db74">30000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SSL Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.ssl.enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.ssl.invalid-host-name-allowed</span><span style="color:#f92672">=</span><span style="color:#e6db74">false</span>
+</span></span></code></pre></div><h5 id="spring-data-mongodb-configuration">Spring Data MongoDB Configuration</h5>
+<p><strong>Configuration Class</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@EnableMongoRepositories</span>(basePackages <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;com.elearning.repository&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MongoConfig</span> <span style="color:#66d9ef">extends</span> AbstractMongoClientConfiguration {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Value</span>(<span style="color:#e6db74">&#34;${spring.data.mongodb.uri}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String mongoUri;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">getDatabaseName</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;elearning&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> MongoClient <span style="color:#a6e22e">mongoClient</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> MongoClients.<span style="color:#a6e22e">create</span>(mongoUri);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Bean</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> MongoTemplate <span style="color:#a6e22e">mongoTemplate</span>() <span style="color:#66d9ef">throws</span> Exception {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> MongoTemplate(mongoClient(), getDatabaseName());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Repository Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Repository</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserRepository</span> <span style="color:#66d9ef">extends</span> MongoRepository<span style="color:#f92672">&lt;</span>User, String<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    Optional<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findByEmail</span>(String email);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findByRole</span>(UserRole role);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Query</span>(<span style="color:#e6db74">&#34;{ &#39;profile.firstName&#39;: { $regex: ?0, $options: &#39;i&#39; } }&#34;</span>)
+</span></span><span style="display:flex;"><span>    List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findByFirstNameContainingIgnoreCase</span>(String firstName);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Query</span>(<span style="color:#e6db74">&#34;{ &#39;createdAt&#39;: { $gte: ?0, $lte: ?1 } }&#34;</span>)
+</span></span><span style="display:flex;"><span>    List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findByCreatedAtBetween</span>(LocalDateTime start, LocalDateTime end);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="data-modeling">Data Modeling</h4>
+<h5 id="document-structure">Document Structure</h5>
+<p><strong>User Document</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;_id&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ObjectId</span>(<span style="color:#e6db74">&#34;507f1f77bcf86cd799439011&#34;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user@example.com&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;passwordHash&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;$2a$12$...&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;role&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;STUDENT&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;profile&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;firstName&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;lastName&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Doe&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;avatar&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://s3.amazonaws.com/avatars/john-doe.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;bio&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Student interested in programming&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;preferences&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;language&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;en&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;timezone&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;UTC&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;notifications&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;enrollments&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;courseId&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ObjectId</span>(<span style="color:#e6db74">&#34;507f1f77bcf86cd799439012&#34;</span>),
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;enrolledAt&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ISODate</span>(<span style="color:#e6db74">&#34;2025-01-11T10:00:00Z&#34;</span>),
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;progress&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.75</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;lastAccessed&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ISODate</span>(<span style="color:#e6db74">&#34;2025-01-11T15:30:00Z&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ISODate</span>(<span style="color:#e6db74">&#34;2025-01-01T00:00:00Z&#34;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;updatedAt&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ISODate</span>(<span style="color:#e6db74">&#34;2025-01-11T15:30:00Z&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Course Document</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;_id&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ObjectId</span>(<span style="color:#e6db74">&#34;507f1f77bcf86cd799439012&#34;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Introduction to Spring Boot&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Learn Spring Boot fundamentals&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;category&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;PROGRAMMING&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;difficulty&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;BEGINNER&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;estimatedHours&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;price&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">99.99</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;teacher&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ObjectId</span>(<span style="color:#e6db74">&#34;507f1f77bcf86cd799439013&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Jane Smith&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;jane@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;modules&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ObjectId</span>(<span style="color:#e6db74">&#34;507f1f77bcf86cd799439014&#34;</span>),
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Getting Started&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;order&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;lessons&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ObjectId</span>(<span style="color:#e6db74">&#34;507f1f77bcf86cd799439015&#34;</span>),
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Spring Boot Overview&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;content&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Introduction to Spring Boot...&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;duration&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;VIDEO&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;spring&#34;</span>, <span style="color:#e6db74">&#34;java&#34;</span>, <span style="color:#e6db74">&#34;backend&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;status&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;PUBLISHED&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ISODate</span>(<span style="color:#e6db74">&#34;2025-01-01T00:00:00Z&#34;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;updatedAt&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ISODate</span>(<span style="color:#e6db74">&#34;2025-01-11T10:00:00Z&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="performance-optimization">Performance Optimization</h4>
+<h5 id="indexing-strategy">Indexing Strategy</h5>
+<p><strong>Single Field Indexes</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Email index for user lookup
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">createIndex</span>({ <span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> }, { <span style="color:#a6e22e">unique</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Role index for role-based queries
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">createIndex</span>({ <span style="color:#e6db74">&#34;role&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Created date index for time-based queries
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">createIndex</span>({ <span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> })
+</span></span></code></pre></div><p><strong>Compound Indexes</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Course search index
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">courses</span>.<span style="color:#a6e22e">createIndex</span>({ 
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;category&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, 
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;difficulty&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, 
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;status&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// User enrollment index
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">createIndex</span>({ 
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;enrollments.courseId&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, 
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;enrollments.progress&#34;</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p><strong>Text Indexes</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Full-text search on course content
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">courses</span>.<span style="color:#a6e22e">createIndex</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text&#34;</span>
+</span></span><span style="display:flex;"><span>}, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">weights</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tags</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h5 id="query-optimization">Query Optimization</h5>
+<p><strong>Efficient Queries</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Use projection to limit returned fields
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">find</span>(
+</span></span><span style="display:flex;"><span>  { <span style="color:#e6db74">&#34;role&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;STUDENT&#34;</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;profile.firstName&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;profile.lastName&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> }
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Use aggregation for complex queries
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">courses</span>.<span style="color:#a6e22e">aggregate</span>([
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">$match</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;status&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;PUBLISHED&#34;</span> } },
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">$group</span><span style="color:#f92672">:</span> { 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">_id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;$category&#34;</span>, 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">$sum</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">avgPrice</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">$avg</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;$price&#34;</span> }
+</span></span><span style="display:flex;"><span>  }},
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">$sort</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;count&#34;</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> } }
+</span></span><span style="display:flex;"><span>])
+</span></span></code></pre></div><h4 id="monitoring-and-analytics">Monitoring and Analytics</h4>
+<h5 id="atlas-monitoring">Atlas Monitoring</h5>
+<p><strong>Performance Metrics</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Database Metrics</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Operations per second</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Query performance</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Connection count</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Memory usage</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Storage usage</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Cluster Metrics</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">CPU usage</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Memory usage</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Network I/O</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Disk I/O</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Replication lag</span>
+</span></span></code></pre></div><p><strong>Alerting Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">CPU Usage Alert</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Metric</span>: <span style="color:#ae81ff">CPU Usage</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Threshold</span>: <span style="color:#ae81ff">80</span><span style="color:#ae81ff">%</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Duration</span>: <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">minutes</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Action</span>: <span style="color:#ae81ff">Email notification</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Memory Usage Alert</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Metric</span>: <span style="color:#ae81ff">Memory Usage</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Threshold</span>: <span style="color:#ae81ff">85</span><span style="color:#ae81ff">%</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Duration</span>: <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">minutes</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Action</span>: <span style="color:#ae81ff">Slack notification</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Connection Count Alert</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Metric</span>: <span style="color:#ae81ff">Connection Count</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Threshold</span>: <span style="color:#ae81ff">90</span><span style="color:#ae81ff">% of max connections</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Duration</span>: <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">minutes</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Action</span>: <span style="color:#ae81ff">PagerDuty alert</span>
+</span></span></code></pre></div><h4 id="cost-optimization">Cost Optimization</h4>
+<h5 id="pricing-structure">Pricing Structure</h5>
+<p><strong>Cluster Pricing</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Shared Clusters</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">M0</span>: <span style="color:#ae81ff">Free</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">M2</span>: <span style="color:#ae81ff">$9/month</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">M5</span>: <span style="color:#ae81ff">$25/month</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Dedicated Clusters</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">M10</span>: <span style="color:#ae81ff">$57/month</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">M20</span>: <span style="color:#ae81ff">$114/month</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">M30</span>: <span style="color:#ae81ff">$171/month</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">M40</span>: <span style="color:#ae81ff">$228/month</span>
+</span></span></code></pre></div><p><strong>Cost Optimization Strategies</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Resource Optimization</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Right-size instances</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Use auto-scaling</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Monitor resource usage</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Clean up unused data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Storage Optimization</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Enable compression</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Use appropriate indexes</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Archive old data</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Regular data cleanup</span>
+</span></span></code></pre></div><h4 id="next-steps">Next Steps</h4>
+<p>Trong các phần tiếp theo, chúng ta sẽ:</p>
+<ul>
+<li>Thiết lập MongoDB Atlas cluster cụ thể</li>
+<li>Cấu hình Spring Boot integration</li>
+<li>Implement data models và repositories</li>
+<li>Thiết lập monitoring và optimization</li>
+</ul>
+<h4 id="key-takeaways">Key Takeaways</h4>
+<ul>
+<li><strong>MongoDB Atlas</strong> cung cấp managed MongoDB service với global distribution</li>
+<li><strong>Multiple cluster types</strong> phù hợp với các workload khác nhau</li>
+<li><strong>Built-in security</strong> với network access control và database authentication</li>
+<li><strong>Performance optimization</strong> với indexing và query optimization</li>
+<li><strong>Monitoring và alerting</strong> cung cấp real-time insights</li>
+<li><strong>Cost optimization</strong> cần thiết cho production workloads</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/3-amazon-s3-storage/3.3-cloudfront-integration/" title="CloudFront CDN Integration"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/4-mongodb-atlas/4.1-atlas-setup/" title="MongoDB Atlas Setup &amp; Configuration" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1755012969"></script>
+    <script src="/js/perfect-scrollbar.min.js?1755012969"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1755012969"></script>
+    <script src="/js/jquery.sticky.js?1755012969"></script>
+    <script src="/js/featherlight.min.js?1755012969"></script>
+    <script src="/js/highlight.pack.js?1755012969"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1755012969"></script>
+    <script src="/js/learn.js?1755012969"></script>
+    <script src="/js/hugo-learn.js?1755012969"></script>
+
+    <link href="/mermaid/mermaid.css?1755012969" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1755012969"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

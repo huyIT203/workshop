@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>CloudFront CDN Integration :: Create a new AWS account.</title>
+
+    
+    <link href="/css/nucleus.css?1755012969" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1755012969" rel="stylesheet">
+    <link href="/css/hybrid.css?1755012969" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1755012969" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1755012969" rel="stylesheet">
+    <link href="/css/auto-complete.css?1755012969" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1755012969" rel="stylesheet">
+    <link href="/css/theme.css?1755012969" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1755012969" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1755012969" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1755012969"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/3-amazon-s3-storage/3.3-cloudfront-integration/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1755012969"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1755012969"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1755012969"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/" title="Creating a new AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/">
+           <b> 1. </b> Creating a new AWS Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="Finding Account ID" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.1-find-account-id/">
+           <b> 1.1 </b> Finding Account ID
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Update Account Information" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.2-update-account/">
+           <b> 1.2 </b> Update Account Information
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="AWS Account Alias" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.3-aws-account-alias/">
+           <b> 1.3 </b> AWS Account Alias
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.4-close-account/" title="Close Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.4-close-account/">
+           <b> 1.4 </b> Close Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/" title="RDS với MySQL - Spring Boot Integration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/">
+           <b> 2. </b> RDS với MySQL - Spring Boot Integration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/2.1-rds-instance-setup/" title="RDS Instance Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/2.1-rds-instance-setup/">
+           <b> 2.1 </b> RDS Instance Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/2.2-springboot-configuration/" title="Spring Boot Database Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/2.2-springboot-configuration/">
+           <b> 2.2 </b> Spring Boot Database Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/2.3-database-migration/" title="Database Migration with Flyway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/2.3-database-migration/">
+           <b> 2.3 </b> Database Migration with Flyway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/" title="Amazon S3 - File Storage &amp; Management" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/">
+           <b> 3. </b> Amazon S3 - File Storage &amp; Management
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/3.1-s3-bucket-setup/" title="S3 Bucket Setup &amp; Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/3.1-s3-bucket-setup/">
+           <b> 3.1 </b> S3 Bucket Setup &amp; Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/3.2-springboot-integration/" title="Spring Boot S3 Integration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/3.2-springboot-integration/">
+           <b> 3.2 </b> Spring Boot S3 Integration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/3.3-cloudfront-integration/" title="CloudFront CDN Integration" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/3-amazon-s3-storage/3.3-cloudfront-integration/">
+           <b> 3.3 </b> CloudFront CDN Integration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-mongodb-atlas/" title="MongoDB Atlas - Cloud Database Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-mongodb-atlas/">
+           <b> 4. </b> MongoDB Atlas - Cloud Database Service
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-mongodb-atlas/4.1-atlas-setup/" title="MongoDB Atlas Setup &amp; Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-mongodb-atlas/4.1-atlas-setup/">
+           <b> 4.1 </b> MongoDB Atlas Setup &amp; Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/3-amazon-s3-storage/3.3-cloudfront-integration/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Esoclusty E-Learning Platform Workshop</a> > <a href='/3-amazon-s3-storage/'>Amazon S3 - File Storage & Management</a> > CloudFront CDN Integration
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              CloudFront CDN Integration
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="cloudfront-cdn-integration">CloudFront CDN Integration</h1>
+<h4 id="overview">Overview</h4>
+<p>Trong phần này, chúng ta sẽ tích hợp Amazon CloudFront với S3 để tối ưu hóa content delivery. CloudFront sẽ hoạt động như một CDN (Content Delivery Network), giúp tăng tốc độ truy cập files từ S3 và giảm chi phí data transfer. Bạn sẽ học cách tạo CloudFront distribution, cấu hình origin access, và tích hợp với Spring Boot application.</p>
+<h4 id="prerequisites">Prerequisites</h4>
+<h5 id="cloudfront-setup">CloudFront Setup</h5>
+<p><strong>Required Services</strong></p>
+<ul>
+<li><strong>Amazon S3</strong>: Source bucket đã được cấu hình</li>
+<li><strong>IAM Permissions</strong>: Quyền tạo và quản lý CloudFront distributions</li>
+<li><strong>SSL Certificate</strong>: Domain certificate (nếu sử dụng custom domain)</li>
+</ul>
+<p><strong>IAM Permissions Required</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;cloudfront:*&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:GetObject&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:ListBucket&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h4 id="step-1-create-cloudfront-distribution">Step 1: Create CloudFront Distribution</h4>
+<h5 id="distribution-configuration">Distribution Configuration</h5>
+<p><strong>1. Navigate to CloudFront</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Bước <span style="color:#ae81ff">1</span> — Chuẩn bị S3 bucket
+</span></span><span style="display:flex;"><span>Bạn đã có S3 bucket chứa file ảnh rồi <span style="color:#f92672">(</span>ví dụ: my-project-bucket<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Vào S3 → chọn bucket → Properties → kiểm tra Block all public access đang ON.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nếu muốn cho CloudFront truy cập, không cần bật public — ta sẽ dùng Origin Access Control <span style="color:#f92672">(</span>OAC<span style="color:#f92672">)</span>.
+</span></span></code></pre></div><p><img src="/images/03/cdf-2.png" alt="S3 Console"></p>
+<p><strong>2. Origin Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Origin Domain</span>: [<span style="color:#ae81ff">Select S3 bucket]</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Example</span>: <span style="color:#ae81ff">elearning-uploads-ap-southeast-1.s3.ap-southeast-1.amazonaws.com</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Or use S3 bucket name</span>: <span style="color:#ae81ff">elearning-uploads-ap-southeast-1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Origin Path</span>: [<span style="color:#ae81ff">Leave empty]</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Root path for all objects</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Can specify subfolder if needed</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Origin Access</span>: <span style="color:#ae81ff">Origin access control settings (recommended)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">More secure than public bucket access</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">AWS manages access automatically</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Better security control</span>
+</span></span></code></pre></div><p><img src="/images/03/cdf-3.png" alt="S3 Console"></p>
+<p><strong>3. Distribution Settings</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">Specify origin</span>
+</span></span></code></pre></div><p><img src="/images/03/cdf-5.png" alt="S3 Console"></p>
+<hr>
+<hr>
+<hr>
+<h4 id="step-3-update-s3service-for-cloudfront">Step 3: Update S3Service for CloudFront</h4>
+<h5 id="cloudfront-integration">CloudFront Integration</h5>
+<p><strong>1. Update S3Service Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">S3Service</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> S3Client s3Client;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String bucketName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;elearning-uploads-ap-southeast-1&#34;</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Value</span>(<span style="color:#e6db74">&#34;${app.aws.cloudfront.domain:}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String cloudfrontDomain;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">S3Service</span>(S3Client s3Client) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">s3Client</span> <span style="color:#f92672">=</span> s3Client;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">uploadFile</span>(MultipartFile file) <span style="color:#66d9ef">throws</span> IOException {
+</span></span><span style="display:flex;"><span>        String keyName <span style="color:#f92672">=</span> file.<span style="color:#a6e22e">getOriginalFilename</span>();
+</span></span><span style="display:flex;"><span>        String contentType <span style="color:#f92672">=</span> file.<span style="color:#a6e22e">getContentType</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Upload to S3</span>
+</span></span><span style="display:flex;"><span>        s3Client.<span style="color:#a6e22e">putObject</span>(PutObjectRequest.<span style="color:#a6e22e">builder</span>()
+</span></span><span style="display:flex;"><span>                        .<span style="color:#a6e22e">bucket</span>(bucketName)
+</span></span><span style="display:flex;"><span>                        .<span style="color:#a6e22e">key</span>(keyName)
+</span></span><span style="display:flex;"><span>                        .<span style="color:#a6e22e">contentType</span>(contentType)
+</span></span><span style="display:flex;"><span>                        .<span style="color:#a6e22e">build</span>(),
+</span></span><span style="display:flex;"><span>                RequestBody.<span style="color:#a6e22e">fromBytes</span>(file.<span style="color:#a6e22e">getBytes</span>())
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Return CloudFront URL if available, otherwise S3 URL</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (cloudfrontDomain <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>cloudfrontDomain.<span style="color:#a6e22e">isEmpty</span>()) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;https://&#34;</span> <span style="color:#f92672">+</span> cloudfrontDomain <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> keyName;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;https://&#34;</span> <span style="color:#f92672">+</span> bucketName <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.s3.amazonaws.com/&#34;</span> <span style="color:#f92672">+</span> keyName;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>2. Application Properties Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#75715e"># CloudFront Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app.aws.cloudfront.domain</span><span style="color:#f92672">=</span><span style="color:#e6db74">[YOUR_CLOUDFRONT_DOMAIN]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-</span> <span style="color:#e6db74">Example: d2ledyithr93sd.cloudfront.net</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-</span> <span style="color:#e6db74">Get from CloudFront distribution details</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">-</span> <span style="color:#e6db74">Used for generating file URLs</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-5-cloudfront-distribution-deployment">Step 5: CloudFront Distribution Deployment</h4>
+<h5 id="distribution-status">Distribution Status</h5>
+<p><strong>1. Wait for Deployment</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Deployment Process</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Status</span>: <span style="color:#ae81ff">In Progress</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Duration</span>: <span style="color:#ae81ff">5-15</span> <span style="color:#ae81ff">minutes</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Regions</span>: <span style="color:#ae81ff">Global deployment</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Edge Locations</span>: <span style="color:#ae81ff">200</span><span style="color:#ae81ff">+ locations worldwide</span>
+</span></span></code></pre></div><p><strong>2. Verify Deployment</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Deployment Complete</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Status</span>: <span style="color:#ae81ff">Deployed</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Domain Name</span>: [<span style="color:#ae81ff">Your CloudFront domain]</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Edge Locations</span>: <span style="color:#ae81ff">Active</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Origin</span>: <span style="color:#ae81ff">Connected to S3</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-6-test-cloudfront-integration">Step 6: Test CloudFront Integration</h4>
+<h5 id="file-access-testing">File Access Testing</h5>
+<p><strong>1. Test CloudFront URL</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Test CloudFront access</span>
+</span></span><span style="display:flex;"><span>curl -I <span style="color:#e6db74">&#34;https://[CLOUDFRONT_DOMAIN]/[FILENAME]&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare with S3 direct access</span>
+</span></span><span style="display:flex;"><span>curl -I <span style="color:#e6db74">&#34;https://[BUCKET_NAME].s3.amazonaws.com/[FILENAME]&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check response headers</span>
+</span></span><span style="display:flex;"><span>curl -v <span style="color:#e6db74">&#34;https://[CLOUDFRONT_DOMAIN]/[FILENAME]&#34;</span>
+</span></span></code></pre></div><p><strong>2. Performance Comparison</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Performance Metrics</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">S3 Direct Access</span>: <span style="color:#ae81ff">Higher latency</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">CloudFront Access</span>: <span style="color:#ae81ff">Lower latency</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cache Hit</span>: <span style="color:#ae81ff">Faster response</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cache Miss</span>: <span style="color:#ae81ff">S3 fallback</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-7-advanced-cloudfront-features">Step 7: Advanced CloudFront Features</h4>
+<h5 id="lambdaedge-integration">Lambda@Edge Integration</h5>
+<p><strong>1. Lambda Function Setup</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Lambda@Edge function for custom headers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">Records</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">cf</span>.<span style="color:#a6e22e">response</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add custom headers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">headers</span>[<span style="color:#e6db74">&#39;x-powered-by&#39;</span>] <span style="color:#f92672">=</span> [{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;x-powered-by&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;E-Learning Platform&#39;</span>
+</span></span><span style="display:flex;"><span>    }];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add CORS headers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">headers</span>[<span style="color:#e6db74">&#39;access-control-allow-origin&#39;</span>] <span style="color:#f92672">=</span> [{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;access-control-allow-origin&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*&#39;</span>
+</span></span><span style="display:flex;"><span>    }];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><strong>2. Lambda@Edge Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Function Configuration</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Runtime</span>: <span style="color:#ae81ff">Node.js 18.x</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Handler</span>: <span style="color:#ae81ff">index.handler</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Memory</span>: <span style="color:#ae81ff">128</span> <span style="color:#ae81ff">MB</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Timeout</span>: <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">seconds</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Trigger</span>: <span style="color:#ae81ff">Origin Response</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-8-monitoring-and-analytics">Step 8: Monitoring and Analytics</h4>
+<h5 id="cloudwatch-integration">CloudWatch Integration</h5>
+<p><strong>1. CloudFront Metrics</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Available Metrics</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Requests</span>: <span style="color:#ae81ff">Total number of requests</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Bytes Downloaded</span>: <span style="color:#ae81ff">Data transfer volume</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cache Hit Ratio</span>: <span style="color:#ae81ff">Cache effectiveness</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Error Rate</span>: <span style="color:#ae81ff">4xx and 5xx errors</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Latency</span>: <span style="color:#ae81ff">Response time metrics</span>
+</span></span></code></pre></div><p><strong>2. Real-time Monitoring</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Monitoring Dashboard</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Request Count</span>: <span style="color:#ae81ff">Real-time request volume</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cache Performance</span>: <span style="color:#ae81ff">Hit/miss ratios</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Geographic Distribution</span>: <span style="color:#ae81ff">User locations</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Error Tracking</span>: <span style="color:#ae81ff">Failed requests</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cost Analysis</span>: <span style="color:#ae81ff">Data transfer costs</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-9-security-configuration">Step 9: Security Configuration</h4>
+<h5 id="security-features">Security Features</h5>
+<p><strong>1. Geo-Restriction</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Geo-Restriction Settings</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">Allow List</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Countries</span>: [<span style="color:#ae81ff">Select allowed countries]</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use Case</span>: <span style="color:#ae81ff">Compliance requirements</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Example</span>: <span style="color:#ae81ff">Only allow access from specific regions</span>
+</span></span></code></pre></div><p><strong>2. Field-Level Encryption</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Encryption Configuration</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Field</span>: <span style="color:#ae81ff">sensitive-data</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Encryption</span>: <span style="color:#ae81ff">AES-256</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Key</span>: <span style="color:#ae81ff">AWS KMS managed key</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use Case</span>: <span style="color:#ae81ff">PCI DSS compliance</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-10-cost-optimization">Step 10: Cost Optimization</h4>
+<h5 id="cost-management">Cost Management</h5>
+<p><strong>1. Price Class Optimization</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Price Class Options</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use Only North America and Europe</span>: <span style="color:#ae81ff">$0.085 per GB</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use All Edge Locations</span>: <span style="color:#ae81ff">$0.100 per GB</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use All Edge Locations (Best Performance)</span>: <span style="color:#ae81ff">$0.120 per GB</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Recommendation</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Development</span>: <span style="color:#ae81ff">Use Only North America and Europe</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Production</span>: <span style="color:#ae81ff">Evaluate user distribution</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Global Users</span>: <span style="color:#ae81ff">Consider All Edge Locations</span>
+</span></span></code></pre></div><p><strong>2. Data Transfer Optimization</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Optimization Strategies</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Enable Compression</span>: <span style="color:#ae81ff">Reduce data transfer</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use Appropriate Cache Policies</span>: <span style="color:#ae81ff">Reduce origin requests</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Monitor Usage</span>: <span style="color:#ae81ff">Track data transfer costs</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Set Alerts</span>: <span style="color:#ae81ff">Cost threshold notifications</span>
+</span></span></code></pre></div><hr>
+<h4 id="next-steps">Next Steps</h4>
+<p>Với CloudFront CDN đã được tích hợp, chúng ta có thể:</p>
+<ul>
+<li>Monitor performance metrics</li>
+<li>Optimize cache policies</li>
+<li>Implement custom behaviors với Lambda@Edge</li>
+<li>Scale globally với edge locations</li>
+</ul>
+<h4 id="key-takeaways">Key Takeaways</h4>
+<ul>
+<li><strong>CloudFront CDN</strong> tối ưu hóa content delivery worldwide</li>
+<li><strong>Origin Access Control</strong> cung cấp security cho S3 bucket</li>
+<li><strong>Cache Policies</strong> ảnh hưởng đến performance và cost</li>
+<li><strong>Lambda@Edge</strong> cho phép custom logic tại edge locations</li>
+<li><strong>Monitoring</strong> cần thiết cho performance optimization</li>
+<li><strong>Cost optimization</strong> với price class và data transfer management</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/3-amazon-s3-storage/3.2-springboot-integration/" title="Spring Boot S3 Integration"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/4-mongodb-atlas/" title="MongoDB Atlas - Cloud Database Service" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1755012969"></script>
+    <script src="/js/perfect-scrollbar.min.js?1755012969"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1755012969"></script>
+    <script src="/js/jquery.sticky.js?1755012969"></script>
+    <script src="/js/featherlight.min.js?1755012969"></script>
+    <script src="/js/highlight.pack.js?1755012969"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1755012969"></script>
+    <script src="/js/learn.js?1755012969"></script>
+    <script src="/js/hugo-learn.js?1755012969"></script>
+
+    <link href="/mermaid/mermaid.css?1755012969" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1755012969"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

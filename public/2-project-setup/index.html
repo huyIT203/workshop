@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Project Setup &amp; Database Configuration :: Create a new AWS account.</title>
+
+    
+    <link href="/css/nucleus.css?1754986437" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1754986437" rel="stylesheet">
+    <link href="/css/hybrid.css?1754986437" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1754986437" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1754986437" rel="stylesheet">
+    <link href="/css/auto-complete.css?1754986437" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1754986437" rel="stylesheet">
+    <link href="/css/theme.css?1754986437" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1754986437" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1754986437" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1754986437"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/2-project-setup/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1754986437"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1754986437"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1754986437"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/" title="Creating a new AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/">
+           <b> 1. </b> Creating a new AWS Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="Finding Account ID" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.1-find-account-id/">
+           <b> 1.1 </b> Finding Account ID
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Update Account Information" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.2-update-account/">
+           <b> 1.2 </b> Update Account Information
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="AWS Account Alias" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.3-aws-account-alias/">
+           <b> 1.3 </b> AWS Account Alias
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.4-close-account/" title="Close Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.4-close-account/">
+           <b> 1.4 </b> Close Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/" title="Technology Overview &amp; Dependencies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/">
+          Technology Overview &amp; Dependencies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.1-backend-framework/" title="Backend Framework" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.1-backend-framework/">
+          Backend Framework
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.2-database-technologies/" title="Database Technologies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.2-database-technologies/">
+          Database Technologies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.3-third-party-dependencies/" title="Third-Party Dependencies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.3-third-party-dependencies/">
+          Third-Party Dependencies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="Setting up MFA for the AWS Account root user" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/">
+           <b> 2. </b> Setting up MFA for the AWS Account root user
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Virtual MFA Device" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/">
+           <b> 2.1 </b> Virtual MFA Device
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/" title="U2F Security Key" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/">
+           <b> 2.2 </b> U2F Security Key
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Other Hardware MFA Device" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/">
+           <b> 2.3 </b> Other Hardware MFA Device
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/" title="Project Setup &amp; Database Configuration" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/2-project-setup/">
+          Project Setup &amp; Database Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/2.1-environment-setup/" title="Environment Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/2.1-environment-setup/">
+          Environment Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/2.2-project-initialization/" title="Project Initialization" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/2.2-project-initialization/">
+          Project Initialization
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-project-setup/2.3-database-configuration/" title="Database Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-project-setup/2.3-database-configuration/">
+          Database Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating an Administrator Accounts and Groups" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/">
+           <b> 3. </b> Creating an Administrator Accounts and Groups
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/" title="Core Features &amp; User Interface" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/">
+          Core Features &amp; User Interface
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.1-user-authentication/" title="User Authentication &amp; Authorization" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.1-user-authentication/">
+          User Authentication &amp; Authorization
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.2-course-management/" title="Course Management System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.2-course-management/">
+          Course Management System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.3-real-time-communication/" title="Real-time Communication Features" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.3-real-time-communication/">
+          Real-time Communication Features
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-verify-new-account/" title="Getting support for Account Authentication" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-verify-new-account/">
+           <b> 4. </b> Getting support for Account Authentication
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-database-migration/" title="Database Migration Automation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-database-migration/">
+          Database Migration Automation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-database-migration/4.1-migration-architecture/" title="Migration System Architecture" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-database-migration/4.1-migration-architecture/">
+          Migration System Architecture
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/2-project-setup/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'>Esoclusty E-Learning Platform Workshop</a> > Project Setup & Database Configuration
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Project Setup &amp; Database Configuration
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="project-setup--database-configuration">Project Setup &amp; Database Configuration</h1>
+<h4 id="overview">Overview</h4>
+<p>In this section, we&rsquo;ll set up the complete development environment for the Esoclusty E-Learning Platform. You&rsquo;ll learn how to initialize the project, configure both MongoDB and MySQL databases, and understand the project architecture and use cases.</p>
+<h4 id="section-contents">Section Contents</h4>
+<h5 id="21-environment-setup">2.1 Environment Setup</h5>
+<p>Set up your development environment with all required tools and software:</p>
+<ul>
+<li><strong>Java Development Kit</strong>: Install and configure JDK 17+</li>
+<li><strong>Maven</strong>: Set up Maven 3.9+ for project management</li>
+<li><strong>MongoDB</strong>: Install and configure MongoDB 4.4+</li>
+<li><strong>MySQL</strong>: Install and configure MySQL 8.0+</li>
+<li><strong>Development Tools</strong>: Configure IDE and database management tools</li>
+<li><strong>Environment Verification</strong>: Test all installations and services</li>
+<li><strong>Troubleshooting</strong>: Resolve common setup issues</li>
+</ul>
+<p><a href="/2-project-setup/2.1-environment-setup/">Explore Environment Setup →</a></p>
+<h5 id="22-project-initialization">2.2 Project Initialization</h5>
+<p>Initialize and configure the e-learning project:</p>
+<ul>
+<li><strong>Repository Setup</strong>: Clone and explore the project structure</li>
+<li><strong>Project Structure Analysis</strong>: Understand the codebase organization</li>
+<li><strong>Maven Configuration</strong>: Analyze POM file and dependencies</li>
+<li><strong>IDE Setup</strong>: Import project into your preferred IDE</li>
+<li><strong>Configuration Files</strong>: Set up application properties</li>
+<li><strong>Project Validation</strong>: Verify build and dependency resolution</li>
+<li><strong>Development Workflow</strong>: Configure Git and development practices</li>
+</ul>
+<p><a href="/2-project-setup/2.2-project-initialization/">Explore Project Initialization →</a></p>
+<h5 id="23-database-configuration">2.3 Database Configuration</h5>
+<p>Configure both MongoDB and MySQL databases:</p>
+<ul>
+<li><strong>MongoDB Configuration</strong>: Connection settings, user management, performance tuning</li>
+<li><strong>MySQL Configuration</strong>: Connection pools, JPA settings, user privileges</li>
+<li><strong>Hybrid Strategy</strong>: Data distribution and cross-database consistency</li>
+<li><strong>Security Configuration</strong>: Authentication, authorization, and network security</li>
+<li><strong>Backup &amp; Recovery</strong>: Automated backup scripts and cron jobs</li>
+<li><strong>Monitoring &amp; Health Checks</strong>: Database monitoring and validation scripts</li>
+<li><strong>Configuration Validation</strong>: Test connections and verify settings</li>
+</ul>
+<p><a href="/2-project-setup/2.3-database-configuration/">Explore Database Configuration →</a></p>
+<h4 id="prerequisites-installation">Prerequisites Installation</h4>
+<h5 id="java-development-kit-jdk-17">Java Development Kit (JDK 17+)</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download and install JDK 17 from Oracle or use OpenJDK</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify installation</span>
+</span></span><span style="display:flex;"><span>java -version
+</span></span><span style="display:flex;"><span>javac -version
+</span></span></code></pre></div><h5 id="maven-39">Maven 3.9+</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download Maven from https://maven.apache.org/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add to PATH environment variable</span>
+</span></span><span style="display:flex;"><span>mvn -version
+</span></span></code></pre></div><h5 id="mongodb-44">MongoDB 4.4+</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install MongoDB Community Edition</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Start MongoDB service</span>
+</span></span><span style="display:flex;"><span>sudo systemctl start mongod
+</span></span><span style="display:flex;"><span>sudo systemctl enable mongod
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify installation</span>
+</span></span><span style="display:flex;"><span>mongosh --version
+</span></span></code></pre></div><h5 id="mysql-80">MySQL 8.0+</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install MySQL Server</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install mysql-server  <span style="color:#75715e"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>sudo yum install mysql-server      <span style="color:#75715e"># CentOS/RHEL</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Start MySQL service</span>
+</span></span><span style="display:flex;"><span>sudo systemctl start mysql
+</span></span><span style="display:flex;"><span>sudo systemctl enable mysql
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Secure installation</span>
+</span></span><span style="display:flex;"><span>sudo mysql_secure_installation
+</span></span></code></pre></div><h4 id="project-initialization">Project Initialization</h4>
+<h5 id="clone-the-repository">Clone the Repository</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clone the project</span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/huyIT203/e-learning.git
+</span></span><span style="display:flex;"><span>cd e-learning/elearning-backend
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify project structure</span>
+</span></span><span style="display:flex;"><span>ls -la
+</span></span></code></pre></div><h5 id="project-structure-overview">Project Structure Overview</h5>
+<pre tabindex="0"><code>elearning-backend/
+├── src/
+│   ├── main/
+│   │   ├── java/com/elearning/elearning_backend/
+│   │   │   ├── Config/                 # Configuration classes
+│   │   │   ├── Controller/             # REST and MVC controllers
+│   │   │   ├── DTO/                    # Data Transfer Objects
+│   │   │   ├── Enum/                   # Enumerations
+│   │   │   ├── Model/                  # Domain models
+│   │   │   ├── Repository/             # Data access layer
+│   │   │   ├── Security/               # Security configurations
+│   │   │   ├── Service/                # Business logic
+│   │   │   └── migration/              # Database migration system
+│   │   └── resources/
+│   │       ├── static/                 # Static resources
+│   │       ├── templates/              # Thymeleaf templates
+│   │       ├── db/                     # Database scripts
+│   │       └── application.properties  # Configuration
+│   └── test/                           # Test files
+├── pom.xml                             # Maven configuration
+└── README.md                           # Project documentation
+</code></pre><p><img src="/images/2/0001.png?featherlight=false&amp;width=90pc" alt="Project Structure"></p>
+<h4 id="database-configuration">Database Configuration</h4>
+<h5 id="mongodb-setup">MongoDB Setup</h5>
+<p><strong>1. Create Database and User</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Connect to MongoDB</span>
+</span></span><span style="display:flex;"><span>mongosh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create database</span>
+</span></span><span style="display:flex;"><span>use elearning
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create user with appropriate permissions</span>
+</span></span><span style="display:flex;"><span>db.createUser<span style="color:#f92672">({</span>
+</span></span><span style="display:flex;"><span>  user: <span style="color:#e6db74">&#34;elearning_user&#34;</span>,
+</span></span><span style="display:flex;"><span>  pwd: <span style="color:#e6db74">&#34;secure_password_123&#34;</span>,
+</span></span><span style="display:flex;"><span>  roles: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span> role: <span style="color:#e6db74">&#34;readWrite&#34;</span>, db: <span style="color:#e6db74">&#34;elearning&#34;</span> <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span> role: <span style="color:#e6db74">&#34;dbAdmin&#34;</span>, db: <span style="color:#e6db74">&#34;elearning&#34;</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">})</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify user creation</span>
+</span></span><span style="display:flex;"><span>db.getUsers<span style="color:#f92672">()</span>
+</span></span></code></pre></div><p><strong>2. MongoDB Configuration in application.properties</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#75715e"># MongoDB Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.uri</span><span style="color:#f92672">=</span><span style="color:#e6db74">mongodb://elearning_user:secure_password_123@localhost:27017/elearning</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.database</span><span style="color:#f92672">=</span><span style="color:#e6db74">elearning</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># MongoDB Connection Pool</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.max-connection-pool-size</span><span style="color:#f92672">=</span><span style="color:#e6db74">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.min-connection-pool-size</span><span style="color:#f92672">=</span><span style="color:#e6db74">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.max-connection-idle-time</span><span style="color:#f92672">=</span><span style="color:#e6db74">30000</span>
+</span></span></code></pre></div><h5 id="mysql-setup">MySQL Setup</h5>
+<p><strong>1. Create Database and User</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- Connect to MySQL as root
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>mysql <span style="color:#f92672">-</span>u root <span style="color:#f92672">-</span>p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Create database
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> elearning CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_unicode_ci;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Create user
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;elearning_user&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;secure_password_123&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Grant permissions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> elearning.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;elearning_user&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">SELECT</span>, <span style="color:#66d9ef">INSERT</span>, <span style="color:#66d9ef">UPDATE</span>, <span style="color:#66d9ef">DELETE</span> <span style="color:#66d9ef">ON</span> elearning.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;elearning_user&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Apply changes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Verify
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SHOW</span> DATABASES;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">User</span>, <span style="color:#66d9ef">Host</span> <span style="color:#66d9ef">FROM</span> mysql.<span style="color:#66d9ef">user</span> <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">User</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;elearning_user&#39;</span>;
+</span></span></code></pre></div><p><strong>2. MySQL Configuration in application.properties</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#75715e"># MySQL Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.url</span><span style="color:#f92672">=</span><span style="color:#e6db74">jdbc:mysql://localhost:3306/elearning?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.username</span><span style="color:#f92672">=</span><span style="color:#e6db74">elearning_user</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.password</span><span style="color:#f92672">=</span><span style="color:#e6db74">secure_password_123</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.driver-class-name</span><span style="color:#f92672">=</span><span style="color:#e6db74">com.mysql.cj.jdbc.Driver</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># JPA/Hibernate Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.hibernate.ddl-auto</span><span style="color:#f92672">=</span><span style="color:#e6db74">validate</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.show-sql</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.properties.hibernate.dialect</span><span style="color:#f92672">=</span><span style="color:#e6db74">org.hibernate.dialect.MySQL8Dialect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.properties.hibernate.format_sql</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Connection Pool</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.hikari.maximum-pool-size</span><span style="color:#f92672">=</span><span style="color:#e6db74">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.hikari.minimum-idle</span><span style="color:#f92672">=</span><span style="color:#e6db74">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.hikari.connection-timeout</span><span style="color:#f92672">=</span><span style="color:#e6db74">30000</span>
+</span></span></code></pre></div><h4 id="application-configuration">Application Configuration</h4>
+<h5 id="complete-applicationproperties">Complete application.properties</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#75715e"># Server Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server.port</span><span style="color:#f92672">=</span><span style="color:#e6db74">8081</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server.servlet.context-path</span><span style="color:#f92672">=</span><span style="color:#e6db74">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Database Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.data.mongodb.uri</span><span style="color:#f92672">=</span><span style="color:#e6db74">mongodb://elearning_user:secure_password_123@localhost:27017/elearning</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.url</span><span style="color:#f92672">=</span><span style="color:#e6db74">jdbc:mysql://localhost:3306/elearning?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.username</span><span style="color:#f92672">=</span><span style="color:#e6db74">elearning_user</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.password</span><span style="color:#f92672">=</span><span style="color:#e6db74">secure_password_123</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># JWT Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jwt.secret</span><span style="color:#f92672">=</span><span style="color:#e6db74">your-super-secret-jwt-key-here-make-it-long-and-random</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jwt.expiration</span><span style="color:#f92672">=</span><span style="color:#e6db74">3600000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># File Upload Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.servlet.multipart.max-file-size</span><span style="color:#f92672">=</span><span style="color:#e6db74">5MB</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.servlet.multipart.max-request-size</span><span style="color:#f92672">=</span><span style="color:#e6db74">10MB</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.servlet.multipart.file-size-threshold</span><span style="color:#f92672">=</span><span style="color:#e6db74">2KB</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Email Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.mail.host</span><span style="color:#f92672">=</span><span style="color:#e6db74">smtp.gmail.com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.mail.port</span><span style="color:#f92672">=</span><span style="color:#e6db74">587</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.mail.username</span><span style="color:#f92672">=</span><span style="color:#e6db74">your-email@gmail.com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.mail.password</span><span style="color:#f92672">=</span><span style="color:#e6db74">your-app-password</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.mail.properties.mail.smtp.auth</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.mail.properties.mail.smtp.starttls.enable</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Logging Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logging.level.com.elearning</span><span style="color:#f92672">=</span><span style="color:#e6db74">DEBUG</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logging.level.org.springframework.security</span><span style="color:#f92672">=</span><span style="color:#e6db74">DEBUG</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logging.level.org.springframework.web</span><span style="color:#f92672">=</span><span style="color:#e6db74">DEBUG</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Migration Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">migration.development.auto-migrate</span><span style="color:#f92672">=</span><span style="color:#e6db74">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">migration.development.require-approval</span><span style="color:#f92672">=</span><span style="color:#e6db74">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">migration.development.backup-before-migration</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span></code></pre></div><h4 id="project-architecture">Project Architecture</h4>
+<h5 id="layered-architecture">Layered Architecture</h5>
+<pre tabindex="0"><code>┌─────────────────────────────────────┐
+│           Presentation Layer        │
+│  (Thymeleaf Templates + Static)    │
+├─────────────────────────────────────┤
+│           Controller Layer          │
+│     (REST + MVC Controllers)       │
+├─────────────────────────────────────┤
+│            Service Layer            │
+│        (Business Logic)             │
+├─────────────────────────────────────┤
+│          Repository Layer           │
+│      (Data Access Objects)         │
+├─────────────────────────────────────┤
+│           Database Layer            │
+│        (MongoDB + MySQL)           │
+└─────────────────────────────────────┘
+</code></pre><h5 id="security-architecture">Security Architecture</h5>
+<pre tabindex="0"><code>┌─────────────────────────────────────┐
+│         Security Filter Chain       │
+├─────────────────────────────────────┤
+│         JWT Authentication          │
+├─────────────────────────────────────┤
+│        Role-based Access            │
+├─────────────────────────────────────┤
+│         CSRF Protection             │
+├─────────────────────────────────────┤
+│         Input Validation            │
+└─────────────────────────────────────┘
+</code></pre><h4 id="use-case-diagrams">Use Case Diagrams</h4>
+<h5 id="system-use-cases">System Use Cases</h5>
+<p>The following prompt can be used with AI tools to generate comprehensive use case diagrams:</p>
+<p><strong>Prompt for AI Diagram Generation:</strong></p>
+<pre tabindex="0"><code>Create a comprehensive use case diagram for an E-Learning Platform with the following actors and use cases:
+
+Actors:
+- Student (Primary user)
+- Teacher (Content creator)
+- Admin (System administrator)
+- Guest (Unauthenticated user)
+
+Student Use Cases:
+- Register/Login
+- Browse courses
+- Enroll in courses
+- Watch video lessons
+- Take quizzes/exams
+- Track progress
+- Participate in discussions
+- Receive certificates
+
+Teacher Use Cases:
+- Create/manage courses
+- Upload content (videos, documents)
+- Create quizzes/exams
+- Monitor student progress
+- Grade assignments
+- Communicate with students
+
+Admin Use Cases:
+- User management
+- Course oversight
+- System monitoring
+- Analytics and reporting
+- Content moderation
+- Database management
+
+Guest Use Cases:
+- Browse public courses
+- View course previews
+- Register account
+
+Include relationships, extends, and includes relationships. Use proper UML notation.
+</code></pre><h5 id="database-schema-use-cases">Database Schema Use Cases</h5>
+<p><strong>Prompt for Database Schema Diagram:</strong></p>
+<pre tabindex="0"><code>Create an ERD (Entity Relationship Diagram) for an E-Learning Platform with the following entities:
+
+Core Entities:
+- User (id, email, password, role, profile)
+- Course (id, title, description, category, teacher_id)
+- Lesson (id, course_id, title, content, video_url, order)
+- Quiz (id, lesson_id, title, questions, time_limit)
+- Question (id, quiz_id, text, type, options, correct_answer)
+- Enrollment (id, user_id, course_id, enrollment_date, progress)
+- Progress (id, user_id, lesson_id, completed, score, completion_date)
+
+Supporting Entities:
+- Category (id, name, description)
+- Comment (id, user_id, course_id, content, created_at)
+- Rating (id, user_id, course_id, rating, review)
+- Certificate (id, user_id, course_id, issued_date, grade)
+
+Include:
+- Primary keys
+- Foreign key relationships
+- Cardinality (1:1, 1:N, M:N)
+- Data types
+- Constraints
+- Indexes for performance
+
+Use proper ERD notation with crow&#39;s foot notation.
+</code></pre><h4 id="building-and-running-the-project">Building and Running the Project</h4>
+<h5 id="build-the-project">Build the Project</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clean and compile</span>
+</span></span><span style="display:flex;"><span>mvn clean compile
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run tests</span>
+</span></span><span style="display:flex;"><span>mvn test
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Package the application</span>
+</span></span><span style="display:flex;"><span>mvn package
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify the JAR file</span>
+</span></span><span style="display:flex;"><span>ls -la target/
+</span></span></code></pre></div><h5 id="run-the-application">Run the Application</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Method 1: Using Maven</span>
+</span></span><span style="display:flex;"><span>mvn spring-boot:run
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Method 2: Using JAR file</span>
+</span></span><span style="display:flex;"><span>java -jar target/elearning-backend-0.0.1-SNAPSHOT.jar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Method 3: With specific profile</span>
+</span></span><span style="display:flex;"><span>mvn spring-boot:run -Dspring-boot.run.profiles<span style="color:#f92672">=</span>development
+</span></span></code></pre></div><h5 id="verify-application">Verify Application</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if application is running</span>
+</span></span><span style="display:flex;"><span>curl http://localhost:8081/actuator/health
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check MongoDB connection</span>
+</span></span><span style="display:flex;"><span>curl http://localhost:8081/api/health/mongodb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check MySQL connection</span>
+</span></span><span style="display:flex;"><span>curl http://localhost:8081/api/health/mysql
+</span></span></code></pre></div><h4 id="development-environment-setup">Development Environment Setup</h4>
+<h5 id="ide-configuration">IDE Configuration</h5>
+<p><strong>IntelliJ IDEA / Eclipse:</strong></p>
+<ul>
+<li>Import as Maven project</li>
+<li>Configure Java 17 SDK</li>
+<li>Set up run configurations</li>
+<li>Enable annotation processing for Lombok</li>
+</ul>
+<p><strong>VS Code:</strong></p>
+<ul>
+<li>Install Java Extension Pack</li>
+<li>Install Spring Boot Extension Pack</li>
+<li>Configure Java runtime</li>
+<li>Set up debugging configurations</li>
+</ul>
+<h5 id="database-tools">Database Tools</h5>
+<p><strong>MongoDB Compass:</strong></p>
+<ul>
+<li>Connect to localhost:27017</li>
+<li>Browse elearning database</li>
+<li>Monitor collections and indexes</li>
+</ul>
+<p><strong>MySQL Workbench:</strong></p>
+<ul>
+<li>Connect to localhost:3306</li>
+<li>Browse elearning database</li>
+<li>Execute SQL queries</li>
+<li>Monitor performance</li>
+</ul>
+<h4 id="troubleshooting-common-issues">Troubleshooting Common Issues</h4>
+<h5 id="connection-issues">Connection Issues</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># MongoDB connection failed</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if MongoDB is running</span>
+</span></span><span style="display:flex;"><span>sudo systemctl status mongod
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># MySQL connection failed</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if MySQL is running</span>
+</span></span><span style="display:flex;"><span>sudo systemctl status mysql
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Port conflicts</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if ports are available</span>
+</span></span><span style="display:flex;"><span>netstat -tulpn | grep :8081
+</span></span><span style="display:flex;"><span>netstat -tulpn | grep :27017
+</span></span><span style="display:flex;"><span>netstat -tulpn | grep :3306
+</span></span></code></pre></div><h5 id="build-issues">Build Issues</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clean Maven cache</span>
+</span></span><span style="display:flex;"><span>mvn clean
+</span></span><span style="display:flex;"><span>rm -rf ~/.m2/repository
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update Maven dependencies</span>
+</span></span><span style="display:flex;"><span>mvn dependency:resolve
+</span></span><span style="display:flex;"><span>mvn dependency:tree
+</span></span></code></pre></div><h4 id="next-steps">Next Steps</h4>
+<p>In the next section, we&rsquo;ll explore the core features and user interface of the platform. You&rsquo;ll learn about:</p>
+<ul>
+<li>User authentication and authorization</li>
+<li>Course management system</li>
+<li>Real-time communication features</li>
+<li>Content management and delivery</li>
+</ul>
+<h4 id="key-takeaways">Key Takeaways</h4>
+<ul>
+<li><strong>Proper environment setup</strong> ensures smooth development experience</li>
+<li><strong>Dual database configuration</strong> provides flexibility and performance</li>
+<li><strong>Security-first approach</strong> with JWT and role-based access control</li>
+<li><strong>Comprehensive configuration</strong> covers all aspects of the application</li>
+<li><strong>Architecture understanding</strong> helps in extending and maintaining the system</li>
+<li><strong>Step-by-step setup</strong> ensures successful project initialization</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Other Hardware MFA Device"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/2-project-setup/2.1-environment-setup/" title="Environment Setup" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1754986437"></script>
+    <script src="/js/perfect-scrollbar.min.js?1754986437"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1754986437"></script>
+    <script src="/js/jquery.sticky.js?1754986437"></script>
+    <script src="/js/featherlight.min.js?1754986437"></script>
+    <script src="/js/highlight.pack.js?1754986437"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1754986437"></script>
+    <script src="/js/learn.js?1754986437"></script>
+    <script src="/js/hugo-learn.js?1754986437"></script>
+
+    <link href="/mermaid/mermaid.css?1754986437" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1754986437"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

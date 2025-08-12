@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Amazon S3 - File Storage &amp; Management :: Create a new AWS account.</title>
+
+    
+    <link href="/css/nucleus.css?1755012969" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1755012969" rel="stylesheet">
+    <link href="/css/hybrid.css?1755012969" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1755012969" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1755012969" rel="stylesheet">
+    <link href="/css/auto-complete.css?1755012969" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1755012969" rel="stylesheet">
+    <link href="/css/theme.css?1755012969" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1755012969" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1755012969" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1755012969"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/3-amazon-s3-storage/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1755012969"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1755012969"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1755012969"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/" title="Creating a new AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/">
+           <b> 1. </b> Creating a new AWS Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="Finding Account ID" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.1-find-account-id/">
+           <b> 1.1 </b> Finding Account ID
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Update Account Information" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.2-update-account/">
+           <b> 1.2 </b> Update Account Information
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="AWS Account Alias" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.3-aws-account-alias/">
+           <b> 1.3 </b> AWS Account Alias
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.4-close-account/" title="Close Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.4-close-account/">
+           <b> 1.4 </b> Close Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/" title="RDS với MySQL - Spring Boot Integration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/">
+           <b> 2. </b> RDS với MySQL - Spring Boot Integration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/2.1-rds-instance-setup/" title="RDS Instance Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/2.1-rds-instance-setup/">
+           <b> 2.1 </b> RDS Instance Setup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/2.2-springboot-configuration/" title="Spring Boot Database Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/2.2-springboot-configuration/">
+           <b> 2.2 </b> Spring Boot Database Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-rds-mysql-springboot/2.3-database-migration/" title="Database Migration with Flyway" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-rds-mysql-springboot/2.3-database-migration/">
+           <b> 2.3 </b> Database Migration with Flyway
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/" title="Amazon S3 - File Storage &amp; Management" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/3-amazon-s3-storage/">
+           <b> 3. </b> Amazon S3 - File Storage &amp; Management
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/3.1-s3-bucket-setup/" title="S3 Bucket Setup &amp; Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/3.1-s3-bucket-setup/">
+           <b> 3.1 </b> S3 Bucket Setup &amp; Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/3.2-springboot-integration/" title="Spring Boot S3 Integration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/3.2-springboot-integration/">
+           <b> 3.2 </b> Spring Boot S3 Integration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-amazon-s3-storage/3.3-cloudfront-integration/" title="CloudFront CDN Integration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-amazon-s3-storage/3.3-cloudfront-integration/">
+           <b> 3.3 </b> CloudFront CDN Integration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-mongodb-atlas/" title="MongoDB Atlas - Cloud Database Service" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-mongodb-atlas/">
+           <b> 4. </b> MongoDB Atlas - Cloud Database Service
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-mongodb-atlas/4.1-atlas-setup/" title="MongoDB Atlas Setup &amp; Configuration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-mongodb-atlas/4.1-atlas-setup/">
+           <b> 4.1 </b> MongoDB Atlas Setup &amp; Configuration
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/3-amazon-s3-storage/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'>Esoclusty E-Learning Platform Workshop</a> > Amazon S3 - File Storage & Management
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Amazon S3 - File Storage &amp; Management
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="amazon-s3---file-storage--management">Amazon S3 - File Storage &amp; Management</h1>
+<h4 id="overview">Overview</h4>
+<p>Trong phần này, chúng ta sẽ thiết lập và cấu hình Amazon S3 để quản lý file storage cho e-learning platform. Bạn sẽ học cách tạo S3 buckets, cấu hình security, và tích hợp với ứng dụng Spring Boot để upload/download files. Đặc biệt, chúng ta sẽ tích hợp S3 với CloudFront để tối ưu hóa performance và giảm chi phí.</p>
+<h4 id="section-contents">Section Contents</h4>
+<h5 id="31-s3-bucket-setup--configuration">3.1 S3 Bucket Setup &amp; Configuration</h5>
+<p>Thiết lập Amazon S3 buckets và cấu hình cơ bản:</p>
+<ul>
+<li><strong>Bucket Creation</strong>: Tạo và cấu hình S3 buckets với naming convention</li>
+<li><strong>Bucket Policies</strong>: Cấu hình access policies và permissions</li>
+<li><strong>CORS Configuration</strong>: Cross-Origin Resource Sharing setup</li>
+<li><strong>Versioning &amp; Lifecycle</strong>: File versioning và lifecycle management</li>
+<li><strong>Encryption</strong>: Server-side encryption configuration</li>
+</ul>
+<p><a href="/3-amazon-s3-storage/3.1-s3-bucket-setup/">Explore S3 Bucket Setup →</a></p>
+<h5 id="32-spring-boot-s3-integration">3.2 Spring Boot S3 Integration</h5>
+<p>Tích hợp Amazon S3 với Spring Boot application:</p>
+<ul>
+<li><strong>AWS SDK Configuration</strong>: Cấu hình AWS SDK cho Java</li>
+<li><strong>S3Service Implementation</strong>: Service để upload files lên S3</li>
+<li><strong>FileController</strong>: REST API endpoints cho file operations</li>
+<li><strong>File Management</strong>: CRUD operations cho files</li>
+<li><strong>Error Handling</strong>: Xử lý lỗi và retry mechanisms</li>
+</ul>
+<p><a href="/3-amazon-s3-storage/3.2-springboot-integration/">Explore Spring Boot Integration →</a></p>
+<h5 id="33-cloudfront-cdn-integration">3.3 CloudFront CDN Integration</h5>
+<p>Tích hợp CloudFront với S3 để tối ưu hóa delivery:</p>
+<ul>
+<li><strong>CloudFront Distribution</strong>: Tạo và cấu hình CDN distribution</li>
+<li><strong>Origin Configuration</strong>: Cấu hình S3 origin cho CloudFront</li>
+<li><strong>Cache Policies</strong>: Tối ưu hóa caching strategies</li>
+<li><strong>Security</strong>: Origin access control và SSL/TLS</li>
+<li><strong>Performance Monitoring</strong>: CloudFront metrics và analytics</li>
+</ul>
+<p><a href="/3-amazon-s3-storage/3.3-cloudfront-integration/">Explore CloudFront Integration →</a></p>
+<h4 id="s3-overview">S3 Overview</h4>
+<h5 id="amazon-s3-benefits">Amazon S3 Benefits</h5>
+<p><strong>Object Storage Service</strong></p>
+<ul>
+<li><strong>Scalability</strong>: Unlimited storage capacity</li>
+<li><strong>Durability</strong>: 99.999999999% (11 9&rsquo;s) durability</li>
+<li><strong>Availability</strong>: 99.99% availability SLA</li>
+<li><strong>Security</strong>: Built-in security và compliance features</li>
+<li><strong>Cost-Effective</strong>: Pay only for storage used</li>
+</ul>
+<p><strong>Use Cases for E-Learning</strong></p>
+<ul>
+<li><strong>Course Content</strong>: Video lectures, documents, presentations</li>
+<li><strong>User Uploads</strong>: Assignment submissions, profile pictures</li>
+<li><strong>Backup Storage</strong>: Database backups, system snapshots</li>
+<li><strong>Static Assets</strong>: Images, CSS, JavaScript files</li>
+<li><strong>Media Files</strong>: Audio, video, interactive content</li>
+</ul>
+<h4 id="s3-storage-classes">S3 Storage Classes</h4>
+<h5 id="storage-class-selection">Storage Class Selection</h5>
+<p><strong>Standard Storage</strong></p>
+<ul>
+<li><strong>Use Case</strong>: Frequently accessed data</li>
+<li><strong>Availability</strong>: 99.99%</li>
+<li><strong>Durability</strong>: 99.999999999%</li>
+<li><strong>Cost</strong>: Most expensive</li>
+<li><strong>Access Time</strong>: Milliseconds</li>
+</ul>
+<p><strong>Intelligent Tiering</strong></p>
+<ul>
+<li><strong>Use Case</strong>: Data with unknown access patterns</li>
+<li><strong>Availability</strong>: 99.9%</li>
+<li><strong>Durability</strong>: 99.999999999%</li>
+<li><strong>Cost</strong>: Automatic cost optimization</li>
+<li><strong>Access Time</strong>: Milliseconds to hours</li>
+</ul>
+<p><strong>Standard-IA (Infrequent Access)</strong></p>
+<ul>
+<li><strong>Use Case</strong>: Infrequently accessed data</li>
+<li><strong>Availability</strong>: 99.9%</li>
+<li><strong>Durability</strong>: 99.999999999%</li>
+<li><strong>Cost</strong>: 40% cheaper than Standard</li>
+<li><strong>Access Time</strong>: Milliseconds</li>
+</ul>
+<p><strong>Glacier Storage</strong></p>
+<ul>
+<li><strong>Use Case</strong>: Long-term archival data</li>
+<li><strong>Availability</strong>: 99.9%</li>
+<li><strong>Durability</strong>: 99.999999999%</li>
+<li><strong>Cost</strong>: 90% cheaper than Standard</li>
+<li><strong>Access Time</strong>: Minutes to hours</li>
+</ul>
+<h4 id="s3-security-features">S3 Security Features</h4>
+<h5 id="access-control">Access Control</h5>
+<p><strong>IAM Policies</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:GetObject&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObject&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:DeleteObject&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::elearning-uploads-*/*&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Condition&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;StringEquals&#34;</span>: {
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;aws:PrincipalTag/Role&#34;</span>: <span style="color:#e6db74">&#34;E-Learning-User&#34;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Bucket Policies</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;PublicReadForGetBucketObjects&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Principal&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:GetObject&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::elearning-uploads-*/*&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Condition&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;StringEquals&#34;</span>: {
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;s3:ResourceType&#34;</span>: <span style="color:#e6db74">&#34;object&#34;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="encryption">Encryption</h5>
+<p><strong>Server-Side Encryption</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Default encryption</span>: <span style="color:#ae81ff">Enable</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Encryption type</span>: <span style="color:#ae81ff">Amazon S3-managed keys (SSE-S3)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">OR -</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Encryption type</span>: <span style="color:#ae81ff">AWS KMS keys (SSE-KMS)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">OR -</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Encryption type</span>: <span style="color:#ae81ff">Customer-provided keys (SSE-C)</span>
+</span></span></code></pre></div><p><strong>Client-Side Encryption</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Encrypt data before uploading</span>
+</span></span><span style="display:flex;"><span>EncryptionMaterials materials <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> EncryptionMaterials(kmsKeyId);
+</span></span><span style="display:flex;"><span>AmazonS3EncryptionClient encryptionClient <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AmazonS3EncryptionClient(
+</span></span><span style="display:flex;"><span>    credentials, materials, cryptoConfig);
+</span></span></code></pre></div><h4 id="s3-performance-optimization">S3 Performance Optimization</h4>
+<h5 id="performance-features">Performance Features</h5>
+<p><strong>S3 Transfer Acceleration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Enable</span>: <span style="color:#66d9ef">Yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Endpoint</span>: <span style="color:#ae81ff">s3-accelerate.amazonaws.com</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Benefits</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Faster uploads from distant locations</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Uses CloudFront edge locations</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Automatic fallback to standard S3</span>
+</span></span></code></pre></div><p><strong>Multipart Upload</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// For files larger than 100 MB</span>
+</span></span><span style="display:flex;"><span>TransferManager transferManager <span style="color:#f92672">=</span> TransferManagerBuilder.<span style="color:#a6e22e">standard</span>()
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">withS3Client</span>(s3Client)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Upload upload <span style="color:#f92672">=</span> transferManager.<span style="color:#a6e22e">upload</span>(bucketName, key, file);
+</span></span><span style="display:flex;"><span>upload.<span style="color:#a6e22e">waitForCompletion</span>();
+</span></span></code></pre></div><p><strong>Parallel Processing</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Upload multiple files in parallel</span>
+</span></span><span style="display:flex;"><span>ExecutorService executor <span style="color:#f92672">=</span> Executors.<span style="color:#a6e22e">newFixedThreadPool</span>(10);
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Future<span style="color:#f92672">&lt;</span>UploadResult<span style="color:#f92672">&gt;&gt;</span> futures <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (File file : files) {
+</span></span><span style="display:flex;"><span>    futures.<span style="color:#a6e22e">add</span>(executor.<span style="color:#a6e22e">submit</span>(() <span style="color:#f92672">-&gt;</span> uploadFile(file)));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="s3-data-management">S3 Data Management</h4>
+<h5 id="lifecycle-policies">Lifecycle Policies</h5>
+<p><strong>Automated Lifecycle Management</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Lifecycle Rule</span>: <span style="color:#ae81ff">Course Content Management</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Actions</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Transition to IA after 30 days</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Transition to Glacier after 90 days</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Delete after 2555 days (7 years)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Filters</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Prefix</span>: <span style="color:#ae81ff">courses/</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Tags</span>: <span style="color:#ae81ff">content-type=course-material</span>
+</span></span></code></pre></div><p><strong>Versioning Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Enable versioning</span>: <span style="color:#66d9ef">Yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Benefits</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Protect against accidental deletion</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Rollback to previous versions</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Compliance requirements</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Cost implications (pay for all versions)</span>
+</span></span></code></pre></div><h5 id="backup-and-recovery">Backup and Recovery</h5>
+<p><strong>Cross-Region Replication</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Source bucket</span>: <span style="color:#ae81ff">ap-southeast-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Destination bucket</span>: <span style="color:#ae81ff">ap-southeast-2</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Replication rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Replicate all objects</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Replicate delete markers</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Replicate existing objects</span>
+</span></span></code></pre></div><p><strong>S3 Replication Configuration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Role&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::123456789012:role/s3-replication-role&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Rules&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Status&#34;</span>: <span style="color:#e6db74">&#34;Enabled&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Priority&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;DeleteMarkerReplication&#34;</span>: { <span style="color:#f92672">&#34;Status&#34;</span>: <span style="color:#e6db74">&#34;Enabled&#34;</span> },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Destination&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Bucket&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::elearning-backup-bucket&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;StorageClass&#34;</span>: <span style="color:#e6db74">&#34;STANDARD_IA&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="cloudfront-integration-benefits">CloudFront Integration Benefits</h4>
+<h5 id="cdn-advantages">CDN Advantages</h5>
+<p><strong>Performance Improvement</strong></p>
+<ul>
+<li><strong>Global Edge Locations</strong>: Content served from nearest location</li>
+<li><strong>Reduced Latency</strong>: Faster file access worldwide</li>
+<li><strong>Bandwidth Optimization</strong>: Reduced origin server load</li>
+<li><strong>Caching</strong>: Intelligent caching strategies</li>
+</ul>
+<p><strong>Cost Optimization</strong></p>
+<ul>
+<li><strong>Reduced Data Transfer</strong>: Lower S3 data transfer costs</li>
+<li><strong>Edge Computing</strong>: Lambda@Edge for custom logic</li>
+<li><strong>Compression</strong>: Automatic content compression</li>
+<li><strong>Intelligent Routing</strong>: Route 53 integration</li>
+</ul>
+<h4 id="next-steps">Next Steps</h4>
+<p>Trong các phần tiếp theo, chúng ta sẽ:</p>
+<ul>
+<li>Thiết lập S3 buckets cụ thể với cấu hình thực tế</li>
+<li>Cấu hình Spring Boot integration với S3Service</li>
+<li>Thiết lập CloudFront distribution</li>
+<li>Implement advanced S3 features</li>
+</ul>
+<h4 id="key-takeaways">Key Takeaways</h4>
+<ul>
+<li><strong>Amazon S3</strong> cung cấp scalable và durable object storage</li>
+<li><strong>Multiple storage classes</strong> cho phép tối ưu hóa chi phí</li>
+<li><strong>Built-in security</strong> với encryption và access control</li>
+<li><strong>Performance optimization</strong> với transfer acceleration và multipart upload</li>
+<li><strong>CloudFront integration</strong> tối ưu hóa content delivery</li>
+<li><strong>Cost optimization</strong> cần thiết cho production workloads</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/2-rds-mysql-springboot/2.3-database-migration/" title="Database Migration with Flyway"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/3-amazon-s3-storage/3.1-s3-bucket-setup/" title="S3 Bucket Setup &amp; Configuration" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1755012969"></script>
+    <script src="/js/perfect-scrollbar.min.js?1755012969"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1755012969"></script>
+    <script src="/js/jquery.sticky.js?1755012969"></script>
+    <script src="/js/featherlight.min.js?1755012969"></script>
+    <script src="/js/highlight.pack.js?1755012969"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1755012969"></script>
+    <script src="/js/learn.js?1755012969"></script>
+    <script src="/js/hugo-learn.js?1755012969"></script>
+
+    <link href="/mermaid/mermaid.css?1755012969" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1755012969"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

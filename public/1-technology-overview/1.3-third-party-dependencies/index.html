@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.148.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Third-Party Dependencies :: Create a new AWS account.</title>
+
+    
+    <link href="/css/nucleus.css?1754986515" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1754986515" rel="stylesheet">
+    <link href="/css/hybrid.css?1754986515" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1754986515" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1754986515" rel="stylesheet">
+    <link href="/css/auto-complete.css?1754986515" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1754986515" rel="stylesheet">
+    <link href="/css/theme.css?1754986515" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1754986515" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1754986515" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1754986515"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/1-technology-overview/1.3-third-party-dependencies/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1754986515"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1754986515"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1754986515"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/" title="Creating a new AWS Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/">
+           <b> 1. </b> Creating a new AWS Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.1-find-account-id/" title="Finding Account ID" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.1-find-account-id/">
+           <b> 1.1 </b> Finding Account ID
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.2-update-account/" title="Update Account Information" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.2-update-account/">
+           <b> 1.2 </b> Update Account Information
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.3-aws-account-alias/" title="AWS Account Alias" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.3-aws-account-alias/">
+           <b> 1.3 </b> AWS Account Alias
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-create-new-aws-account/1.4-close-account/" title="Close Account" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-create-new-aws-account/1.4-close-account/">
+           <b> 1.4 </b> Close Account
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/" title="Technology Overview &amp; Dependencies" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/1-technology-overview/">
+          Technology Overview &amp; Dependencies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.1-backend-framework/" title="Backend Framework" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.1-backend-framework/">
+          Backend Framework
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.2-database-technologies/" title="Database Technologies" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/1-technology-overview/1.2-database-technologies/">
+          Database Technologies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/1-technology-overview/1.3-third-party-dependencies/" title="Third-Party Dependencies" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/1-technology-overview/1.3-third-party-dependencies/">
+          Third-Party Dependencies
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/" title="Setting up MFA for the AWS Account root user" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/">
+           <b> 2. </b> Setting up MFA for the AWS Account root user
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/" title="Virtual MFA Device" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/1-virtual-mfa-device/">
+           <b> 2.1 </b> Virtual MFA Device
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/" title="U2F Security Key" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/2-u2f-security-key/">
+           <b> 2.2 </b> U2F Security Key
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/" title="Other Hardware MFA Device" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-mfa-setup-for-aws-user-root/3-other-hardware-mfa-device/">
+           <b> 2.3 </b> Other Hardware MFA Device
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-create-admin-user-and-group/" title="Creating an Administrator Accounts and Groups" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-create-admin-user-and-group/">
+           <b> 3. </b> Creating an Administrator Accounts and Groups
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/" title="Core Features &amp; User Interface" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/">
+          Core Features &amp; User Interface
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.1-user-authentication/" title="User Authentication &amp; Authorization" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.1-user-authentication/">
+          User Authentication &amp; Authorization
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.2-course-management/" title="Course Management System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.2-course-management/">
+          Course Management System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/3-core-features/3.3-real-time-communication/" title="Real-time Communication Features" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/3-core-features/3.3-real-time-communication/">
+          Real-time Communication Features
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-verify-new-account/" title="Getting support for Account Authentication" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-verify-new-account/">
+           <b> 4. </b> Getting support for Account Authentication
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-database-migration/" title="Database Migration Automation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-database-migration/">
+          Database Migration Automation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/4-database-migration/4.1-migration-architecture/" title="Migration System Architecture" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/4-database-migration/4.1-migration-architecture/">
+          Migration System Architecture
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="//localhost:1313/1-technology-overview/1.3-third-party-dependencies/" selected>English</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830891&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>26-11-2023</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Esoclusty E-Learning Platform Workshop</a> > <a href='/1-technology-overview/'>Technology Overview & Dependencies</a> > Third-Party Dependencies
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Third-Party Dependencies
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="third-party-dependencies">Third-Party Dependencies</h1>
+<h4 id="overview">Overview</h4>
+<p>The Esoclusty E-Learning Platform leverages a comprehensive set of third-party libraries and dependencies to enhance functionality, improve performance, and ensure security. This section explores the key dependencies and their specific use cases in the platform.</p>
+<h4 id="security--authentication-dependencies">Security &amp; Authentication Dependencies</h4>
+<h5 id="jwt-implementation-libraries">JWT Implementation Libraries</h5>
+<p><strong>JSON Web Token</strong> libraries provide secure authentication:</p>
+<p><strong>JJWT (Java JWT)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>io.jsonwebtoken<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jjwt-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>0.11.5<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>io.jsonwebtoken<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jjwt-impl<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>0.11.5<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>runtime<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>io.jsonwebtoken<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>jjwt-jackson<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>0.11.5<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>runtime<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Key Features</strong></p>
+<ul>
+<li><strong>Token Generation</strong>: Secure JWT token creation</li>
+<li><strong>Signature Verification</strong>: HMAC-SHA256 signature validation</li>
+<li><strong>Claims Management</strong>: Custom claims and payload handling</li>
+<li><strong>Expiration Handling</strong>: Automatic token expiration management</li>
+</ul>
+<p><strong>Use Cases in Platform</strong></p>
+<ul>
+<li><strong>User Authentication</strong>: Secure login and session management</li>
+<li><strong>API Security</strong>: Protected endpoint access control</li>
+<li><strong>Role-based Access</strong>: User permission validation</li>
+<li><strong>Session Management</strong>: Stateless user session handling</li>
+</ul>
+<p><img src="/images/1/0007.png?featherlight=false&amp;width=90pc" alt="JWT Authentication Flow"></p>
+<h5 id="validation-framework">Validation Framework</h5>
+<p><strong>Input validation</strong> and data integrity:</p>
+<p><strong>Spring Boot Validation</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-validation<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Validation Features</strong></p>
+<ul>
+<li><strong>Bean Validation</strong>: JSR-303/JSR-349 compliance</li>
+<li><strong>Custom Validators</strong>: Application-specific validation rules</li>
+<li><strong>Error Handling</strong>: Comprehensive validation error messages</li>
+<li><strong>Security Validation</strong>: Input sanitization and security checks</li>
+</ul>
+<p><strong>Validation Use Cases</strong></p>
+<ul>
+<li><strong>User Input</strong>: Form data validation and sanitization</li>
+<li><strong>API Requests</strong>: Request parameter validation</li>
+<li><strong>File Uploads</strong>: File type and size validation</li>
+<li><strong>Data Integrity</strong>: Database constraint validation</li>
+</ul>
+<h4 id="content-processing-dependencies">Content Processing Dependencies</h4>
+<h5 id="markdown-processing">Markdown Processing</h5>
+<p><strong>Rich text content</strong> support and processing:</p>
+<p><strong>Flexmark</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>com.vladsch.flexmark<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>flexmark-all<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>0.64.8<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Markdown Features</strong></p>
+<ul>
+<li><strong>Full Markdown Support</strong>: Complete Markdown specification</li>
+<li><strong>HTML Conversion</strong>: Markdown to HTML transformation</li>
+<li><strong>Extension Support</strong>: Custom markdown extensions</li>
+<li><strong>Security</strong>: XSS prevention and sanitization</li>
+</ul>
+<p><strong>Platform Applications</strong></p>
+<ul>
+<li><strong>Course Content</strong>: Rich text lesson content</li>
+<li><strong>User Comments</strong>: Formatted user feedback</li>
+<li><strong>Documentation</strong>: Technical documentation support</li>
+<li><strong>Email Templates</strong>: Rich email content formatting</li>
+</ul>
+<p><img src="/images/1/0008.png?featherlight=false&amp;width=90pc" alt="Markdown Processing"></p>
+<h5 id="document-processing">Document Processing</h5>
+<p><strong>Office document</strong> handling and manipulation:</p>
+<p><strong>Apache POI</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.poi<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>poi-ooxml<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>5.4.0<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Document Support</strong></p>
+<ul>
+<li><strong>Excel Files</strong>: .xlsx file reading and writing</li>
+<li><strong>Word Documents</strong>: .docx file processing</li>
+<li><strong>PowerPoint</strong>: .pptx presentation handling</li>
+<li><strong>CSV Support</strong>: Comma-separated value processing</li>
+</ul>
+<p><strong>E-Learning Applications</strong></p>
+<ul>
+<li><strong>Course Materials</strong>: Import/export of course content</li>
+<li><strong>Student Data</strong>: Bulk student data management</li>
+<li><strong>Reports</strong>: Excel-based reporting and analytics</li>
+<li><strong>Assessments</strong>: Quiz and exam data import/export</li>
+</ul>
+<h4 id="database-migration-dependencies">Database Migration Dependencies</h4>
+<h5 id="flyway-migration-framework">Flyway Migration Framework</h5>
+<p><strong>Database schema</strong> versioning and migration:</p>
+<p><strong>Core Flyway</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.flywaydb<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>flyway-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.flywaydb<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>flyway-mysql<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Migration Features</strong></p>
+<ul>
+<li><strong>Version Control</strong>: SQL script versioning and tracking</li>
+<li><strong>Automatic Execution</strong>: Startup migration execution</li>
+<li><strong>Rollback Support</strong>: Migration rollback capabilities</li>
+<li><strong>Environment Management</strong>: Different migration strategies</li>
+</ul>
+<p><strong>Migration Benefits</strong></p>
+<ul>
+<li><strong>Schema Evolution</strong>: Controlled database changes</li>
+<li><strong>Team Collaboration</strong>: Consistent schema across environments</li>
+<li><strong>Deployment Automation</strong>: Automated database updates</li>
+<li><strong>Version Tracking</strong>: Complete migration history</li>
+</ul>
+<p><img src="/images/1/0009.png?featherlight=false&amp;width=90pc" alt="Database Migration"></p>
+<h5 id="test-containers">Test Containers</h5>
+<p><strong>Integration testing</strong> with real databases:</p>
+<p><strong>Test Containers</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.testcontainers<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>junit-jupiter<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.testcontainers<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>mysql<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.testcontainers<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>mongodb<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Testing Capabilities</strong></p>
+<ul>
+<li><strong>Isolated Testing</strong>: Independent test database instances</li>
+<li><strong>Real Database Testing</strong>: Testing with actual database engines</li>
+<li><strong>Automated Setup</strong>: Automatic test environment configuration</li>
+<li><strong>Cleanup</strong>: Automatic test data cleanup</li>
+</ul>
+<p><strong>Testing Benefits</strong></p>
+<ul>
+<li><strong>Realistic Testing</strong>: Production-like testing environment</li>
+<li><strong>Integration Testing</strong>: End-to-end functionality testing</li>
+<li><strong>Performance Testing</strong>: Database performance validation</li>
+<li><strong>Regression Testing</strong>: Automated regression detection</li>
+</ul>
+<h4 id="development--testing-dependencies">Development &amp; Testing Dependencies</h4>
+<h5 id="lombok">Lombok</h5>
+<p><strong>Code reduction</strong> and boilerplate elimination:</p>
+<p><strong>Lombok Integration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.projectlombok<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>lombok<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>provided<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Lombok Features</strong></p>
+<ul>
+<li><strong>Getter/Setter</strong>: Automatic accessor method generation</li>
+<li><strong>Constructor</strong>: Automatic constructor generation</li>
+<li><strong>Builder Pattern</strong>: Builder pattern implementation</li>
+<li><strong>Data Classes</strong>: Immutable data class generation</li>
+</ul>
+<p><strong>Code Quality Benefits</strong></p>
+<ul>
+<li><strong>Reduced Boilerplate</strong>: Less repetitive code</li>
+<li><strong>Improved Readability</strong>: Cleaner, more focused code</li>
+<li><strong>Fewer Bugs</strong>: Reduced manual coding errors</li>
+<li><strong>Faster Development</strong>: Rapid model class creation</li>
+</ul>
+<p><strong>Platform Usage</strong></p>
+<ul>
+<li><strong>DTO Classes</strong>: Data transfer object generation</li>
+<li><strong>Entity Models</strong>: Database entity class simplification</li>
+<li><strong>API Models</strong>: Request/response model classes</li>
+<li><strong>Configuration Classes</strong>: Configuration class simplification</li>
+</ul>
+<h5 id="testing-framework">Testing Framework</h5>
+<p><strong>Comprehensive testing</strong> capabilities:</p>
+<p><strong>Spring Boot Testing</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-test<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.security<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-security-test<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Testing Features</strong></p>
+<ul>
+<li><strong>Unit Testing</strong>: Individual component testing</li>
+<li><strong>Integration Testing</strong>: Component interaction testing</li>
+<li><strong>Security Testing</strong>: Security configuration validation</li>
+<li><strong>Performance Testing</strong>: Application performance validation</li>
+</ul>
+<p><strong>Testing Capabilities</strong></p>
+<ul>
+<li><strong>Mock Support</strong>: Comprehensive mocking framework</li>
+<li><strong>Test Data</strong>: Test data generation and management</li>
+<li><strong>Assertion Libraries</strong>: Rich assertion capabilities</li>
+<li><strong>Test Reporting</strong>: Detailed test execution reports</li>
+</ul>
+<h4 id="monitoring--observability-dependencies">Monitoring &amp; Observability Dependencies</h4>
+<h5 id="spring-boot-actuator">Spring Boot Actuator</h5>
+<p><strong>Production monitoring</strong> and health checks:</p>
+<p><strong>Actuator Integration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-actuator<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Monitoring Features</strong></p>
+<ul>
+<li><strong>Health Checks</strong>: Application and component health</li>
+<li><strong>Metrics Collection</strong>: Performance and usage metrics</li>
+<li><strong>Environment Information</strong>: Configuration and environment details</li>
+<li><strong>Management Endpoints</strong>: Administrative and monitoring endpoints</li>
+</ul>
+<p><strong>Production Benefits</strong></p>
+<ul>
+<li><strong>Health Monitoring</strong>: Real-time application health status</li>
+<li><strong>Performance Tracking</strong>: Response time and throughput metrics</li>
+<li><strong>Resource Monitoring</strong>: Memory, CPU, and database usage</li>
+<li><strong>Alerting</strong>: Automated health status notifications</li>
+</ul>
+<p><img src="/images/1/0010.png?featherlight=false&amp;width=90pc" alt="Monitoring Dashboard"></p>
+<h5 id="micrometer-integration">Micrometer Integration</h5>
+<p><strong>Metrics collection</strong> and external monitoring:</p>
+<p><strong>Micrometer Features</strong></p>
+<ul>
+<li><strong>Metrics Collection</strong>: Application and business metrics</li>
+<li><strong>External Integration</strong>: Prometheus, Grafana, and other tools</li>
+<li><strong>Custom Metrics</strong>: Application-specific performance indicators</li>
+<li><strong>Performance Monitoring</strong>: Response time and throughput tracking</li>
+</ul>
+<p><strong>Monitoring Integration</strong></p>
+<ul>
+<li><strong>Prometheus</strong>: Time-series metrics collection</li>
+<li><strong>Grafana</strong>: Metrics visualization and dashboards</li>
+<li><strong>Alert Manager</strong>: Automated alerting and notification</li>
+<li><strong>Custom Dashboards</strong>: Application-specific monitoring views</li>
+</ul>
+<h4 id="real-time-communication-dependencies">Real-time Communication Dependencies</h4>
+<h5 id="websocket-support">WebSocket Support</h5>
+<p><strong>Real-time features</strong> and live communication:</p>
+<p><strong>Spring WebSocket</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-websocket<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>WebSocket Features</strong></p>
+<ul>
+<li><strong>STOMP Protocol</strong>: Message-oriented communication</li>
+<li><strong>Real-time Messaging</strong>: Instant message delivery</li>
+<li><strong>Connection Management</strong>: WebSocket connection handling</li>
+<li><strong>Security Integration</strong>: WebSocket security configuration</li>
+</ul>
+<p><strong>Platform Applications</strong></p>
+<ul>
+<li><strong>Live Chat</strong>: Real-time user communication</li>
+<li><strong>Notifications</strong>: Instant system notifications</li>
+<li><strong>Progress Updates</strong>: Live learning progress updates</li>
+<li><strong>Collaborative Features</strong>: Real-time collaboration tools</li>
+</ul>
+<p><img src="/images/1/0011.png?featherlight=false&amp;width=90pc" alt="WebSocket Architecture"></p>
+<h5 id="sockjs-support">SockJS Support</h5>
+<p><strong>Browser compatibility</strong> and fallback support:</p>
+<p><strong>SockJS Benefits</strong></p>
+<ul>
+<li><strong>Browser Support</strong>: Support for older browsers</li>
+<li><strong>Fallback Mechanisms</strong>: Automatic fallback to HTTP polling</li>
+<li><strong>Connection Reliability</strong>: Robust connection handling</li>
+<li><strong>Cross-browser Compatibility</strong>: Consistent behavior across browsers</li>
+</ul>
+<h4 id="email--communication-dependencies">Email &amp; Communication Dependencies</h4>
+<h5 id="spring-mail">Spring Mail</h5>
+<p><strong>Email functionality</strong> and communication:</p>
+<p><strong>Mail Integration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-mail<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Email Features</strong></p>
+<ul>
+<li><strong>SMTP Support</strong>: Standard email protocol support</li>
+<li><strong>Template Integration</strong>: Thymeleaf email template support</li>
+<li><strong>Attachment Support</strong>: File attachment capabilities</li>
+<li><strong>Batch Processing</strong>: Bulk email sending capabilities</li>
+</ul>
+<p><strong>Platform Usage</strong></p>
+<ul>
+<li><strong>User Registration</strong>: Welcome and confirmation emails</li>
+<li><strong>Password Recovery</strong>: Password reset email functionality</li>
+<li><strong>Course Notifications</strong>: Course updates and announcements</li>
+<li><strong>System Alerts</strong>: Administrative and system notifications</li>
+</ul>
+<h4 id="frontend--ui-dependencies">Frontend &amp; UI Dependencies</h4>
+<h5 id="thymeleaf-extensions">Thymeleaf Extensions</h5>
+<p><strong>Enhanced templating</strong> capabilities:</p>
+<p><strong>Security Integration</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.thymeleaf.extras<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>thymeleaf-extras-springsecurity6<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p><strong>Security Features</strong></p>
+<ul>
+<li><strong>Role-based Rendering</strong>: Content based on user roles</li>
+<li><strong>Security Context</strong>: Access to security information in templates</li>
+<li><strong>Conditional Display</strong>: Role-based content visibility</li>
+<li><strong>User Information</strong>: Display of user-specific information</li>
+</ul>
+<p><strong>UI Benefits</strong></p>
+<ul>
+<li><strong>Dynamic Content</strong>: Role-based content rendering</li>
+<li><strong>Security Integration</strong>: Seamless security integration</li>
+<li><strong>User Experience</strong>: Personalized user interface</li>
+<li><strong>Access Control</strong>: Template-level access control</li>
+</ul>
+<h4 id="dependency-management--versioning">Dependency Management &amp; Versioning</h4>
+<h5 id="maven-configuration">Maven Configuration</h5>
+<p><strong>Centralized dependency</strong> management:</p>
+<p><strong>Parent POM</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;parent&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-parent<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>3.4.5<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;relativePath/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/parent&gt;</span>
+</span></span></code></pre></div><p><strong>Version Management</strong></p>
+<ul>
+<li><strong>Spring Boot BOM</strong>: Managed dependency versions</li>
+<li><strong>Consistent Versions</strong>: Compatible dependency versions</li>
+<li><strong>Security Updates</strong>: Automatic security patch management</li>
+<li><strong>Version Alignment</strong>: Spring ecosystem version alignment</li>
+</ul>
+<p><strong>Dependency Benefits</strong></p>
+<ul>
+<li><strong>Version Compatibility</strong>: Ensured dependency compatibility</li>
+<li><strong>Security Updates</strong>: Regular security vulnerability patches</li>
+<li><strong>Performance Improvements</strong>: Latest performance optimizations</li>
+<li><strong>Bug Fixes</strong>: Regular bug fix and stability improvements</li>
+</ul>
+<h4 id="security--vulnerability-management">Security &amp; Vulnerability Management</h4>
+<h5 id="dependency-scanning">Dependency Scanning</h5>
+<p><strong>Security vulnerability</strong> detection and management:</p>
+<p><strong>Security Features</strong></p>
+<ul>
+<li><strong>Vulnerability Scanning</strong>: Automated security vulnerability detection</li>
+<li><strong>Version Updates</strong>: Security patch recommendations</li>
+<li><strong>License Compliance</strong>: Open source license compliance checking</li>
+<li><strong>Risk Assessment</strong>: Security risk assessment and reporting</li>
+</ul>
+<p><strong>Security Benefits</strong></p>
+<ul>
+<li><strong>Proactive Security</strong>: Early vulnerability detection</li>
+<li><strong>Compliance</strong>: License and security compliance</li>
+<li><strong>Risk Mitigation</strong>: Reduced security risk exposure</li>
+<li><strong>Audit Support</strong>: Security audit and compliance support</li>
+</ul>
+<h4 id="performance--optimization-dependencies">Performance &amp; Optimization Dependencies</h4>
+<h5 id="connection-pooling">Connection Pooling</h5>
+<p><strong>Database connection</strong> optimization:</p>
+<p><strong>HikariCP Integration</strong></p>
+<ul>
+<li><strong>Fast Connection</strong>: Optimized connection establishment</li>
+<li><strong>Connection Pooling</strong>: Efficient connection reuse</li>
+<li><strong>Performance Monitoring</strong>: Connection pool performance metrics</li>
+<li><strong>Configuration Tuning</strong>: Optimized connection pool settings</li>
+</ul>
+<p><strong>Performance Benefits</strong></p>
+<ul>
+<li><strong>Reduced Latency</strong>: Faster database operations</li>
+<li><strong>Resource Efficiency</strong>: Optimal resource utilization</li>
+<li><strong>Scalability</strong>: Better handling of concurrent requests</li>
+<li><strong>Monitoring</strong>: Real-time performance monitoring</li>
+</ul>
+<h4 id="next-steps">Next Steps</h4>
+<p>In the next section, we&rsquo;ll explore the project setup and configuration, including environment setup, database configuration, and project initialization procedures.</p>
+<h4 id="key-takeaways">Key Takeaways</h4>
+<ul>
+<li><strong>Comprehensive dependency stack</strong> provides enterprise-grade functionality</li>
+<li><strong>Security-first approach</strong> with JWT and validation libraries</li>
+<li><strong>Content processing capabilities</strong> for rich multimedia support</li>
+<li><strong>Database migration automation</strong> for schema management</li>
+<li><strong>Comprehensive testing framework</strong> for quality assurance</li>
+<li><strong>Production monitoring</strong> and observability capabilities</li>
+<li><strong>Real-time communication</strong> support for interactive features</li>
+<li><strong>Optimized performance</strong> through connection pooling and caching</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/1-technology-overview/1.2-database-technologies/" title="Database Technologies"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/2-mfa-setup-for-aws-user-root/" title="Setting up MFA for the AWS Account root user" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1754986515"></script>
+    <script src="/js/perfect-scrollbar.min.js?1754986515"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1754986515"></script>
+    <script src="/js/jquery.sticky.js?1754986515"></script>
+    <script src="/js/featherlight.min.js?1754986515"></script>
+    <script src="/js/highlight.pack.js?1754986515"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1754986515"></script>
+    <script src="/js/learn.js?1754986515"></script>
+    <script src="/js/hugo-learn.js?1754986515"></script>
+
+    <link href="/mermaid/mermaid.css?1754986515" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1754986515"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
