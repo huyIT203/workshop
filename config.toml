@@ -1,6 +1,9 @@
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 
+# Base URL for GitHub Pages
+baseURL = "https://huyit203.github.io/workshop/"
+
 # Suppress warnings
 ignoreLogs = ['warning-goldmark-raw-html']
 
