@@ -40,9 +40,7 @@ Region: [Select closest to your application]
 # Click "Try Free" hoặc "Sign Up"
 ```
 
-{{% notice info %}}
-**Browser Screenshot**: Chụp màn hình MongoDB Atlas homepage
-{{% /notice %}}
+
 
 **2. Account Creation**
 ```yaml
@@ -54,9 +52,7 @@ Account name: [Your organization name]
   - Can be changed later
 ```
 
-{{% notice info %}}
-**Browser Screenshot**: Chụp màn hình form đăng ký tài khoản
-{{% /notice %}}
+
 
 **3. Email Verification**
 ```yaml
@@ -67,9 +63,6 @@ Verification Process:
   - Access Atlas dashboard
 ```
 
-{{% notice info %}}
-**Email Screenshot**: Chụp màn hình email verification
-{{% /notice %}}
 
 ---
 
@@ -90,9 +83,7 @@ Project Owner: [Your email]
   - Manages billing and access
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình tạo project mới
-{{% /notice %}}
+
 
 **2. Project Configuration**
 ```yaml
@@ -105,9 +96,7 @@ Project Settings:
     - Team: Development
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình project
-{{% /notice %}}
+
 
 ---
 
@@ -123,9 +112,6 @@ Version: 7.0 (Latest stable)
   - Compatibility with Spring Boot
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình chọn database type và version
-{{% /notice %}}
 
 **2. Cloud Provider & Region**
 ```yaml
@@ -141,9 +127,6 @@ Region Selection: [Select closest to your application]
   - Example: US East (N. Virginia)
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình chọn cloud provider và region
-{{% /notice %}}
 
 ##### Cluster Tier Selection
 **Free Tier (M0)**
@@ -157,9 +140,6 @@ Cluster Tier: M0 Sandbox
   - Limitations: No dedicated resources
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình chọn cluster tier
-{{% /notice %}}
 
 **Paid Tiers (M2+)**
 ```yaml
@@ -173,9 +153,7 @@ Production Environment:
   - M30: $171/month, 30 GB storage
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình so sánh các cluster tiers
-{{% /notice %}}
+
 
 ##### Cluster Settings
 **Cluster Name**
@@ -187,9 +165,7 @@ Cluster Name: elearning-cluster-[env]
   - Easy identification
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình cluster name
-{{% /notice %}}
+
 
 **Additional Settings**
 ```yaml
@@ -201,9 +177,7 @@ Cluster Settings:
   - Region: [Selected region]
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình cluster settings
-{{% /notice %}}
+
 
 ---
 
@@ -219,9 +193,6 @@ Access Method: IP Access List
   - Suitable for small teams
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình Network Access
-{{% /notice %}}
 
 **2. IP Address Configuration**
 ```yaml
@@ -236,9 +207,7 @@ Comment: [Description for each IP range]
   - Example: "Home office - Personal development"
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình IP Access List
-{{% /notice %}}
+
 
 ##### VPC Peering (Advanced)
 **AWS VPC Peering**
@@ -251,9 +220,6 @@ VPC Peering Setup:
   - Benefits: Private, secure connection
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình VPC Peering (nếu sử dụng)
-{{% /notice %}}
 
 ---
 
@@ -270,9 +236,7 @@ User Configuration:
   - Authentication Method: Password
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình tạo database user
-{{% /notice %}}
+
 
 **2. User Roles Configuration**
 ```yaml
@@ -288,9 +252,8 @@ Custom Roles:
   - backup_user: Backup operations
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình user roles
-{{% /notice %}}
+
+
 
 ##### Database Creation
 **1. Create Application Database**
@@ -308,9 +271,6 @@ db.createCollection("enrollments")
 db.createCollection("lessons")
 ```
 
-{{% notice info %}}
-**Terminal Screenshot**: Chụp màn hình tạo database và collections
-{{% /notice %}}
 
 ---
 
@@ -327,9 +287,8 @@ Backup Configuration:
   - Cloud Provider: Same as cluster
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình backup
-{{% /notice %}}
+
+
 
 **2. Backup Schedule**
 ```yaml
@@ -341,9 +300,7 @@ Backup Schedule:
   - Cloud Provider Snapshots: Enabled
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình backup schedule
-{{% /notice %}}
+
 
 ##### Monitoring Configuration
 **1. Performance Advisor**
@@ -356,9 +313,6 @@ Performance Advisor:
   - Performance insights: Enabled
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình Performance Advisor
-{{% /notice %}}
 
 **2. Real-time Performance Panel**
 ```yaml
@@ -371,9 +325,8 @@ Performance Metrics:
   - Network I/O
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình Performance Panel
-{{% /notice %}}
+
+
 
 ---
 
@@ -401,9 +354,7 @@ Connection Count Alert:
   - Action: PagerDuty alert
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình alerts
-{{% /notice %}}
+
 
 **2. Alert Channels**
 ```yaml
@@ -415,9 +366,6 @@ Notification Methods:
   - SMS: [Phone number]
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cấu hình alert channels
-{{% /notice %}}
 
 ---
 
@@ -434,9 +382,6 @@ Connection Information:
   - Connection String: mongodb+srv://username:password@cluster.mongodb.net/
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình connection string
-{{% /notice %}}
 
 **2. Test Connection**
 ```bash
@@ -471,9 +416,7 @@ Security Features:
   - Audit Logging: Enabled
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình security configuration
-{{% /notice %}}
+
 
 **2. Advanced Security**
 ```yaml
@@ -485,9 +428,6 @@ Advanced Security:
   - Backup Encryption: Enabled
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình advanced security settings
-{{% /notice %}}
 
 ---
 
@@ -504,9 +444,7 @@ Right-sizing Strategy:
   - Regular performance review
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cluster sizing options
-{{% /notice %}}
+
 
 **2. Cost Monitoring**
 ```yaml
@@ -518,9 +456,7 @@ Cost Management:
   - Use reserved instances (if available)
 ```
 
-{{% notice info %}}
-**Atlas Screenshot**: Chụp màn hình cost monitoring dashboard
-{{% /notice %}}
+
 
 ---
 
@@ -538,9 +474,7 @@ Cost Management:
 mongosh "mongodb+srv://username:password@cluster.mongodb.net/"
 ```
 
-{{% notice info %}}
-**Terminal Screenshot**: Chụp màn hình troubleshooting connection issues
-{{% /notice %}}
+
 
 **Performance Issues**
 ```javascript
@@ -556,9 +490,7 @@ db.courses.getIndexes()
 db.users.find({email: "user@example.com"}).explain("executionStats")
 ```
 
-{{% notice info %}}
-**Terminal Screenshot**: Chụp màn hình performance analysis
-{{% /notice %}}
+
 
 ---
 

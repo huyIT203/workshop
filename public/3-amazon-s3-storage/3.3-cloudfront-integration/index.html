@@ -12,21 +12,21 @@
     <title>CloudFront CDN Integration :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1755012969" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1755012969" rel="stylesheet">
-    <link href="/css/hybrid.css?1755012969" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1755012969" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1755012969" rel="stylesheet">
-    <link href="/css/auto-complete.css?1755012969" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1755012969" rel="stylesheet">
-    <link href="/css/theme.css?1755012969" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1755012969" rel="stylesheet">
+    <link href="/css/nucleus.css?1755013743" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1755013743" rel="stylesheet">
+    <link href="/css/hybrid.css?1755013743" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1755013743" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1755013743" rel="stylesheet">
+    <link href="/css/auto-complete.css?1755013743" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1755013743" rel="stylesheet">
+    <link href="/css/theme.css?1755013743" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1755013743" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1755012969" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1755013743" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1755012969"></script>
+    <script src="/js/jquery-3.3.1.min.js?1755013743"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1755012969"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1755012969"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1755013743"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1755013743"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1755012969"></script>
+<script type="text/javascript" src="/js/search.js?1755013743"></script>
 
     
   </div>
@@ -845,86 +845,11 @@
 </span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cache Hit</span>: <span style="color:#ae81ff">Faster response</span>
 </span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cache Miss</span>: <span style="color:#ae81ff">S3 fallback</span>
 </span></span></code></pre></div><hr>
-<h4 id="step-7-advanced-cloudfront-features">Step 7: Advanced CloudFront Features</h4>
-<h5 id="lambdaedge-integration">Lambda@Edge Integration</h5>
-<p><strong>1. Lambda Function Setup</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Lambda@Edge function for custom headers
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>) =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">Records</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">cf</span>.<span style="color:#a6e22e">response</span>;
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add custom headers
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">headers</span>[<span style="color:#e6db74">&#39;x-powered-by&#39;</span>] <span style="color:#f92672">=</span> [{
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;x-powered-by&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;E-Learning Platform&#39;</span>
-</span></span><span style="display:flex;"><span>    }];
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add CORS headers
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">headers</span>[<span style="color:#e6db74">&#39;access-control-allow-origin&#39;</span>] <span style="color:#f92672">=</span> [{
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;access-control-allow-origin&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*&#39;</span>
-</span></span><span style="display:flex;"><span>    }];
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>;
-</span></span><span style="display:flex;"><span>};
-</span></span></code></pre></div><p><strong>2. Lambda@Edge Configuration</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Function Configuration</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Runtime</span>: <span style="color:#ae81ff">Node.js 18.x</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Handler</span>: <span style="color:#ae81ff">index.handler</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Memory</span>: <span style="color:#ae81ff">128</span> <span style="color:#ae81ff">MB</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Timeout</span>: <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">seconds</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Trigger</span>: <span style="color:#ae81ff">Origin Response</span>
-</span></span></code></pre></div><hr>
-<h4 id="step-8-monitoring-and-analytics">Step 8: Monitoring and Analytics</h4>
-<h5 id="cloudwatch-integration">CloudWatch Integration</h5>
-<p><strong>1. CloudFront Metrics</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Available Metrics</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Requests</span>: <span style="color:#ae81ff">Total number of requests</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Bytes Downloaded</span>: <span style="color:#ae81ff">Data transfer volume</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cache Hit Ratio</span>: <span style="color:#ae81ff">Cache effectiveness</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Error Rate</span>: <span style="color:#ae81ff">4xx and 5xx errors</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Latency</span>: <span style="color:#ae81ff">Response time metrics</span>
-</span></span></code></pre></div><p><strong>2. Real-time Monitoring</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Monitoring Dashboard</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Request Count</span>: <span style="color:#ae81ff">Real-time request volume</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cache Performance</span>: <span style="color:#ae81ff">Hit/miss ratios</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Geographic Distribution</span>: <span style="color:#ae81ff">User locations</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Error Tracking</span>: <span style="color:#ae81ff">Failed requests</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cost Analysis</span>: <span style="color:#ae81ff">Data transfer costs</span>
-</span></span></code></pre></div><hr>
-<h4 id="step-9-security-configuration">Step 9: Security Configuration</h4>
-<h5 id="security-features">Security Features</h5>
-<p><strong>1. Geo-Restriction</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Geo-Restriction Settings</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">Allow List</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Countries</span>: [<span style="color:#ae81ff">Select allowed countries]</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use Case</span>: <span style="color:#ae81ff">Compliance requirements</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Example</span>: <span style="color:#ae81ff">Only allow access from specific regions</span>
-</span></span></code></pre></div><p><strong>2. Field-Level Encryption</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Encryption Configuration</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Field</span>: <span style="color:#ae81ff">sensitive-data</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Encryption</span>: <span style="color:#ae81ff">AES-256</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Key</span>: <span style="color:#ae81ff">AWS KMS managed key</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use Case</span>: <span style="color:#ae81ff">PCI DSS compliance</span>
-</span></span></code></pre></div><hr>
-<h4 id="step-10-cost-optimization">Step 10: Cost Optimization</h4>
-<h5 id="cost-management">Cost Management</h5>
-<p><strong>1. Price Class Optimization</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Price Class Options</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use Only North America and Europe</span>: <span style="color:#ae81ff">$0.085 per GB</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use All Edge Locations</span>: <span style="color:#ae81ff">$0.100 per GB</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use All Edge Locations (Best Performance)</span>: <span style="color:#ae81ff">$0.120 per GB</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">Recommendation</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Development</span>: <span style="color:#ae81ff">Use Only North America and Europe</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Production</span>: <span style="color:#ae81ff">Evaluate user distribution</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Global Users</span>: <span style="color:#ae81ff">Consider All Edge Locations</span>
-</span></span></code></pre></div><p><strong>2. Data Transfer Optimization</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Optimization Strategies</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Enable Compression</span>: <span style="color:#ae81ff">Reduce data transfer</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Use Appropriate Cache Policies</span>: <span style="color:#ae81ff">Reduce origin requests</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Monitor Usage</span>: <span style="color:#ae81ff">Track data transfer costs</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Set Alerts</span>: <span style="color:#ae81ff">Cost threshold notifications</span>
-</span></span></code></pre></div><hr>
+<p><strong>2.Test chạy thử trên postman</strong>
+<img src="/images/03/cdf-1.png" alt="S3 Console">
+<img src="/images/03/cdf-6.png" alt="S3 Console">
+<img src="/images/03/cdf-7.png" alt="S3 Console"></p>
+<hr>
 <h4 id="next-steps">Next Steps</h4>
 <p>Với CloudFront CDN đã được tích hợp, chúng ta có thể:</p>
 <ul>
@@ -1258,19 +1183,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1755012969"></script>
-    <script src="/js/perfect-scrollbar.min.js?1755012969"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1755012969"></script>
-    <script src="/js/jquery.sticky.js?1755012969"></script>
-    <script src="/js/featherlight.min.js?1755012969"></script>
-    <script src="/js/highlight.pack.js?1755012969"></script>
+    <script src="/js/clipboard.min.js?1755013743"></script>
+    <script src="/js/perfect-scrollbar.min.js?1755013743"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1755013743"></script>
+    <script src="/js/jquery.sticky.js?1755013743"></script>
+    <script src="/js/featherlight.min.js?1755013743"></script>
+    <script src="/js/highlight.pack.js?1755013743"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1755012969"></script>
-    <script src="/js/learn.js?1755012969"></script>
-    <script src="/js/hugo-learn.js?1755012969"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1755013743"></script>
+    <script src="/js/learn.js?1755013743"></script>
+    <script src="/js/hugo-learn.js?1755013743"></script>
 
-    <link href="/mermaid/mermaid.css?1755012969" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1755012969"></script>
+    <link href="/mermaid/mermaid.css?1755013743" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1755013743"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
