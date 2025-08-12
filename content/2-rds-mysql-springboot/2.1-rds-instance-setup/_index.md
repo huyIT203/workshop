@@ -54,7 +54,7 @@ Trong phần này, chúng ta sẽ thiết lập Amazon RDS instance với MySQL 
 ```
 
 
-![RDS Console](/images/02/rds_1.png)
+![RDS Console](/workshop/images/02/rds_1.png)
 
 
 **2. Choose Database Creation Method**
@@ -62,7 +62,7 @@ Trong phần này, chúng ta sẽ thiết lập Amazon RDS instance với MySQL 
 - **Easy create**: AWS recommended settings
 - **Select "Standard create"** for custom configuration
 
-![RDS Console](/images/02/rds-2.png)
+![RDS Console](/workshop/images/02/rds-2.png)
 
 **3. Engine Options**
 ```yaml
@@ -81,7 +81,7 @@ Master password: [Strong password with 8+ characters]
 Confirm password: [Same password]
 ```
 
-![RDS Console](/images/02/rds-4.png)
+![RDS Console](/workshop/images/02/rds-4.png)
 
 **Instance Configuration**
 ```yaml
@@ -93,9 +93,9 @@ Storage autoscaling: Enable
 Maximum storage threshold: 1000 GB
 ```
 
-![RDS Console](/images/02/rds-3.png)
-![RDS Console](/images/02/rds-4.png)
-![RDS Console](/images/02/rds-5.png)
+![RDS Console](/workshop/images/02/rds-3.png)
+![RDS Console](/workshop/images/02/rds-4.png)
+![RDS Console](/workshop/images/02/rds-5.png)
 ---
 
 #### Step 2: Network Configuration
@@ -113,7 +113,7 @@ Description: Security group for e-learning database
 
 ```
 
-![RDS Console](/images/02/rds-6.png)
+![RDS Console](/workshop/images/02/rds-6.png)
 
 **Inbound Rules**
 ```yaml
@@ -124,7 +124,7 @@ Source: [Your application security group] / [Specific IP ranges]
 Description: MySQL access from application
 ```
 
-![RDS Console](/images/02/rds-7.png)
+![RDS Console](/workshop/images/02/rds-7.png)
 
 
 
@@ -144,7 +144,7 @@ hãy test connection nếu thành công thì rds của bạn đã được tạo
 Hãy chạy và test thử
 ```
 
-![RDS Console](/images/02/rds-8.png)
+![RDS Console](/workshop/images/02/rds-8.png)
 
 
 

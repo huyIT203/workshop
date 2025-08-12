@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/4-mongodb-atlas/4.1-atlas-setup/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/2-rds-mysql-springboot/2.1-rds-instance-setup/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/3-amazon-s3-storage/3.1-s3-bucket-setup/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -14,15 +23,6 @@
                 hreflang="en"
                 href="//localhost:1313/"
                 />
-  </url><url>
-    <loc>//localhost:1313/4-mongodb-atlas/4.1-atlas-setup/</loc>
-    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/2-rds-mysql-springboot/2.1-rds-instance-setup/</loc>
-    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/3-amazon-s3-storage/3.1-s3-bucket-setup/</loc>
-    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/1-create-new-aws-account/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>

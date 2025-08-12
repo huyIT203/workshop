@@ -2,7 +2,7 @@
 # Chạy script này trong thư mục Workshop-template
 
 param(
-    [string]$ImageSource = "",
+    [string]$/imagesource = "",
     [string]$Chapter = "1"
 )
 
@@ -52,8 +52,8 @@ Write-Host ""
 
 # Hiển thị ảnh hiện tại trong chương
 Write-Host "Ảnh hiện tại trong chương $Chapter:" -ForegroundColor Cyan
-$CurrentImages = Get-ChildItem $ImagePath -File | Where-Object { $_.Extension -match "\.(png|jpg|jpeg|svg)$" }
-$CurrentImages | ForEach-Object {
+$Current/images = Get-ChildItem $ImagePath -File | Where-Object { $_.Extension -match "\.(png|jpg|jpeg|svg)$" }
+$Current/images | ForEach-Object {
     Write-Host "  - $($_.Name)" -ForegroundColor White
 }
 
@@ -94,7 +94,7 @@ Write-Host "3. Kiểm tra các trang có ảnh đã thay" -ForegroundColor White
 
 Write-Host ""
 Write-Host "=== CHUẨN BỊ CHO GITHUB PAGES ===" -ForegroundColor Green
-Write-Host "1. git add . && git commit -m 'Update images'" -ForegroundColor White
+Write-Host "1. git add . && git commit -m 'Update /images'" -ForegroundColor White
 Write-Host "2. git push origin main" -ForegroundColor White
 Write-Host "3. Bật GitHub Pages trong repository settings" -ForegroundColor White
 

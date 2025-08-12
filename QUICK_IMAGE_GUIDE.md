@@ -56,7 +56,7 @@ hugo server
 ```bash
 # Commit thay đổi
 git add .
-git commit -m "Update images"
+git commit -m "Update /images"
 
 # Push lên GitHub
 git push origin main
@@ -73,4 +73,4 @@ git push origin main
 
 ## 🆘 Cần Giúp Đỡ?
 
-Chạy script: `.\replace-images.ps1` trong PowerShell 
+Chạy script: `.\replace-/images.ps1` trong PowerShell 

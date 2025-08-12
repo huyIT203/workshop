@@ -16,10 +16,10 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
     }
 };
 
-// Execute actions on images generated from Markdown pages
-var images = $("div#body-inner img").not(".inline");
+// Execute actions on /images generated from Markdown pages
+var /images = $("div#body-inner img").not(".inline");
 // Wrap image inside a featherlight (to get a full size view in a popup)
-images.wrap(function(){
+/images.wrap(function(){
   var image =$(this);
   var o = getUrlParameter(image[0].src);
   var f = o['featherlight'];
@@ -32,7 +32,7 @@ images.wrap(function(){
 });
 
 // Change styles, depending on parameters set to the image
-images.each(function(index){
+/images.each(function(index){
   var image = $(this)
   var o = getUrlParameter(image[0].src);
   if (typeof o !== "undefined") {

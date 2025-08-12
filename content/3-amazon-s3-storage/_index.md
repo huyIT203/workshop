@@ -57,7 +57,7 @@ Tích hợp CloudFront với S3 để tối ưu hóa delivery:
 - **Course Content**: Video lectures, documents, presentations
 - **User Uploads**: Assignment submissions, profile pictures
 - **Backup Storage**: Database backups, system snapshots
-- **Static Assets**: Images, CSS, JavaScript files
+- **Static Assets**: /images, CSS, JavaScript files
 - **Media Files**: Audio, video, interactive content
 
 #### S3 Storage Classes

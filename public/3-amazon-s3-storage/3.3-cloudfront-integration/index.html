@@ -12,21 +12,21 @@
     <title>CloudFront CDN Integration :: Create a new AWS account.</title>
 
     
-    <link href="/css/nucleus.css?1755013743" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1755013743" rel="stylesheet">
-    <link href="/css/hybrid.css?1755013743" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1755013743" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1755013743" rel="stylesheet">
-    <link href="/css/auto-complete.css?1755013743" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1755013743" rel="stylesheet">
-    <link href="/css/theme.css?1755013743" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1755013743" rel="stylesheet">
+    <link href="/css/nucleus.css?1755015801" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1755015801" rel="stylesheet">
+    <link href="/css/hybrid.css?1755015801" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1755015801" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1755015801" rel="stylesheet">
+    <link href="/css/auto-complete.css?1755015801" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1755015801" rel="stylesheet">
+    <link href="/css/theme.css?1755015801" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1755015801" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1755013743" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1755015801" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1755013743"></script>
+    <script src="/js/jquery-3.3.1.min.js?1755015801"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1755013743"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1755013743"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1755015801"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1755015801"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1755013743"></script>
+<script type="text/javascript" src="/js/search.js?1755015801"></script>
 
     
   </div>
@@ -665,7 +665,7 @@
             
           
           
-            <a href='/'>Esoclusty E-Learning Platform Workshop</a> > <a href='/3-amazon-s3-storage/'>Amazon S3 - File Storage & Management</a> > CloudFront CDN Integration
+            <a href='/'>Workshop</a> > <a href='/3-amazon-s3-storage/'>Amazon S3 - File Storage & Management</a> > CloudFront CDN Integration
           
         
           
@@ -746,7 +746,7 @@
 </span></span><span style="display:flex;"><span>Vào S3 → chọn bucket → Properties → kiểm tra Block all public access đang ON.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Nếu muốn cho CloudFront truy cập, không cần bật public — ta sẽ dùng Origin Access Control <span style="color:#f92672">(</span>OAC<span style="color:#f92672">)</span>.
-</span></span></code></pre></div><p><img src="/images/03/cdf-2.png" alt="S3 Console"></p>
+</span></span></code></pre></div><p><img src="/workshop/images/03/cdf-2.png" alt="S3 Console"></p>
 <p><strong>2. Origin Configuration</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Origin Domain</span>: [<span style="color:#ae81ff">Select S3 bucket]</span>
 </span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Example</span>: <span style="color:#ae81ff">elearning-uploads-ap-southeast-1.s3.ap-southeast-1.amazonaws.com</span>
@@ -760,12 +760,12 @@
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">More secure than public bucket access</span>
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">AWS manages access automatically</span>
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Better security control</span>
-</span></span></code></pre></div><p><img src="/images/03/cdf-3.png" alt="S3 Console"></p>
+</span></span></code></pre></div><p><img src="/workshop/images/03/cdf-3.png" alt="S3 Console"></p>
 <p><strong>3. Distribution Settings</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">Specify origin</span>
-</span></span></code></pre></div><p><img src="/images/03/cdf-5.png" alt="S3 Console"></p>
+</span></span></code></pre></div><p><img src="/workshop/images/03/cdf-5.png" alt="S3 Console"></p>
 <hr>
 <hr>
 <hr>
@@ -846,9 +846,9 @@
 </span></span><span style="display:flex;"><span>  - <span style="color:#f92672">Cache Miss</span>: <span style="color:#ae81ff">S3 fallback</span>
 </span></span></code></pre></div><hr>
 <p><strong>2.Test chạy thử trên postman</strong>
-<img src="/images/03/cdf-1.png" alt="S3 Console">
-<img src="/images/03/cdf-6.png" alt="S3 Console">
-<img src="/images/03/cdf-7.png" alt="S3 Console"></p>
+<img src="/workshop/images/03/cdf-1.png" alt="S3 Console">
+<img src="/workshop/images/03/cdf-6.png" alt="S3 Console">
+<img src="/workshop/images/03/cdf-7.png" alt="S3 Console"></p>
 <hr>
 <h4 id="next-steps">Next Steps</h4>
 <p>Với CloudFront CDN đã được tích hợp, chúng ta có thể:</p>
@@ -1183,19 +1183,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1755013743"></script>
-    <script src="/js/perfect-scrollbar.min.js?1755013743"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1755013743"></script>
-    <script src="/js/jquery.sticky.js?1755013743"></script>
-    <script src="/js/featherlight.min.js?1755013743"></script>
-    <script src="/js/highlight.pack.js?1755013743"></script>
+    <script src="/js/clipboard.min.js?1755015801"></script>
+    <script src="/js/perfect-scrollbar.min.js?1755015801"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1755015801"></script>
+    <script src="/js/jquery.sticky.js?1755015801"></script>
+    <script src="/js/featherlight.min.js?1755015801"></script>
+    <script src="/js/highlight.pack.js?1755015801"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1755013743"></script>
-    <script src="/js/learn.js?1755013743"></script>
-    <script src="/js/hugo-learn.js?1755013743"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1755015801"></script>
+    <script src="/js/learn.js?1755015801"></script>
+    <script src="/js/hugo-learn.js?1755015801"></script>
 
-    <link href="/mermaid/mermaid.css?1755013743" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1755013743"></script>
+    <link href="/mermaid/mermaid.css?1755015801" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1755015801"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

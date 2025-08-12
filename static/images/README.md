@@ -1,11 +1,11 @@
-# Images Directory
+# /images Directory
 
-This directory contains all the images used in the Esoclusty E-Learning Platform workshop.
+This directory contains all the /images used in the Esoclusty E-Learning Platform workshop.
 
 ## Directory Structure
 
 ```
-images/
+/images/
 ├── 1/                    # Section 1: Technology Overview
 │   ├── 0001.png         # E-Learning Platform Overview
 │   ├── 0002.png         # Spring Boot Architecture
@@ -106,16 +106,16 @@ images/
 - **0019.png**: System benefits summary
 - **0020.png**: Workshop completion
 
-## Adding Images
+## Adding /images
 
-1. **Place images** in the appropriate numbered subdirectory
+1. **Place /images** in the appropriate numbered subdirectory
 2. **Name files** according to the convention (0001.png, 0002.png, etc.)
-3. **Optimize images** for web use
-4. **Ensure consistency** in style and quality across all images
+3. **Optimize /images** for web use
+4. **Ensure consistency** in style and quality across all /images
 
 ## Image Sources
 
-Images can be:
+/images can be:
 - Screenshots of the actual application
 - Architecture diagrams created with tools like Draw.io, Lucidchart, or Visio
 - UI mockups or wireframes
@@ -125,7 +125,7 @@ Images can be:
 
 ## Notes
 
-- All images referenced in the workshop content should be placed here
+- All /images referenced in the workshop content should be placed here
 - Maintain consistent naming convention for easy reference
-- Ensure images are high quality and professional looking
+- Ensure /images are high quality and professional looking
 - Consider accessibility (alt text descriptions in the workshop content) 

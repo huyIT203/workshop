@@ -50,7 +50,7 @@ Trong phần này, chúng ta sẽ thiết lập Amazon S3 buckets từ đầu, c
 # Click "Create bucket"
 ```
 
-![S3 Console](/images/03/s3-1.png)
+![S3 Console](/workshop/images/03/s3-1.png)
 
 
 
@@ -80,7 +80,7 @@ Override settings: Disabled
   - Follow security best practices
 ```
 
-![S3 Console](/images/03/s3-2.png)
+![S3 Console](/workshop/images/03/s3-2.png)
 
 ---
 
@@ -100,7 +100,7 @@ Object Ownership: Bucket owner enforced
   - Better security management
 ```
 
-![S3 Console](/images/03/s3-3.png)
+![S3 Console](/workshop/images/03/s3-3.png)
 
 
 
@@ -124,7 +124,7 @@ Benefits:
   - Compliance requirements
 ```
 
-![S3 Console](/images/03/S3-4.png)
+![S3 Console](/workshop/images/03/S3-4.png)
 
 ```yaml
 Bước 1 — Đặt tên & quyền truy cập
@@ -149,8 +149,8 @@ AWS sẽ hiển thị Access key ID và Secret access key → lưu ngay, vì Sec
 Sau này bạn dùng thông tin này để cấu hình trong application.properties Spring Boot.
 Thành công tạo user IAM
 ``` 
-![S3 Console](/images/03/s3-5.png)
-![S3 Console](/images/03/s3-6.png)
+![S3 Console](/workshop/images/03/s3-5.png)
+![S3 Console](/workshop/images/03/s3-6.png)
 
 ---
 
@@ -171,7 +171,7 @@ Lưu cặp key này vào AWS CLI, hoặc trong file .env / biến môi trường
 ⚠ Lưu ý bảo mật: Không commit Access Key vào GitHub.
 
 ```
-![S3 Console](/images/03/s3-8.png)
+![S3 Console](/workshop/images/03/s3-8.png)
 #### Step 5: Configure Access Control
 
 ##### Bucket Policies

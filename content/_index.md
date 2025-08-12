@@ -1,5 +1,5 @@
 ---
-title : "Esoclusty E-Learning Platform Workshop"
+title : "Workshop"
 date : "2025-01-11"
 weight : 1
 chapter : false

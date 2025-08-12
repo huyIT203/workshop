@@ -52,7 +52,7 @@ Vào S3 → chọn bucket → Properties → kiểm tra Block all public access 
 Nếu muốn cho CloudFront truy cập, không cần bật public — ta sẽ dùng Origin Access Control (OAC).
 ```
 
-![S3 Console](/images/03/cdf-2.png)
+![S3 Console](/workshop/images/03/cdf-2.png)
 
 **2. Origin Configuration**
 ```yaml
@@ -70,7 +70,7 @@ Origin Access: Origin access control settings (recommended)
   - Better security control
 ```
 
-![S3 Console](/images/03/cdf-3.png)
+![S3 Console](/workshop/images/03/cdf-3.png)
 
 **3. Distribution Settings**
 ```yaml
@@ -79,7 +79,7 @@ Origin Access: Origin access control settings (recommended)
 Specify origin
 ```
 
-![S3 Console](/images/03/cdf-5.png)
+![S3 Console](/workshop/images/03/cdf-5.png)
 
 ---
 
@@ -208,9 +208,9 @@ Performance Metrics:
 
 
 **2.Test chạy thử trên postman**
-![S3 Console](/images/03/cdf-1.png)
-![S3 Console](/images/03/cdf-6.png)
-![S3 Console](/images/03/cdf-7.png)
+![S3 Console](/workshop/images/03/cdf-1.png)
+![S3 Console](/workshop/images/03/cdf-6.png)
+![S3 Console](/workshop/images/03/cdf-7.png)
 
 
 
