@@ -5,7 +5,7 @@ weight : 1
 chapter : false
 ---
 
-# Esoclusty E-Learning Platform Workshop
+# Workshop
 
 #### Overview
 Chào mừng bạn đến với workshop về Esoclusty E-Learning Platform! Đây là một nền tảng học tập trực tuyến toàn diện được xây dựng với Spring Boot, tích hợp cả MySQL và MongoDB để cung cấp trải nghiệm học tập tốt nhất.

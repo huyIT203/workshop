@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MongoDB Atlas Setup &amp; Configuration on Create a new AWS account.</title>
+    <title>MongoDB Atlas Setup &amp; Configuration on Workshop</title>
     <link>http://localhost:1313/workshop/4-mongodb-atlas/4.1-atlas-setup/</link>
-    <description>Recent content in MongoDB Atlas Setup &amp; Configuration on Create a new AWS account.</description>
+    <description>Recent content in MongoDB Atlas Setup &amp; Configuration on Workshop</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>

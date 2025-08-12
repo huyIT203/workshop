@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Finding Account ID on Create a new AWS account.</title>
+    <title>Finding Account ID on Workshop</title>
     <link>http://localhost:1313/workshop/1-create-new-aws-account/1.1-find-account-id/</link>
-    <description>Recent content in Finding Account ID on Create a new AWS account.</description>
+    <description>Recent content in Finding Account ID on Workshop</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>

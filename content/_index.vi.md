@@ -1,11 +1,11 @@
 ---
-title : "Workshop Nền Tảng E-Learning Esoclusty"
+title : "Workshop"
 date : "2025-01-11"
 weight : 1 
 chapter : false
 ---
 
-# Workshop Nền Tảng E-Learning Esoclusty
+# Workshop
 
 #### Tổng quan
 Chào mừng bạn đến với workshop toàn diện về việc xây dựng nền tảng e-learning hiện đại, giàu tính năng sử dụng Spring Boot, MongoDB và MySQL. Workshop này sẽ hướng dẫn bạn qua toàn bộ quá trình phát triển, từ việc lựa chọn công nghệ đến triển khai production, bao gồm các tính năng nâng cao như giao tiếp real-time, tự động hóa database migration và giám sát toàn diện.
