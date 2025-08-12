@@ -4,6 +4,10 @@ theme = "hugo-theme-learn"
 # Suppress warnings
 ignoreLogs = ['warning-goldmark-raw-html']
 
+baseURL = "https://huyit203.github.io/workshop/"
+relativeURLs = true
+canonifyURLs = true
+
 # Allow raw HTML in markdown
 [markup]
   [markup.goldmark]
